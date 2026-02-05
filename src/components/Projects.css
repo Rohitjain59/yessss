@@ -1,0 +1,156 @@
+.projects {
+    background-color: var(--color-bg);
+    padding: 6rem 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4rem;
+    margin-bottom: 4rem;
+    font-family: var(--font-serif);
+}
+
+.projects-indices span {
+    margin-left: 1.5rem;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.projects-indices span.active {
+    opacity: 1;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 70vh;
+    width: 100%;
+}
+
+/* Base Item - All items exist at once, position changes via class */
+/* Base Item */
+.gallery-item {
+    position: absolute;
+    top: 50%;
+    width: 35vw;
+    height: 100%;
+    transform: translateY(-50%) scale(0.8);
+    transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0;
+    z-index: 1;
+    filter: brightness(0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    will-change: transform, left, opacity;
+    /* Optimization */
+}
+
+/* Active: Center, Top Layer */
+.gallery-item.active {
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 20;
+    filter: brightness(1);
+}
+
+/* Prev: Left, Middle Layer */
+.gallery-item.prev {
+    left: 15%;
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0.6;
+    z-index: 10;
+}
+
+/* Next: Right, Middle Layer */
+.gallery-item.next {
+    left: 85%;
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0.6;
+    z-index: 10;
+}
+
+/* Hidden: Center Back, Bottom Layer - The "Return Path" */
+.gallery-item.hidden {
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.2);
+    /* Smaller scale to hide behind Active */
+    opacity: 0;
+    z-index: 0;
+    /* Move seamlessly to/from this state */
+}
+
+/* Item Title (Inside Item now) */
+.item-title-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 12;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.gallery-item.active .item-title-container {
+    opacity: 1;
+    /* Only show title on active item */
+    transition-delay: 0.3s;
+    /* Delay title fade in */
+}
+
+.item-title span {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 5vw;
+    line-height: 0.9;
+    text-transform: uppercase;
+    color: white;
+}
+
+.projects-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.projects-description {
+    max-width: 400px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.5;
+    min-height: 3em;
+    /* Reserve space to prevent jump on text change */
+}
+
+@media (max-width: 768px) {
+    .gallery-image.side {
+        display: none;
+    }
+
+    .gallery-image {
+        width: 90vw;
+    }
+
+    .projects-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 2rem;
+    }
+}

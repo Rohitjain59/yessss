@@ -1,0 +1,160 @@
+.values-section {
+    position: relative;
+    min-height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0rem;
+}
+
+.values-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Darker overlay */
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    backdrop-filter: blur(5px);
+}
+
+.values-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 4rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Strict 2 rows */
+    grid-template-rows: repeat(2, minmax(400px, auto));
+    /* Gap handles the spacing between cards */
+    gap: 15px;
+}
+
+/* Card Styling - "Dark Tabs" */
+.value-card {
+    /* Much darker, nearly opaque to ensure visibility against any background */
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Very subtle border for definition */
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Align text to top */
+    transition: all 0.4s ease;
+    position: relative;
+    border-radius: 4px;
+    /* Slight rounding or sharp */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* Shadow for lift */
+}
+
+.value-card:hover {
+    background: #000000;
+    /* Solid black on hover */
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.value-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+}
+
+.value-card p {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    font-weight: 300;
+    max-width: 80%;
+}
+
+/* Positioning Numbers - "Floating Outside" */
+.card-number {
+    position: absolute;
+    bottom: -30px;
+    /* Below the card */
+    left: 0;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Adjustments for Top Row Numbers which are weirdly placed in design */
+/* Card 1 is top left. Number (1) is between Card 1 and 2 at bottom alignment */
+/* We'll handle specific overrides via classes if needed, 
+   but standard bottom-left works well for a clean system */
+.card-1 .card-number {
+    right: -20px;
+    left: auto;
+    bottom: 0;
+}
+
+.card-2 .card-number {
+    right: -20px;
+    left: auto;
+    bottom: 0;
+}
+
+.values-intro-text {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: right;
+    padding: 2rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center vertically in its slot */
+    align-items: flex-end;
+}
+
+.values-intro-text p {
+    max-width: 300px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 2rem;
+    }
+
+    .values-intro-text {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        text-align: left;
+        padding: 1rem 0;
+        align-items: flex-start;
+    }
+
+    .values-intro-text p {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,120 @@
+.vision-section {
+    display: flex;
+    min-height: 100vh;
+    background-color: #0F1112;
+    /* Dark background matching image */
+    color: white;
+    overflow: hidden;
+}
+
+.vision-image-container {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.vision-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9);
+}
+
+.vision-content {
+    width: 50%;
+    padding: 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.vision-header {
+    text-align: right;
+    width: 100%;
+}
+
+.vision-subtitle {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+}
+
+.vision-main-title {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centered as per image reference */
+}
+
+.vision-main-title h2 {
+    font-family: var(--font-serif);
+    font-size: 5vw;
+    /* Responsive large text */
+    font-weight: 400;
+    line-height: 1.1;
+    text-align: left;
+    /* Looks left aligned or centered in design? "A VISION OF" top, "INSPIRED LIVING" bottom */
+    text-transform: uppercase;
+}
+
+.italic-text {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.vision-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2rem;
+    text-align: right;
+    max-width: 400px;
+    align-self: flex-end;
+    /* Align to bottom right */
+}
+
+.vision-text {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.btn-vision {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-vision:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 900px) {
+    .vision-section {
+        flex-direction: column;
+    }
+
+    .vision-image-container,
+    .vision-content {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .vision-main-title h2 {
+        font-size: 3rem;
+    }
+}
