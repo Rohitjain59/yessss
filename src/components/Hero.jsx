@@ -1,26 +1,36 @@
 import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import './Hero.css';
-import heroImg from '../assets/hero.png';
 
 const Hero = () => {
     const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+    const containerRef = useRef(null);
+    const titleRef = useRef(null);
 
     const heroImages = [
-        "https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80", // Dark moody modern exterior
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80", // Spacious luxury living room
-        "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"  // Modern pool/patio dusk
+        "https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+        "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
     ];
+
+    useGSAP(() => {
+        // Initial Title Reveal
+        gsap.fromTo(titleRef.current,
+            { y: 100, opacity: 0, scale: 0.9 },
+            { y: 0, opacity: 1, scale: 1, duration: 1.5, ease: "power3.out", delay: 0.5 }
+        );
+    }, { scope: containerRef });
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
         }, 3000);
-
         return () => clearInterval(interval);
     }, [heroImages.length]);
 
     return (
-        <section className="hero" id="hero">
+        <section className="hero" id="hero" ref={containerRef}>
             <div className="hero-background">
                 {heroImages.map((imgUrl, index) => (
                     <img
@@ -32,7 +42,7 @@ const Hero = () => {
                 ))}
             </div>
 
-            <h1 className="hero-title">DISHVA</h1>
+            <h1 className="hero-title" ref={titleRef}>DISHVA</h1>
 
         </section>
     );

@@ -51,8 +51,26 @@ const Projects = ({ standalone = false }) => {
         return () => clearInterval(interval);
     }, [standalone]);
 
-    // GSAP Animation for Standalone Page
+    // GSAP Animation for Both Views
     useGSAP(() => {
+        if (!standalone && projectsRef.current) {
+            // Homepage Animation: Reveal the entire section
+            gsap.fromTo(projectsRef.current.children,
+                { y: 50, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    stagger: 0.2,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: projectsRef.current,
+                        start: "top 75%"
+                    }
+                }
+            );
+        }
+
         if (standalone && projectsRef.current) {
             const items = gsap.utils.toArray('.project-card');
 
@@ -116,7 +134,7 @@ const Projects = ({ standalone = false }) => {
 
     // --- RENDER HOMEPAGE WIDGET (CAROUSEL) ---
     return (
-        <section className="projects" id="projects">
+        <section className="projects" id="projects" ref={projectsRef}>
             <div className="projects-header">
                 <div className="section-label">(OUR PROJECTS)</div>
                 <div className="projects-indices">

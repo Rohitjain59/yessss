@@ -22,10 +22,14 @@
 
 .vision-content {
     width: 50%;
-    padding: 0 4rem;
+    padding: 8rem 4rem 4rem 4rem;
+    /* More top padding, move content up overall via flex-start */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    /* Align top instead of space-between */
+    gap: 4rem;
+    /* Space elements out manually */
     position: relative;
 }
 

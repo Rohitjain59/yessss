@@ -7,6 +7,7 @@ import Values from './components/Values';
 import Amenities from './components/Amenities';
 import About from './components/About';
 import Projects from './components/Projects';
+import Contact from './components/Contact';
 import './index.css';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         } />
         <Route path="/projects" element={<Projects standalone={true} />} />
         <Route path="/about" element={<About standalone={true} />} />
+        <Route path="/contact" element={<Contact standalone={true} />} />
       </Routes>
     </div>
   );

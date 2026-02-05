@@ -28,11 +28,16 @@ const Navbar = () => {
       trigger: document.body,
       start: "top top",
       onUpdate: (self) => {
-        // Optional: Change nav background on scroll
+        // Change nav background on scroll
         if (self.progress > 0.05) {
           navRef.current.classList.add('scrolled');
         } else {
           navRef.current.classList.remove('scrolled');
+        }
+
+        // Re-animate line when back at very top
+        if (self.progress === 0 && self.direction === -1) {
+          gsap.fromTo(lineRef.current, { scaleX: 0 }, { scaleX: 1, duration: 1, ease: "power3.out" });
         }
       }
     });
@@ -57,7 +62,9 @@ const Navbar = () => {
         <div className="navbar-left-spacer"></div> {/* Spacer for grid centering */}
 
         <div className="navbar-logo">
-          <img src={logo} alt="Dishva Logo" className="logo-img" />
+          <Link to="/">
+            <img src={logo} alt="Dishva Logo" className="logo-img" />
+          </Link>
         </div>
 
         <div className="navbar-actions">
@@ -75,11 +82,12 @@ const Navbar = () => {
       <div ref={menuRef} className="menu-overlay">
         <div className="menu-links">
           <Link to="/" onClick={handleLinkClick}>Home</Link>
+          <Link to="/projects" onClick={handleLinkClick}>Projects</Link>
+          <Link to="/about" onClick={handleLinkClick}>About</Link>
+          <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
           <Link to="/#vision" onClick={handleLinkClick}>Vision</Link>
           <Link to="/#values" onClick={handleLinkClick}>Values</Link>
           <Link to="/#amenities" onClick={handleLinkClick}>Amenities</Link>
-          <Link to="/projects" onClick={handleLinkClick}>Projects</Link>
-          <Link to="/about" onClick={handleLinkClick}>About</Link>
         </div>
       </div>
     </>
