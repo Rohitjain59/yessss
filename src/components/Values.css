@@ -47,12 +47,14 @@
 }
 
 /* Card Styling - "Dark Tabs" */
+/* Card Styling - "Dark Tabs" */
 .value-card {
-    /* Much darker, nearly opaque to ensure visibility against any background */
-    background: rgba(5, 5, 5, 0.95);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    /* Very subtle border for definition */
+    /* Richer background to stand out */
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    /* Accent line */
     padding: 3rem 2.5rem;
     display: flex;
     flex-direction: column;
@@ -61,15 +63,15 @@
     transition: all 0.4s ease;
     position: relative;
     border-radius: 4px;
-    /* Slight rounding or sharp */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    /* Shadow for lift */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    /* Ensure visibility if JS fails */
+    opacity: 1;
 }
 
 .value-card:hover {
-    background: #000000;
-    /* Solid black on hover */
-    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(20, 20, 20, 0.95);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-5px);
 }
 
 .value-card h3 {

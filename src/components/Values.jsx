@@ -7,16 +7,23 @@ const Values = () => {
     const containerRef = useRef(null);
 
     useGSAP(() => {
-        gsap.from(".value-card", {
-            y: 50,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.1,
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top 75%"
+        gsap.fromTo(".value-card",
+            {
+                y: 50,
+                autoAlpha: 0 // handles opacity + visibility
+            },
+            {
+                y: 0,
+                autoAlpha: 1,
+                duration: 0.8,
+                stagger: 0.1,
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 80%", // Trigger a bit earlier
+                    toggleActions: "play none none reverse"
+                }
             }
-        })
+        );
     }, { scope: containerRef });
 
     return (
