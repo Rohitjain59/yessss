@@ -44,6 +44,13 @@ const Hero = () => {
 
             <h1 className="hero-title" ref={titleRef}>DISHVA</h1>
 
+            <div className="hero-content">
+                <h2 className="hero-subtitle">At Elyse Residence</h2>
+                <p className="hero-description">
+                    We believe that a home is more than a physical space — it's a reflection of your aspirations.
+                </p>
+                <div className="scroll-indicator">SCROLL</div>
+            </div>
         </section>
     );
 };

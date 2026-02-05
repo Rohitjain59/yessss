@@ -49,7 +49,8 @@
     font-family: var(--font-serif);
     font-size: 22vw;
     line-height: 1;
-    z-index: 2;
+    z-index: 1;
+    /* Lower z-index */
     pointer-events: none;
     color: #ffffff;
     opacity: 1;
@@ -63,10 +64,12 @@
 /* Info content on the right */
 .hero-content {
     position: absolute;
-    bottom: 10%;
+    bottom: 30%;
+    /* Moved up */
     right: 5%;
     width: 300px;
-    z-index: 3;
+    z-index: 10;
+    /* Much higher z-index */
     text-align: left;
 }
 
@@ -97,37 +100,49 @@
 
 @media (max-width: 768px) {
     .hero {
-        height: 85vh;
-        /* Make image "choti" (smaller height) */
+        height: 100vh;
+        /* Restore full height to avoid cutting off */
     }
 
     .hero-title {
-        font-size: 15vw;
+        font-size: 18vw;
         bottom: 5%;
+        /* Bring it UP so it is visible */
         left: 50%;
         transform: translateX(-50%);
+        opacity: 0.3;
+        /* Fade it out so text is readable */
     }
 
     .hero-content {
-        bottom: 5%;
-        right: 5%;
-        left: 5%;
-        width: auto;
+        bottom: 35%;
+        /* Move text WAY up to clear the title */
+        right: 0;
+        left: 0;
+        width: 100%;
+        padding: 0 2rem;
+        text-align: center;
+        /* Center text on mobile */
+    }
+
+    .hero-description {
+        max-width: 100%;
+        margin: 0 auto 1rem auto;
     }
 }
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 14vw;
-        bottom: -10%;
-        /* "Dishva half dekhwao" - positioned lower to be cut off or at very bottom */
+        font-size: 20vw;
+        bottom: 5%;
+        /* Even higher on small screens */
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .hero-description {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
     }
 }
