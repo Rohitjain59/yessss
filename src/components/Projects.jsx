@@ -9,6 +9,13 @@ gsap.registerPlugin(ScrollTrigger);
 import projectImg from '../assets/project.png';
 import aboutImg from '../assets/about.png';
 import heroImg from '../assets/hero.png';
+import florImg from '../assets/flor.jpg';
+import house1Img from '../assets/house1.jpg';
+import house2Img from '../assets/house2.jpeg';
+import house4Img from '../assets/house 4.jpg';
+import house5Img from '../assets/house 5.jpeg';
+import house6Img from '../assets/house6.jpeg';
+import house8Img from '../assets/house8.jpeg';
 
 export const projectsData = [
     {
@@ -17,7 +24,15 @@ export const projectsData = [
         img: projectImg,
         desc: "Two-story luxury apartments that features sunlit living spaces, private terraces, and a selection of exclusive amenities.",
         location: "SOUTH DELHI",
-        status: "ONGOING PROJECT"
+        status: "ONGOING PROJECT",
+        amenities: ["Private Lift", "Sky Penthouse", "Concierge Service", "Heated Indoor Pool", "Valet Parking"],
+        gallery: [projectImg, house1Img, house2Img, aboutImg, house4Img, house5Img, heroImg, house6Img, florImg],
+        story: "Lumière Duplex Residences redefine urban luxury by blending contemporary architecture with the warmth of natural light. \n\nInspired by the interplay of sun and shadow, the design philosophy focuses on creating expansive, airy interiors that seamlessly connect with the outdoors. \n\nEach residence is a masterpiece of craftsmanship, featuring double-height living areas, private elevators, and sustainable materials that ensure a healthy, eco-friendly lifestyle.",
+        floorPlans: {
+            "Ground Floor": [florImg, house1Img, house2Img],
+            "First Floor": [house4Img, house5Img, house6Img],
+            "Penthouse": [heroImg, projectImg, aboutImg]
+        }
     },
     {
         id: 2,
@@ -25,7 +40,15 @@ export const projectsData = [
         img: aboutImg,
         desc: "Elevated living with panoramic city views, floor-to-ceiling windows, and bespoke interior finishes.",
         location: "GURGAON",
-        status: "UPCOMING PROJECT"
+        status: "UPCOMING PROJECT",
+        amenities: ["Golf Course View", "VRV Air Conditioning", "Italian Marble Flooring", "Smart Home Automation", "Clubhouse Access"],
+        gallery: [aboutImg, house4Img, house6Img, heroImg, house1Img, house5Img, projectImg, house8Img, florImg],
+        story: "Aurora Sky Penthouses are designed for those who seek to live above the ordinary. \n\nPerched atop the city's skyline, these residences offer unobstructed views that change with the colors of the day—from the golden hues of sunrise to the twinkling city lights at night. \n\nThe architectural language is minimal yet bold, emphasizing clean lines and glass facades that dissolve the boundary between inside and outside.",
+        floorPlans: {
+            "Ground Floor": [house1Img, house2Img, florImg],
+            "First Floor": [aboutImg, heroImg, projectImg],
+            "Penthouse": [house5Img, house6Img, house4Img]
+        }
     },
     {
         id: 3,
@@ -33,15 +56,31 @@ export const projectsData = [
         img: heroImg,
         desc: "Secluded sanctuary homes surrounded by lush landscaping, featuring private pools and outdoor wellness areas.",
         location: "NOIDA",
-        status: "COMPLETED"
+        status: "COMPLETED",
+        amenities: ["Private Garden", "Terrace Garden", "Gated Community", "Kids Play Area", "Meditation Zone"],
+        gallery: [heroImg, house2Img, florImg, projectImg, house1Img, house8Img, aboutImg, house5Img, house4Img],
+        story: "Serenity Garden Villas are a tribute to the healing power of nature. \n\nNestled within acres of lush greenery, each villa is designed as a personal retreat from the chaos of urban life. \n\nThe layout focuses on privacy and tranquility, with central courtyards, water bodies, and private gardens that create a microclimate of cool, fresh air. It's not just a home; it's a wellness sanctuary.",
+        floorPlans: {
+            "Ground Floor": [heroImg, house4Img, house1Img],
+            "First Floor": [house2Img, florImg, house5Img],
+            "Penthouse": [projectImg, aboutImg, house6Img]
+        }
     },
     {
         id: 4,
         title: ["OBSIDIAN", "HEIGHTS"],
-        img: projectImg, // Reusing projectImg to ensure visibility
+        img: projectImg,
         desc: "Architectural masterpieces defined by bold geometry, sustainable materials, and breathtaking horizon views.",
         location: "MUMBAI",
-        status: "ONGOING PROJECT"
+        status: "ONGOING PROJECT",
+        amenities: ["Sea View", "Infinity Pool", "Rooftop Lounge", "Business Center", "Private Cinema"],
+        gallery: [projectImg, house5Img, house8Img, heroImg, house1Img, house4Img, aboutImg, house2Img, florImg],
+        story: "Obsidian Heights stands as a bold statement of modern power and elegance. \n\nThe dark, sleek facade, inspired by volcanic glass, contrasts with the soft, luxurious interiors. \n\nThis project is designed for the visionaries—the leaders who shape the world. With state-of-the-art business facilities integrated into the residential complex, it offers the perfect balance of work, life, and leisure.",
+        floorPlans: {
+            "Ground Floor": [house2Img, house6Img, florImg],
+            "First Floor": [projectImg, heroImg, aboutImg],
+            "Penthouse": [house4Img, house5Img, house1Img]
+        }
     }
 ];
 

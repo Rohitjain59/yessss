@@ -1,16 +1,52 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projectsData } from './Projects';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import {
+    FaBuilding, FaConciergeBell, FaSwimmingPool, FaCarAlt,
+    FaGolfBall, FaFan, FaGem, FaMobileAlt, FaGlassCheers, FaTree,
+    FaToriiGate, FaChild, FaSpa, FaWater,
+    FaCocktail, FaBriefcase, FaFilm
+} from 'react-icons/fa';
+import { MdDeck, MdElevator, MdClose } from "react-icons/md";
 import './ProjectDetail.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const getAmenityIcon = (amenity) => {
+    const map = {
+        "Private Lift": <MdElevator />,
+        "Sky Penthouse": <FaBuilding />,
+        "Concierge Service": <FaConciergeBell />,
+        "Heated Indoor Pool": <FaSwimmingPool />,
+        "Valet Parking": <FaCarAlt />,
+        "Golf Course View": <FaGolfBall />,
+        "VRV Air Conditioning": <FaFan />,
+        "Italian Marble Flooring": <FaGem />,
+        "Smart Home Automation": <FaMobileAlt />,
+        "Clubhouse Access": <FaGlassCheers />,
+        "Private Garden": <FaTree />,
+        "Terrace Garden": <MdDeck />,
+        "Gated Community": <FaToriiGate />,
+        "Kids Play Area": <FaChild />,
+        "Meditation Zone": <FaSpa />,
+        "Sea View": <FaWater />,
+        "Infinity Pool": <FaSwimmingPool />,
+        "Rooftop Lounge": <FaCocktail />,
+        "Business Center": <FaBriefcase />,
+        "Private Cinema": <FaFilm />
+    };
+    return map[amenity] || <FaGem />; // Default icon
+};
+
 const ProjectDetail = () => {
     const { id } = useParams();
     const project = projectsData.find(p => p.id === parseInt(id));
+    const [activeTab, setActiveTab] = useState('Ground Floor');
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isGalleryExpanded, setIsGalleryExpanded] = useState(false);
 
     useGSAP(() => {
         gsap.fromTo('.detail-hero-img',
@@ -35,7 +71,7 @@ const ProjectDetail = () => {
                 }
             }
         );
-    });
+    }, { dependencies: [] }); // Fixed dependency array
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -44,6 +80,15 @@ const ProjectDetail = () => {
     if (!project) {
         return <div className="detail-error">Project not found</div>;
     }
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        alert("Thank you! Our brochure will be sent to you shortly.");
+        closeModal();
+    };
 
     return (
         <div className="project-detail-page">
@@ -67,14 +112,78 @@ const ProjectDetail = () => {
             </div>
 
             <section className="detail-content-section">
-                <div className="detail-grid">
-                    <div className="detail-info-block">
-                        <h3>Architectural Vision</h3>
-                        <p>Designed to harmonize with its surroundings, {project.title.join(' ')} stands as a testament to modern architectural excellence. Every curve and line has been meticulously planned to optimize natural light and airflow.</p>
+
+                {/* 1. Project Story Section */}
+                <div className="detail-story-section">
+                    <h3 className="section-subtitle">PROJECT STORY</h3>
+                    <div className="story-content">
+                        {project.story.split('\n\n').map((paragraph, idx) => (
+                            <p key={idx}>{paragraph}</p>
+                        ))}
                     </div>
-                    <div className="detail-info-block">
-                        <h3>Interiors & Amenities</h3>
-                        <p>Experience a life of unbridled luxury with bespoke interiors, imported marble flooring, and state-of-the-art smart home automation. Residents enjoy exclusive access to a private clubhouse, infinity pool, and wellness center.</p>
+                </div>
+
+                {/* 2. Gallery Section (Expandable) */}
+                <div className="detail-gallery">
+                    <h3 className="section-subtitle">PROJECT GALLERY</h3>
+                    <div className="gallery-grid-view">
+                        {project.gallery?.slice(0, isGalleryExpanded ? project.gallery.length : 6).map((img, index) => {
+                            const isLastVisible = !isGalleryExpanded && index === 5 && project.gallery.length > 6;
+                            const remainingCount = project.gallery.length - 6;
+
+                            return (
+                                <div
+                                    key={index}
+                                    className={`gallery-img-container ${isLastVisible ? 'has-overlay' : ''}`}
+                                    onClick={isLastVisible ? () => setIsGalleryExpanded(true) : null}
+                                >
+                                    <img src={img} alt={`Gallery ${index}`} className="project-gallery-img" />
+                                    {isLastVisible && (
+                                        <div className="gallery-overlay">
+                                            <span>+{remainingCount}</span>
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+
+                {/* 3. Floor Plans Section */}
+                <div className="detail-floorplans">
+                    <h3 className="section-subtitle">FLOOR PLANS</h3>
+                    <div className="floorplan-tabs">
+                        {Object.keys(project.floorPlans).map((floor) => (
+                            <button
+                                key={floor}
+                                className={`tab-btn ${activeTab === floor ? 'active' : ''}`}
+                                onClick={() => setActiveTab(floor)}
+                            >
+                                {floor}
+                            </button>
+                        ))}
+                    </div>
+                    <div className="floorplan-display">
+                        <div className="floorplan-grid-view">
+                            {project.floorPlans[activeTab]?.map((planImg, index) => (
+                                <div key={index} className="floorplan-img-wrapper">
+                                    <img src={planImg} alt={`${activeTab} Plan ${index + 1}`} className="floorplan-img" />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* 4. Amenities Section */}
+                <div className="detail-amenities" id="amenities">
+                    <h3 className="section-subtitle">EXCLUSIVE AMENITIES</h3>
+                    <div className="amenities-list">
+                        {project.amenities?.map((amenity, index) => (
+                            <div key={index} className="amenity-tag">
+                                <span className="amenity-icon">{getAmenityIcon(amenity)}</span>
+                                <span className="amenity-text">{amenity}</span>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
@@ -94,11 +203,33 @@ const ProjectDetail = () => {
                 </div>
 
                 <div className="detail-action">
+                    <button className="btn-outline" onClick={openModal}>DOWNLOAD BROCHURE</button>
                     <Link to="/contact" className="btn-solid">ENQUIRE NOW</Link>
                 </div>
             </section>
+
+            {/* Modal Popup */}
+            {isModalOpen && (
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <button className="modal-close" onClick={closeModal}><MdClose /></button>
+                        <h3>Download Brochure</h3>
+                        <p>Fill in your details to get the brochure.</p>
+                        <form onSubmit={handleFormSubmit}>
+                            <div className="form-group">
+                                <input type="text" placeholder="Your Name" required />
+                            </div>
+                            <div className="form-group">
+                                <input type="tel" placeholder="Phone Number" required />
+                            </div>
+                            <button type="submit" className="btn-solid full-width">DOWNLOAD</button>
+                        </form>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
 
 export default ProjectDetail;
+
