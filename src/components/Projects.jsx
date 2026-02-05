@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,30 +10,38 @@ import projectImg from '../assets/project.png';
 import aboutImg from '../assets/about.png';
 import heroImg from '../assets/hero.png';
 
-const projectsData = [
+export const projectsData = [
     {
         id: 1,
         title: ["LUMIÈRE DUPLEX", "RESIDENCES"],
         img: projectImg,
-        desc: "Two-story luxury apartments that features sunlit living spaces, private terraces, and a selection of exclusive amenities."
+        desc: "Two-story luxury apartments that features sunlit living spaces, private terraces, and a selection of exclusive amenities.",
+        location: "SOUTH DELHI",
+        status: "ONGOING PROJECT"
     },
     {
         id: 2,
         title: ["AURORA SKY", "PENTHOUSES"],
         img: aboutImg,
-        desc: "Elevated living with panoramic city views, floor-to-ceiling windows, and bespoke interior finishes."
+        desc: "Elevated living with panoramic city views, floor-to-ceiling windows, and bespoke interior finishes.",
+        location: "GURGAON",
+        status: "UPCOMING PROJECT"
     },
     {
         id: 3,
         title: ["SERENITY", "GARDEN VILLAS"],
         img: heroImg,
-        desc: "Secluded sanctuary homes surrounded by lush landscaping, featuring private pools and outdoor wellness areas."
+        desc: "Secluded sanctuary homes surrounded by lush landscaping, featuring private pools and outdoor wellness areas.",
+        location: "NOIDA",
+        status: "COMPLETED"
     },
     {
         id: 4,
         title: ["OBSIDIAN", "HEIGHTS"],
         img: projectImg, // Reusing projectImg to ensure visibility
-        desc: "Architectural masterpieces defined by bold geometry, sustainable materials, and breathtaking horizon views."
+        desc: "Architectural masterpieces defined by bold geometry, sustainable materials, and breathtaking horizon views.",
+        location: "MUMBAI",
+        status: "ONGOING PROJECT"
     }
 ];
 
@@ -113,17 +122,24 @@ const Projects = ({ standalone = false }) => {
                     {projectsData.map((project, index) => (
                         <div key={project.id} className="project-card">
                             <div className="card-image-wrapper">
-                                <img src={project.img} alt={project.title.join(' ')} />
+                                <Link to={`/projects/${project.id}`}>
+                                    <img src={project.img} alt={project.title.join(' ')} />
+                                </Link>
                             </div>
                             <div className="card-content">
-                                <span className="project-number">{(index + 1).toString().padStart(2, '0')}</span>
+                                <div className="card-meta-header">
+                                    <div className="meta-info-row">
+                                        <span className="meta-location">{project.location}</span>
+                                        <span className="meta-status">{project.status}</span>
+                                    </div>
+                                </div>
                                 <h2 className="project-name">
                                     {project.title.map((line, i) => (
                                         <span key={i} className="block-span">{line}</span>
                                     ))}
                                 </h2>
                                 <p className="project-desc">{project.desc}</p>
-                                <button className="btn-line">VIEW RESIDENCE</button>
+                                <Link to={`/projects/${project.id}`} className="btn-line">VIEW RESIDENCE</Link>
                             </div>
                         </div>
                     ))}
@@ -137,26 +153,25 @@ const Projects = ({ standalone = false }) => {
         <section className="projects" id="projects" ref={projectsRef}>
             <div className="projects-header">
                 <div className="section-label">(OUR PROJECTS)</div>
-                <div className="projects-indices">
-                    {projectsData.map((_, idx) => (
-                        <span key={idx} className={idx === activeIndex ? "active" : ""}>
-                            ({idx + 1})
-                        </span>
-                    ))}
-                </div>
             </div>
 
             <div className="gallery-container">
                 {projectsData.map((project, index) => (
                     <div key={project.id} className={`gallery-item ${getPositionClass(index)}`}>
-                        <img src={project.img} alt={project.title.join(' ')} />
-                        <div className="item-title-container">
-                            <h2 className="item-title">
-                                {project.title.map((line, i) => (
-                                    <span key={i}>{line}</span>
-                                ))}
-                            </h2>
-                        </div>
+                        <Link to={`/projects/${project.id}`} className="gallery-link">
+                            <img src={project.img} alt={project.title.join(' ')} />
+                            <div className="item-title-container">
+                                <div className="project-top-meta">
+                                    <span className="meta-left">{project.location}</span>
+                                    <span className="meta-right">{project.status}</span>
+                                </div>
+                                <h2 className="item-title">
+                                    {project.title.map((line, i) => (
+                                        <span key={i}>{line}</span>
+                                    ))}
+                                </h2>
+                            </div>
+                        </Link>
                     </div>
                 ))}
             </div>
@@ -165,7 +180,7 @@ const Projects = ({ standalone = false }) => {
                 <p className="projects-description">
                     {projectsData[activeIndex].desc}
                 </p>
-                <button className="btn-pill">LEARN MORE</button>
+                <Link to={`/projects/${projectsData[activeIndex].id}`} className="btn-pill">LEARN MORE</Link>
             </div>
         </section>
     );

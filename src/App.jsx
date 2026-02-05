@@ -7,7 +7,9 @@ import Values from './components/Values';
 import Amenities from './components/Amenities';
 import About from './components/About';
 import Projects from './components/Projects';
+import ProjectDetail from './components/ProjectDetail';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 import './index.css';
 
 function App() {
@@ -39,9 +41,11 @@ function App() {
           </>
         } />
         <Route path="/projects" element={<Projects standalone={true} />} />
+        <Route path="/projects/:id" element={<ProjectDetail />} />
         <Route path="/about" element={<About standalone={true} />} />
         <Route path="/contact" element={<Contact standalone={true} />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
