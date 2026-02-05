@@ -120,8 +120,14 @@
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 1.5rem;
+        padding: 1rem 1.5rem;
+        /* Reduced padding */
         grid-template-columns: 1fr auto 1fr;
+    }
+
+    .logo-img {
+        height: 25px;
+        /* Smaller logo for mobile */
     }
 
     .menu-links a {

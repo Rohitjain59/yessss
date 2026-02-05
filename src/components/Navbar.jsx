@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -73,12 +74,12 @@ const Navbar = () => {
       {/* Full Screen Menu Overlay */}
       <div ref={menuRef} className="menu-overlay">
         <div className="menu-links">
-          <a href="#hero" onClick={handleLinkClick}>Home</a>
-          <a href="#vision" onClick={handleLinkClick}>Vision</a>
-          <a href="#values" onClick={handleLinkClick}>Values</a>
-          <a href="#amenities" onClick={handleLinkClick}>Amenities</a>
-          <a href="#projects" onClick={handleLinkClick}>Projects</a>
-          <a href="#about" onClick={handleLinkClick}>About</a>
+          <Link to="/" onClick={handleLinkClick}>Home</Link>
+          <Link to="/#vision" onClick={handleLinkClick}>Vision</Link>
+          <Link to="/#values" onClick={handleLinkClick}>Values</Link>
+          <Link to="/#amenities" onClick={handleLinkClick}>Amenities</Link>
+          <Link to="/projects" onClick={handleLinkClick}>Projects</Link>
+          <Link to="/about" onClick={handleLinkClick}>About</Link>
         </div>
       </div>
     </>

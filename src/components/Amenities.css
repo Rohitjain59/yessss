@@ -96,6 +96,8 @@
 @media (max-width: 900px) {
     .amenities-section {
         flex-direction: column;
+        min-height: auto;
+        /* Prevent gaps */
     }
 
     .amenities-text-container {

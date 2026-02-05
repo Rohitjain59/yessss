@@ -31,6 +31,12 @@
     padding: 0 4rem;
 }
 
+@media (max-width: 768px) {
+    .values-container {
+        padding: 0 1.5rem;
+    }
+}
+
 .values-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -134,9 +140,18 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+    .values-section {
+        min-height: auto;
+        /* Prevent vertical centering gaps */
+        padding: 4rem 0;
+        align-items: flex-start;
+        /* Top align instead of center */
+    }
+
     .values-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
+        /* Remove fixed height constraint */
         gap: 2rem;
     }
 
@@ -146,15 +161,64 @@
         text-align: left;
         padding: 1rem 0;
         align-items: flex-start;
+        order: -1;
+        /* Ensure intro text is at the top */
     }
 
     .values-intro-text p {
         max-width: 100%;
     }
+
+    /* Reset weird card number positioning for mobile flow */
+    .card-1 .card-number,
+    .card-2 .card-number {
+        right: auto;
+        left: 0;
+    }
+
+    .value-card {
+        min-height: 250px;
+        /* Smaller min-height for mobile */
+        padding: 2rem 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
+    .values-container {
+        padding: 0 1rem;
+        overflow: hidden;
+        /* Hide scrollbar from parent */
+    }
+
     .values-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1.5rem;
+        padding-bottom: 3rem;
+        /* Space for card numbers and shadows */
+        /* Hide scrollbar */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .values-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .values-intro-text {
+        min-width: 100%;
+        /* Intro text takes full width first */
+        padding: 0 0.5rem 1.5rem 0.5rem;
+        scroll-snap-align: center;
+    }
+
+    .value-card {
+        min-width: 85vw;
+        /* Almost full screen width cards */
+        scroll-snap-align: center;
+        margin-right: 0;
     }
 }

@@ -96,9 +96,14 @@
 }
 
 @media (max-width: 768px) {
+    .hero {
+        height: 85vh;
+        /* Make image "choti" (smaller height) */
+    }
+
     .hero-title {
-        font-size: 25vw;
-        bottom: 20%;
+        font-size: 15vw;
+        bottom: 5%;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -108,5 +113,21 @@
         right: 5%;
         left: 5%;
         width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 14vw;
+        bottom: -10%;
+        /* "Dishva half dekhwao" - positioned lower to be cut off or at very bottom */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 0.75rem;
     }
 }

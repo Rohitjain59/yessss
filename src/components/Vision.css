@@ -22,7 +22,7 @@
 
 .vision-content {
     width: 50%;
-    padding: 4rem 4rem;
+    padding: 0 4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -106,15 +106,37 @@
 @media (max-width: 900px) {
     .vision-section {
         flex-direction: column;
+        min-height: auto;
+        /* Allow content to dictate height, preventing gaps */
+        padding: 4rem 0;
+        /* Add vertical padding */
     }
 
-    .vision-image-container,
+    .vision-image-container {
+        width: 100%;
+        height: 45vh;
+        /* Fixed affordable height */
+        min-height: 300px;
+    }
+
     .vision-content {
         width: 100%;
-        height: 50vh;
+        height: auto;
+        /* Let text grow */
+        padding: 3rem 1.5rem;
     }
 
     .vision-main-title h2 {
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .vision-content {
+        padding: 2rem 1rem;
+    }
+
+    .vision-main-title h2 {
+        font-size: 2rem;
     }
 }
