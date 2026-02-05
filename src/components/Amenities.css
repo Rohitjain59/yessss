@@ -1,118 +1,113 @@
 .amenities-section {
-    display: flex;
-    min-height: 100vh;
-    background-color: #0F1112;
-    color: white;
-    /* Ensure image container has space to grow */
-    box-sizing: border-box;
-}
-
-.amenities-text-container {
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4rem;
-    background-color: #0F1112;
-    /* Match parent */
-    z-index: 2;
-    box-sizing: border-box;
-}
-
-.amenities-content {
-    max-width: 400px;
+    padding: 6rem 10%;
+    background-color: white;
+    /* Changed from dark to white based on image provided which looks like white background or light grey cards */
+    color: black;
+    min-height: auto;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    align-items: center;
+}
+
+.amenities-header {
+    margin-bottom: 4rem;
+    text-align: center;
 }
 
 .amenities-title {
-    font-family: var(--font-serif);
-    font-size: 4vw;
-    line-height: 1;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-.italic-font {
-    font-style: italic;
-    font-weight: 300;
-}
-
-.amenities-desc {
     font-family: var(--font-sans);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #cccccc;
-    max-width: 300px;
-}
-
-.btn-amenities {
-    background-color: white;
+    /* Changed to sans-serif to match the uploaded image */
+    font-size: 3rem;
+    font-weight: 700;
     color: black;
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 50px;
+    text-transform: capitalize;
+}
+
+/* Grid Layout */
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Card Styling */
+.amenity-card {
+    border: 1px solid #eee;
+    /* Lighter border */
+    border-radius: 20px;
+    /* More rounded as per image */
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: white;
+    cursor: default;
+    aspect-ratio: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.amenity-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+    border-color: #ddd;
+}
+
+/* Icon Circle */
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #888;
+    /* Slightly thinner/lighter look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    /* Slightly larger icon inside */
+    color: #444;
+}
+
+.amenity-card:hover .icon-circle {
+    border-color: black;
+    color: black;
+}
+
+/* Text */
+.amenity-name {
     font-family: var(--font-sans);
-    text-transform: uppercase;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
+    color: #4a5e4b;
+    /* Greenish/Grey tone from image if possible, or black */
     font-weight: 600;
-    letter-spacing: 0.1em;
-    align-self: flex-start;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    text-transform: uppercase;
+    line-height: 1.4;
+    max-width: 80%;
 }
 
-.btn-amenities:hover {
-    transform: scale(1.05);
-}
-
-.amenities-image-container {
-    flex: 1;
-    /* Better than width: 60% for flexbox context to fill remaining space */
-    position: relative;
-    /* Ensure it has height */
-    min-height: 500px;
-    height: auto;
-    overflow: hidden;
-}
-
-.amenities-img-wrapper {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    /* Lock it to container */
-    top: 0;
-    left: 0;
-}
-
-.amenities-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-@media (max-width: 900px) {
-    .amenities-section {
-        flex-direction: column;
-        min-height: auto;
-        /* Prevent gaps */
-    }
-
-    .amenities-text-container {
-        width: 100%;
-        padding: 3rem 1.5rem;
+/* Responsive */
+@media (max-width: 768px) {
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
 
     .amenities-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
-    .amenities-image-container {
-        width: 100%;
-        height: 50vh;
-        /* Explicit height on mobile */
-        min-height: 300px;
+    .amenity-card {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
     }
 }

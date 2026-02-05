@@ -46,7 +46,6 @@ const ProjectDetail = () => {
     const project = projectsData.find(p => p.id === parseInt(id));
     const [activeTab, setActiveTab] = useState('Ground Floor');
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isGalleryExpanded, setIsGalleryExpanded] = useState(false);
 
     useGSAP(() => {
         gsap.fromTo('.detail-hero-img',
@@ -123,29 +122,15 @@ const ProjectDetail = () => {
                     </div>
                 </div>
 
-                {/* 2. Gallery Section (Expandable) */}
+                {/* 2. Gallery Section (Vertical Grid Layout) */}
                 <div className="detail-gallery">
                     <h3 className="section-subtitle">PROJECT GALLERY</h3>
                     <div className="gallery-grid-view">
-                        {project.gallery?.slice(0, isGalleryExpanded ? project.gallery.length : 6).map((img, index) => {
-                            const isLastVisible = !isGalleryExpanded && index === 5 && project.gallery.length > 6;
-                            const remainingCount = project.gallery.length - 6;
-
-                            return (
-                                <div
-                                    key={index}
-                                    className={`gallery-img-container ${isLastVisible ? 'has-overlay' : ''}`}
-                                    onClick={isLastVisible ? () => setIsGalleryExpanded(true) : null}
-                                >
-                                    <img src={img} alt={`Gallery ${index}`} className="project-gallery-img" />
-                                    {isLastVisible && (
-                                        <div className="gallery-overlay">
-                                            <span>+{remainingCount}</span>
-                                        </div>
-                                    )}
-                                </div>
-                            );
-                        })}
+                        {project.gallery?.map((img, index) => (
+                            <div key={index} className="gallery-img-container">
+                                <img src={img} alt={`Gallery ${index}`} className="project-gallery-img" />
+                            </div>
+                        ))}
                     </div>
                 </div>
 

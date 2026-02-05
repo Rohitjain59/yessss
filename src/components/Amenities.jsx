@@ -3,8 +3,28 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Amenities.css';
+import {
+    TbBuildingArch, TbWheelchair, TbElevator, TbFireExtinguisher,
+    TbCar, TbBatteryCharging, TbWifi, TbVideo,
+    TbDoorEnter, TbSolarPanel, TbFlame, TbAntenna
+} from 'react-icons/tb';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const amenitiesList = [
+    { icon: <TbBuildingArch />, title: "MULTI PURPOSE HALL" },
+    { icon: <TbWheelchair />, title: "SENIOR CITIZEN AREA" },
+    { icon: <TbElevator />, title: "2 LIFT IN EACH BLOCK" },
+    { icon: <TbFireExtinguisher />, title: "FIRE SAFETY" },
+    { icon: <TbCar />, title: "BASEMENT PARKING" },
+    { icon: <TbBatteryCharging />, title: "POWER BACKUP" },
+    { icon: <TbWifi />, title: "WIFI" },
+    { icon: <TbVideo />, title: "SECURITY SYSTEM" },
+    { icon: <TbDoorEnter />, title: "ATTRACTIVE ENTRANCE FOYER" },
+    { icon: <TbSolarPanel />, title: "SOLAR SYSTEM" },
+    { icon: <TbFlame />, title: "GAS PIPELINE" },
+    { icon: <TbAntenna />, title: "DTH CONNECTION" },
+];
 
 const Amenities = () => {
     const sectionRef = useRef(null);
@@ -13,22 +33,22 @@ const Amenities = () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: sectionRef.current,
-                start: "top 70%",
+                start: "top 80%",
                 toggleActions: "play none none reverse"
             }
         });
 
-        tl.from(".amenities-text-animate", {
-            y: 50,
+        tl.from(".amenities-title", {
+            y: 30,
             opacity: 0,
             duration: 0.8,
-            stagger: 0.1,
             ease: "power3.out"
         })
-            .from(".amenities-img-wrapper", {
-                scale: 0.9,
+            .from(".amenity-card", {
+                y: 50,
                 opacity: 0,
-                duration: 1,
+                duration: 0.6,
+                stagger: 0.1,
                 ease: "power2.out"
             }, "-=0.4");
 
@@ -36,31 +56,19 @@ const Amenities = () => {
 
     return (
         <section className="amenities-section" id="amenities" ref={sectionRef}>
-            <div className="amenities-text-container">
-                <div className="amenities-content">
-                    <h2 className="amenities-title amenities-text-animate">
-                        WELLNESS-<br />
-                        CENTERED<br />
-                        <span className="italic-font">AMENITIES</span>
-                    </h2>
-
-                    <p className="amenities-desc amenities-text-animate">
-                        From private fitness studios to guided meditation sessions, our amenities are designed to enhance your well-being and foster a sense of harmony.
-                    </p>
-
-                    <button className="btn-amenities amenities-text-animate">LEARN MORE</button>
-                </div>
+            <div className="amenities-header">
+                <h2 className="amenities-title">Amenities</h2>
             </div>
 
-            <div className="amenities-image-container">
-                {/* Using a reliable placeholder from Unsplash via a different endpoint or specific ID known to work, or standard placeholder */}
-                <div className="amenities-img-wrapper">
-                    <img
-                        src="https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1771&q=80"
-                        alt="Wellness Architecture"
-                        className="amenities-img"
-                    />
-                </div>
+            <div className="amenities-grid">
+                {amenitiesList.map((item, index) => (
+                    <div key={index} className="amenity-card">
+                        <div className="icon-circle">
+                            {item.icon}
+                        </div>
+                        <p className="amenity-name">{item.title}</p>
+                    </div>
+                ))}
             </div>
         </section>
     );
