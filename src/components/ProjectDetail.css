@@ -187,6 +187,33 @@
     }
 }
 
+@media (max-width: 480px) {
+    .detail-title {
+        font-size: 2.2rem;
+        /* Smaller title for mobile */
+    }
+
+    .detail-content-section {
+        padding: 3rem 1.5rem;
+        /* Reduced padding */
+    }
+
+    .detail-hero {
+        height: 60vh;
+        /* Shorter hero on mobile */
+    }
+
+    .gallery-grid-view {
+        grid-template-columns: 1fr;
+        /* 1 column for gallery on small mobile */
+        gap: 1.5rem;
+    }
+
+    .spec-value {
+        font-size: 1.6rem;
+    }
+}
+
 /* New Sections Styles */
 .section-subtitle {
     font-family: var(--font-serif);

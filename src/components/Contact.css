@@ -121,7 +121,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0.5rem 0;
     color: white;
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: 1.5rem;
     outline: none;
     transition: border-color 0.3s;
@@ -195,5 +195,24 @@
     .btn-submit {
         width: 100%;
         text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-title {
+        font-size: 2.2rem;
+    }
+
+    .contact-page {
+        padding: 8rem 1rem 4rem 1rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 1rem;
     }
 }

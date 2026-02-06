@@ -364,6 +364,16 @@
     .projects-grid {
         row-gap: 3rem;
     }
+
+    .project-name {
+        font-size: 1.5rem;
+        /* Smaller project title */
+    }
+
+    .item-title span {
+        font-size: 8vw;
+        /* Larger relative size for visibility */
+    }
 }
 
 /* Project Meta Info (Location & Status) */

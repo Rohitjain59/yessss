@@ -21,9 +21,7 @@
     padding: 1.5rem 3rem;
 }
 
-.navbar-left-spacer {
-    /* Empty div to balance grid */
-}
+
 
 .navbar-line {
     position: absolute;
@@ -134,5 +132,17 @@
 
     .menu-links a {
         font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 1rem 1rem;
+    }
+
+    .menu-links a {
+        font-size: 1.5rem;
+        /* Smaller menu links */
+        gap: 1.5rem;
     }
 }
