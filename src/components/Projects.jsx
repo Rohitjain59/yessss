@@ -285,7 +285,7 @@ const Projects = ({ standalone = false }) => {
     return (
         <section className="projects" id="projects" ref={projectsRef}>
             <div className="projects-header">
-                <div className="section-label">(OUR PROJECTS)</div>
+                <h2 className="projects-heading">OUR PROJECTS</h2>
             </div>
 
             <div className="gallery-container">

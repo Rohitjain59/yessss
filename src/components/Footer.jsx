@@ -2,12 +2,14 @@ import React from 'react';
 import './Footer.css';
 import { Link } from 'react-router-dom';
 
+import dishvaLogo from '../assets/dishva_logo.png';
+
 const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-content">
                 <div className="footer-brand">
-                    <h2 className="footer-logo">DISHVA</h2>
+                    <img src={dishvaLogo} alt="Dishva" className="footer-logo-img" />
                     <p className="footer-tagline">Crafting spaces that defy the ordinary.</p>
                 </div>
 

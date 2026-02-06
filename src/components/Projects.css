@@ -29,8 +29,8 @@
 
 .page-title {
     font-family: var(--font-serif);
-    font-size: 5rem;
-    font-weight: 300;
+    font-size: 2.5rem;
+    font-weight: 400;
     letter-spacing: 0.1em;
 }
 
@@ -203,10 +203,19 @@
 /* Original Components Styles Below */
 .projects-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 4rem;
     margin-bottom: 4rem;
     font-family: var(--font-serif);
+}
+
+.projects-heading {
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .projects-indices span {

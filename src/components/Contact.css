@@ -33,10 +33,10 @@
 
 .contact-title {
     font-family: var(--font-serif);
-    font-size: 5rem;
+    font-size: 2.5rem;
     line-height: 0.95;
     margin-bottom: 2rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .contact-text p {
