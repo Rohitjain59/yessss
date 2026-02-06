@@ -26,7 +26,23 @@ export const projectsData = [
         location: "SOUTH DELHI",
         status: "ONGOING PROJECT",
         amenities: ["Private Lift", "Sky Penthouse", "Concierge Service", "Heated Indoor Pool", "Valet Parking"],
-        gallery: [projectImg, house1Img, house2Img, aboutImg, house4Img, house5Img, heroImg, house6Img, florImg],
+        gallery: [
+            { src: projectImg, text: "MAIN FACADE" },
+            { src: house1Img, text: "LIVING AREA" },
+            { src: house2Img, text: "MASTER SUITE" },
+            { src: aboutImg, text: "DINING SPACE" },
+            { src: house4Img, text: "MODERN KITCHEN" },
+            { src: house5Img, text: "PRIVATE POOL" },
+            { src: heroImg, text: "SKY TERRACE" },
+            { src: house6Img, text: "HOME THEATER" },
+            { src: florImg, text: "SPA & WELLNESS" },
+            { src: house8Img, text: "GUEST LOUNGE" },
+            { src: house1Img, text: "LIBRARY" },
+            { src: house2Img, text: "WINE CELLAR" },
+            { src: projectImg, text: "ART GALLERY" },
+            { src: house5Img, text: "GARDEN PATH" },
+            { src: aboutImg, text: "PANORAMIC VIEW" }
+        ],
         story: "Lumière Duplex Residences redefine urban luxury by blending contemporary architecture with the warmth of natural light. \n\nInspired by the interplay of sun and shadow, the design philosophy focuses on creating expansive, airy interiors that seamlessly connect with the outdoors. \n\nEach residence is a masterpiece of craftsmanship, featuring double-height living areas, private elevators, and sustainable materials that ensure a healthy, eco-friendly lifestyle.",
         floorPlans: {
             "Ground Floor": [florImg, house1Img, house2Img],
@@ -42,7 +58,23 @@ export const projectsData = [
         location: "GURGAON",
         status: "UPCOMING PROJECT",
         amenities: ["Golf Course View", "VRV Air Conditioning", "Italian Marble Flooring", "Smart Home Automation", "Clubhouse Access"],
-        gallery: [aboutImg, house4Img, house6Img, heroImg, house1Img, house5Img, projectImg, house8Img, florImg],
+        gallery: [
+            { src: aboutImg, text: "PANORAMIC VIEW" },
+            { src: house4Img, text: "MODERN KITCHEN" },
+            { src: house6Img, text: "HOME THEATER" },
+            { src: heroImg, text: "SKY TERRACE" },
+            { src: house1Img, text: "LIVING AREA" },
+            { src: house5Img, text: "PRIVATE POOL" },
+            { src: projectImg, text: "MAIN FACADE" },
+            { src: house8Img, text: "GUEST LOUNGE" },
+            { src: florImg, text: "SPA & WELLNESS" },
+            { src: house2Img, text: "MASTER SUITE" },
+            { src: aboutImg, text: "DINING SPACE" },
+            { src: house5Img, text: "GARDEN PATH" },
+            { src: house1Img, text: "LIBRARY" },
+            { src: house6Img, text: "ART GALLERY" },
+            { src: heroImg, text: "WINE CELLAR" }
+        ],
         story: "Aurora Sky Penthouses are designed for those who seek to live above the ordinary. \n\nPerched atop the city's skyline, these residences offer unobstructed views that change with the colors of the day—from the golden hues of sunrise to the twinkling city lights at night. \n\nThe architectural language is minimal yet bold, emphasizing clean lines and glass facades that dissolve the boundary between inside and outside.",
         floorPlans: {
             "Ground Floor": [house1Img, house2Img, florImg],
@@ -58,7 +90,23 @@ export const projectsData = [
         location: "NOIDA",
         status: "COMPLETED",
         amenities: ["Private Garden", "Terrace Garden", "Gated Community", "Kids Play Area", "Meditation Zone"],
-        gallery: [heroImg, house2Img, florImg, projectImg, house1Img, house8Img, aboutImg, house5Img, house4Img],
+        gallery: [
+            { src: heroImg, text: "SKY TERRACE" },
+            { src: house2Img, text: "MASTER SUITE" },
+            { src: florImg, text: "SPA & WELLNESS" },
+            { src: projectImg, text: "MAIN FACADE" },
+            { src: house1Img, text: "LIVING AREA" },
+            { src: house8Img, text: "GUEST LOUNGE" },
+            { src: aboutImg, text: "DINING SPACE" },
+            { src: house5Img, text: "PRIVATE POOL" },
+            { src: house4Img, text: "MODERN KITCHEN" },
+            { src: house6Img, text: "HOME THEATER" },
+            { src: house1Img, text: "LIBRARY" },
+            { src: house2Img, text: "WINE CELLAR" },
+            { src: projectImg, text: "ART GALLERY" },
+            { src: house5Img, text: "GARDEN PATH" },
+            { src: aboutImg, text: "PANORAMIC VIEW" }
+        ],
         story: "Serenity Garden Villas are a tribute to the healing power of nature. \n\nNestled within acres of lush greenery, each villa is designed as a personal retreat from the chaos of urban life. \n\nThe layout focuses on privacy and tranquility, with central courtyards, water bodies, and private gardens that create a microclimate of cool, fresh air. It's not just a home; it's a wellness sanctuary.",
         floorPlans: {
             "Ground Floor": [heroImg, house4Img, house1Img],
@@ -74,7 +122,23 @@ export const projectsData = [
         location: "MUMBAI",
         status: "ONGOING PROJECT",
         amenities: ["Sea View", "Infinity Pool", "Rooftop Lounge", "Business Center", "Private Cinema"],
-        gallery: [projectImg, house5Img, house8Img, heroImg, house1Img, house4Img, aboutImg, house2Img, florImg],
+        gallery: [
+            { src: projectImg, text: "MAIN FACADE" },
+            { src: house5Img, text: "PRIVATE POOL" },
+            { src: house8Img, text: "GUEST LOUNGE" },
+            { src: heroImg, text: "SKY TERRACE" },
+            { src: house1Img, text: "LIVING AREA" },
+            { src: house4Img, text: "MODERN KITCHEN" },
+            { src: aboutImg, text: "DINING SPACE" },
+            { src: house2Img, text: "MASTER SUITE" },
+            { src: florImg, text: "SPA & WELLNESS" },
+            { src: house6Img, text: "HOME THEATER" },
+            { src: house1Img, text: "LIBRARY" },
+            { src: house2Img, text: "WINE CELLAR" },
+            { src: projectImg, text: "ART GALLERY" },
+            { src: house5Img, text: "GARDEN PATH" },
+            { src: aboutImg, text: "PANORAMIC VIEW" }
+        ],
         story: "Obsidian Heights stands as a bold statement of modern power and elegance. \n\nThe dark, sleek facade, inspired by volcanic glass, contrasts with the soft, luxurious interiors. \n\nThis project is designed for the visionaries—the leaders who shape the world. With state-of-the-art business facilities integrated into the residential complex, it offers the perfect balance of work, life, and leisure.",
         floorPlans: {
             "Ground Floor": [house2Img, house6Img, florImg],
@@ -148,6 +212,20 @@ const Projects = ({ standalone = false }) => {
         return "hidden";
     };
 
+    // Standalone Page Logic
+    const [filterStatus, setFilterStatus] = useState('ONGOING');
+
+    const filteredProjects = projectsData.filter(project => {
+        if (filterStatus === 'ONGOING') {
+            // Show Ongoing and Completed in the main list, or just Ongoing?
+            // User asked for "Ongoing" and "Upcoming". Strict filtering might be better to be precise.
+            // Let's include everything that IS NOT Upcoming in the first tab to avoid hiding content.
+            return !project.status.includes('UPCOMING');
+        } else {
+            return project.status.includes('UPCOMING');
+        }
+    });
+
     // --- RENDER STANDALONE PAGE (GRID/LIST) ---
     if (standalone) {
         return (
@@ -155,10 +233,26 @@ const Projects = ({ standalone = false }) => {
                 <div className="projects-page-header">
                     <h1 className="page-title">OUR PORTFOLIO</h1>
                     <p className="page-subtitle">A curation of our finest architectural endeavors.</p>
+
+                    {/* Filter Tabs */}
+                    <div className="project-filters">
+                        <button
+                            className={`filter-btn ${filterStatus === 'ONGOING' ? 'active' : ''}`}
+                            onClick={() => setFilterStatus('ONGOING')}
+                        >
+                            ONGOING
+                        </button>
+                        <button
+                            className={`filter-btn ${filterStatus === 'UPCOMING' ? 'active' : ''}`}
+                            onClick={() => setFilterStatus('UPCOMING')}
+                        >
+                            UPCOMING
+                        </button>
+                    </div>
                 </div>
 
                 <div className="projects-grid">
-                    {projectsData.map((project, index) => (
+                    {filteredProjects.map((project, index) => (
                         <div key={project.id} className="project-card">
                             <div className="card-image-wrapper">
                                 <Link to={`/projects/${project.id}`}>

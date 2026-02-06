@@ -33,10 +33,10 @@ function App() {
         <Route path="/" element={
           <>
             <Hero />
-            <Vision />
             <Values />
             <Amenities />
             <Projects />
+            <Vision />
             <About />
           </>
         } />

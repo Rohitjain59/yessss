@@ -22,7 +22,7 @@
 
 .vision-content {
     width: 50%;
-    padding: 8rem 4rem 4rem 4rem;
+    padding: 14rem 4rem 4rem 4rem;
     /* More top padding, move content up overall via flex-start */
     display: flex;
     flex-direction: column;

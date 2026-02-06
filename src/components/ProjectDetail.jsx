@@ -44,8 +44,13 @@ const getAmenityIcon = (amenity) => {
 const ProjectDetail = () => {
     const { id } = useParams();
     const project = projectsData.find(p => p.id === parseInt(id));
-    const [activeTab, setActiveTab] = useState('Ground Floor');
+    // tabs removed
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const [activeTab, setActiveTab] = useState('Ground Floor');
+    const [floorLightboxImg, setFloorLightboxImg] = useState(null); // { src, title }
+
+    const [activeLightboxIndex, setActiveLightboxIndex] = useState(null);
 
     useGSAP(() => {
         gsap.fromTo('.detail-hero-img',
@@ -70,7 +75,7 @@ const ProjectDetail = () => {
                 }
             }
         );
-    }, { dependencies: [] }); // Fixed dependency array
+    }, { dependencies: [] });
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -82,6 +87,22 @@ const ProjectDetail = () => {
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
+
+    const openLightbox = (index) => setActiveLightboxIndex(index);
+    const closeLightbox = () => setActiveLightboxIndex(null);
+
+    const nextImage = (e) => {
+        e.stopPropagation();
+        setActiveLightboxIndex((prev) => (prev + 1) % project.gallery.length);
+    };
+
+    const prevImage = (e) => {
+        e.stopPropagation();
+        setActiveLightboxIndex((prev) => (prev - 1 + project.gallery.length) % project.gallery.length);
+    };
+
+    const openLightboxForFloor = (src, title) => setFloorLightboxImg({ src, title });
+    const closeFloorLightbox = () => setFloorLightboxImg(null);
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -126,9 +147,12 @@ const ProjectDetail = () => {
                 <div className="detail-gallery">
                     <h3 className="section-subtitle">PROJECT GALLERY</h3>
                     <div className="gallery-grid-view">
-                        {project.gallery?.map((img, index) => (
-                            <div key={index} className="gallery-img-container">
-                                <img src={img} alt={`Gallery ${index}`} className="project-gallery-img" />
+                        {project.gallery?.map((item, index) => (
+                            <div key={index} className="gallery-item-wrapper" onClick={() => openLightbox(index)}>
+                                <div className="gallery-img-container">
+                                    <img src={item.src} alt={item.text} className="project-gallery-img" />
+                                </div>
+                                <div className="gallery-caption">{item.text}</div>
                             </div>
                         ))}
                     </div>
@@ -137,6 +161,8 @@ const ProjectDetail = () => {
                 {/* 3. Floor Plans Section */}
                 <div className="detail-floorplans">
                     <h3 className="section-subtitle">FLOOR PLANS</h3>
+
+                    {/* Tabs Navigation */}
                     <div className="floorplan-tabs">
                         {Object.keys(project.floorPlans).map((floor) => (
                             <button
@@ -148,11 +174,28 @@ const ProjectDetail = () => {
                             </button>
                         ))}
                     </div>
+
                     <div className="floorplan-display">
                         <div className="floorplan-grid-view">
-                            {project.floorPlans[activeTab]?.map((planImg, index) => (
-                                <div key={index} className="floorplan-img-wrapper">
-                                    <img src={planImg} alt={`${activeTab} Plan ${index + 1}`} className="floorplan-img" />
+                            {Object.keys(project.floorPlans).map((floorName, index) => (
+                                <div
+                                    key={floorName}
+                                    className={`floorplan-category-card ${activeTab !== floorName ? 'dimmed' : ''}`}
+                                    onClick={() => setActiveTab(floorName)}
+                                >
+                                    <div className="floorplan-img-wrapper" onClick={(e) => {
+                                        e.stopPropagation(); // Prevent tab switch overlap if clicked efficiently
+                                        setActiveTab(floorName);
+                                        openLightboxForFloor(project.floorPlans[floorName][0], floorName);
+                                    }}>
+                                        {/* Show the first image of this floor category as representative */}
+                                        <img
+                                            src={project.floorPlans[floorName][0]}
+                                            alt={`${floorName} Plan`}
+                                            className="floorplan-img"
+                                        />
+                                    </div>
+                                    <div className="floorplan-label">{floorName}</div>
                                 </div>
                             ))}
                         </div>
@@ -193,7 +236,43 @@ const ProjectDetail = () => {
                 </div>
             </section>
 
-            {/* Modal Popup */}
+            {/* Lightbox Modal */}
+            {activeLightboxIndex !== null && (
+                <div className="lightbox-overlay" onClick={closeLightbox}>
+                    <button className="lightbox-close" onClick={closeLightbox}><MdClose /></button>
+                    <button className="lightbox-prev" onClick={prevImage}>&lt;</button>
+                    <button className="lightbox-next" onClick={nextImage}>&gt;</button>
+                    <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+                        <img
+                            src={project.gallery[activeLightboxIndex].src}
+                            alt={project.gallery[activeLightboxIndex].text}
+                            className="lightbox-img"
+                        />
+                        <div className="lightbox-caption">
+                            {project.gallery[activeLightboxIndex].text}
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Separate Lightbox for Floor Plans */}
+            {floorLightboxImg && (
+                <div className="lightbox-overlay" onClick={closeFloorLightbox}>
+                    <button className="lightbox-close" onClick={closeFloorLightbox}><MdClose /></button>
+                    <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+                        <img
+                            src={floorLightboxImg.src}
+                            alt={floorLightboxImg.title}
+                            className="lightbox-img"
+                        />
+                        <div className="lightbox-caption">
+                            {floorLightboxImg.title}
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Brochure Form Modal */}
             {isModalOpen && (
                 <div className="modal-overlay">
                     <div className="modal-content">

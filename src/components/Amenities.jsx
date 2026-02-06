@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Amenities.css';
+import ArchitectureImg from '../assets/house1.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,38 +43,41 @@ const Amenities = () => {
 
     return (
         <section className="amenities-section" id="amenities" ref={sectionRef}>
-            <div className="amenities-left">
-                <div className="amenities-content">
-                    <h2 className="amenities-title amenities-text-animate">
-                        WELLNESS-<br />
-                        CENTERED<br />
-                        <span className="italic-font">AMENITIES</span>
-                    </h2>
+            <div className="amenities-container">
+                <div className="amenities-left">
+                    <div className="amenities-content">
+                        <span className="section-label">EXCEPTIONAL LIVING</span>
+                        <h2 className="amenities-title amenities-text-animate">
+                            WELLNESS-<br />
+                            CENTERED<br />
+                            <span className="italic-font">AMENITIES</span>
+                        </h2>
 
-                    <p className="amenities-desc amenities-text-animate">
-                        From private fitness studios to guided meditation sessions, our amenities are designed to enhance your well-being and foster a sense of harmony.
-                    </p>
+                        <p className="amenities-desc amenities-text-animate">
+                            From private fitness studios to guided meditation sessions, our amenities are designed to enhance your well-being and foster a sense of harmony.
+                        </p>
 
-                    <button className="btn-amenities amenities-text-animate">LEARN MORE</button>
+                        <button className="btn-amenities amenities-text-animate">LEARN MORE</button>
+                    </div>
                 </div>
-            </div>
 
-            <div className="amenities-right">
-                <div className="amenities-images">
-                    {/* Background Architecture Image */}
-                    <img
-                        src="https://images.unsplash.com/photo-1512918580421-32c295f1d359?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80"
-                        alt="Background Architecture"
-                        className="amenities-bg-img"
-                    />
-
-                    {/* Floating Foreground Image (Gym) */}
-                    <div className="amenities-fg-img-wrapper">
+                <div className="amenities-right">
+                    <div className="amenities-images">
+                        {/* Background Architecture Image */}
                         <img
-                            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Fitness Studio"
-                            className="amenities-fg-img"
+                            src={ArchitectureImg}
+                            alt="Background Architecture"
+                            className="amenities-bg-img"
                         />
+
+                        {/* Floating Foreground Image (Gym) */}
+                        <div className="amenities-fg-img-wrapper">
+                            <img
+                                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Fitness Studio"
+                                className="amenities-fg-img"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

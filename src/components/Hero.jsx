@@ -1,7 +1,12 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import './Hero.css';
+
+import heroImage from '../assets/hero.png';
+import house1 from '../assets/house1.jpg';
+import house2 from '../assets/house2.jpeg';
 
 const Hero = () => {
     const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
@@ -9,9 +14,9 @@ const Hero = () => {
     const titleRef = useRef(null);
 
     const heroImages = [
-        "https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-        "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        heroImage,
+        house1,
+        house2
     ];
 
     useGSAP(() => {
@@ -42,17 +47,19 @@ const Hero = () => {
                 ))}
             </div>
 
-            <h1 className="hero-title" ref={titleRef}>DISHVA</h1>
+
 
             <div className="hero-content">
                 <h2 className="hero-subtitle">At Elyse Residence</h2>
                 <p className="hero-description">
                     We believe that a home is more than a physical space — it's a reflection of your aspirations.
                 </p>
+                <Link to="/projects" className="hero-cta-btn">VIEW RESIDENCES</Link>
                 <div className="scroll-indicator">SCROLL</div>
             </div>
         </section>
     );
+
 };
 
 export default Hero;

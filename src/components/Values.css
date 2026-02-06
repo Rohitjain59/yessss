@@ -1,3 +1,4 @@
+/* New Redesign Styles */
 .values-section {
     position: relative;
     min-height: 100vh;
@@ -5,10 +6,8 @@
     background-size: cover;
     background-position: center;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5rem 0rem;
+    padding: 8rem 0;
+    overflow: hidden;
 }
 
 .values-bg-overlay {
@@ -17,10 +16,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* Darker overlay */
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.8));
     z-index: 1;
-    backdrop-filter: blur(5px);
 }
 
 .values-container {
@@ -28,205 +25,160 @@
     z-index: 2;
     width: 100%;
     max-width: 1400px;
+    margin: 0 auto;
     padding: 0 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
 }
 
-@media (max-width: 768px) {
-    .values-container {
-        padding: 0 1.5rem;
-    }
+/* Header Section */
+.values-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: flex-end;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.values-grid {
+.section-label {
+    grid-column: 1 / -1;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: #888;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.values-title {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.italic-text {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 300;
+}
+
+.values-desc-text {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+    max-width: 500px;
+}
+
+/* Values List */
+.values-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* Strict 2 rows */
-    grid-template-rows: repeat(2, minmax(400px, auto));
-    /* Gap handles the spacing between cards */
-    gap: 15px;
+    row-gap: 5rem;
+    column-gap: 3rem;
 }
 
-/* Card Styling - "Dark Tabs" */
-/* Card Styling - "Dark Tabs" */
-.value-card {
-    /* Richer background to stand out */
-    background: rgba(10, 10, 10, 0.85);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    /* Accent line */
-    padding: 3rem 2.5rem;
+.value-item {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    /* Align text to top */
-    transition: all 0.4s ease;
+    gap: 1.5rem;
     position: relative;
-    border-radius: 4px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-    /* Ensure visibility if JS fails */
-    opacity: 1;
 }
 
-.value-card:hover {
-    background: rgba(20, 20, 20, 0.95);
-    border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-5px);
-}
-
-.value-card h3 {
+.value-number {
     font-family: var(--font-serif);
-    font-size: 1.6rem;
-    font-weight: 400;
-    margin-bottom: 2rem;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.1);
+    line-height: 1;
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    z-index: 0;
+}
+
+.value-content {
+    position: relative;
+    z-index: 1;
+    margin-top: 1rem;
+}
+
+.value-content h3 {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    line-height: 1.2;
-}
-
-.value-card p {
-    font-family: var(--font-sans);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    opacity: 0.8;
-    font-weight: 300;
-    max-width: 80%;
-}
-
-/* Positioning Numbers - "Floating Outside" */
-.card-number {
-    position: absolute;
-    bottom: -30px;
-    /* Below the card */
-    left: 0;
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    opacity: 0.6;
-}
-
-/* Adjustments for Top Row Numbers which are weirdly placed in design */
-/* Card 1 is top left. Number (1) is between Card 1 and 2 at bottom alignment */
-/* We'll handle specific overrides via classes if needed, 
-   but standard bottom-left works well for a clean system */
-.card-1 .card-number {
-    right: -20px;
-    left: auto;
-    bottom: 0;
-}
-
-.card-2 .card-number {
-    right: -20px;
-    left: auto;
-    bottom: 0;
-}
-
-.values-intro-text {
-    grid-column: 3;
-    grid-row: 1;
-    text-align: right;
-    padding: 2rem;
-    font-family: var(--font-sans);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    background: transparent;
+    margin-bottom: 1rem;
+    min-height: 2.2em;
+    /* Ensure alignment */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* Center vertically in its slot */
     align-items: flex-end;
 }
 
-.values-intro-text p {
-    max-width: 300px;
+.value-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 1.5rem;
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.value-item:hover .value-line {
+    background: white;
+    transform: scaleX(1.05);
+}
+
+.value-content p {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: #888;
+    line-height: 1.6;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .values-section {
-        min-height: auto;
-        /* Prevent vertical centering gaps */
-        padding: 4rem 0;
-        align-items: flex-start;
-        /* Top align instead of center */
-    }
-
-    .values-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        /* Remove fixed height constraint */
+    .values-header {
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    .values-intro-text {
-        grid-column: 1 / -1;
-        grid-row: auto;
-        text-align: left;
-        padding: 1rem 0;
-        align-items: flex-start;
-        order: -1;
-        /* Ensure intro text is at the top */
+    .values-title {
+        font-size: 3rem;
     }
 
-    .values-intro-text p {
-        max-width: 100%;
-    }
-
-    /* Reset weird card number positioning for mobile flow */
-    .card-1 .card-number,
-    .card-2 .card-number {
-        right: auto;
-        left: 0;
-    }
-
-    .value-card {
-        min-height: 250px;
-        /* Smaller min-height for mobile */
-        padding: 2rem 1.5rem;
+    .values-list {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
+    .values-section {
+        padding: 6rem 0;
+    }
+
     .values-container {
-        padding: 0 1rem;
-        overflow: visible;
-        /* Allow shadows to breathe */
+        padding: 0 2rem;
+        gap: 4rem;
     }
 
-    .values-grid {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 1rem;
-        padding-bottom: 3rem;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+    .values-list {
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
 
-    .values-grid::-webkit-scrollbar {
-        display: none;
+    .value-item {
+        padding-left: 2rem;
+        /* Indent for clean look on mobile */
     }
 
-    .values-intro-text {
-        min-width: 100%;
-        padding: 0 0.5rem 3rem 0.5rem;
-        /* More bottom padding for separation */
-        scroll-snap-align: center;
-    }
-
-    .value-card {
-        min-width: 85vw;
-        scroll-snap-align: center;
-        margin-right: 0;
-        background: rgba(15, 15, 15, 0.95);
-        /* Slightly darker/richer for mobile */
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        /* Stronger border for clearer edges */
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        /* Stronger shadow */
-    }
-
-    .value-card h3 {
+    .value-number {
+        left: 0;
+        top: 0;
         font-size: 2rem;
-        /* Larger titles for impact */
     }
 }

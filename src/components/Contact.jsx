@@ -31,27 +31,37 @@ const Contact = ({ standalone = true }) => {
 
                 {/* Left Column: Info */}
                 <div className="contact-info">
-                    <div className="section-label contact-animate">(GET IN TOUCH)</div>
                     <h1 className="contact-title contact-animate">
-                        START A<br />CONVERSATION
+                        CONTACT<br />DISHVA GROUP
                     </h1>
+
+                    <div className="contact-text contact-animate">
+                        <p>
+                            DISHVA Group provides exclusive 2 & 3 BHK apartments in Zundal, Vaishnodevi Circle, Ahmedabad.
+                            If you are looking for affordable luxurious flats near Vaishnodevi circle, Ahmedabad, and Shops in Zundal,
+                            we are here with a few ongoing projects like    Dishva Orbit, Dishva Solitaire, Dishva Essence, and Dishva Ixora.
+                        </p>
+                        <p className="mt-4">
+                            Feel free to contact us for any inquiries. You can call us or drop an email, and our team of experts will connect with you as soon as possible.
+                        </p>
+                    </div>
 
                     <div className="contact-details contact-animate">
                         <div className="detail-group">
-                            <span className="label">VISIT US</span>
-                            <p>Dishva Residences<br />1200 Luxury Lane<br />Beverly Hills, CA 90210</p>
+                            <span className="label">OFFICE ADDRESS</span>
+                            <p>Vaishnodevi Circle, Zundal<br />Ahmedabad, Gujarat</p>
                         </div>
 
                         <div className="detail-group">
-                            <span className="label">CONTACT</span>
+                            <span className="label">GET IN TOUCH</span>
                             <p>
-                                <a href="mailto:hello@dishva.com">hello@dishva.com</a><br />
-                                <a href="tel:+13105550123">+1 (310) 555-0123</a>
+                                <a href="mailto:[EMAIL_ADDRESS]">[EMAIL_ADDRESS]</a><br />
+                                <a href="tel:+919876543210">+91 98765 43210</a>
                             </p>
                         </div>
 
                         <div className="detail-group">
-                            <span className="label">FOLLOW</span>
+                            <span className="label">FOLLOW US</span>
                             <div className="social-links">
                                 <a href="#">Instagram</a>
                                 <a href="#">LinkedIn</a>

@@ -6,73 +6,63 @@ import gsap from 'gsap';
 const Values = () => {
     const containerRef = useRef(null);
 
+    const valuesList = [
+        { title: "HOLISTIC WELL-BEING", desc: "Spaces designed to nurture the mind, body, and soul." },
+        { title: "DISCRETION & EXCLUSIVITY", desc: "Privacy and personal growth at the forefront." },
+        { title: "CULTURAL ENRICHMENT", desc: "Celebrate local artistry, history, and traditions." },
+        { title: "COMMUNITY & CONNECTION", desc: "A welcoming environment that fosters relationships." },
+        { title: "SUSTAINABLE ELEGANCE", desc: "Luxury that respects our environment." }
+    ];
+
     useGSAP(() => {
-        gsap.fromTo(".value-card",
-            {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 75%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        tl.from(".values-header", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        })
+            .from(".value-item", {
                 y: 50,
-                autoAlpha: 0 // handles opacity + visibility
-            },
-            {
-                y: 0,
-                autoAlpha: 1,
+                opacity: 0,
                 duration: 0.8,
                 stagger: 0.1,
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "top 80%", // Trigger a bit earlier
-                    toggleActions: "play none none reverse"
-                }
-            }
-        );
+                ease: "power3.out"
+            }, "-=0.5");
+
     }, { scope: containerRef });
 
     return (
         <section className="values-section" id="values" ref={containerRef}>
             <div className="values-bg-overlay"></div>
-            {/* Background image is handled in CSS or via absolute img here */}
 
             <div className="values-container">
-                <div className="values-grid">
-
-                    {/* Top Right Description Block - Placed first in DOM for grid flow or absolute? 
-                    Grid approach: 2 rows of items.
-                */}
-
-                    <div className="value-card card-1">
-                        <h3>HOLISTIC<br />WELL-BEING</h3>
-                        <p>Spaces designed to nurture the mind, body, and soul.</p>
+                <div className="values-header">
+                    <span className="section-label">OUR PHILOSOPHY</span>
+                    <h2 className="values-title">Created for the <br /> <span className="italic-text">Discerning Few</span></h2>
+                    <div className="values-desc-text">
+                        <p>At Elyse Residence, we believe that a home is more than a physical space — it's a reflection of your aspirations, well-being, and values. Our mission is to immerse you in a lifestyle that balances refined aesthetics, architectural excellence, and a profound sense of community.</p>
                     </div>
+                </div>
 
-                    <div className="value-card card-2">
-                        <h3>DISCRETION &<br />EXCLUSIVITY</h3>
-                        <p>Privacy and personal growth at the forefront.</p>
-                        <span className="card-number">(1)</span>
-                    </div>
-
-                    <div className="values-intro-text">
-                        <p>At Elyse Residence, we believe that a home is more than a physical space — it's a reflection of your aspirations, well-being, and values.</p>
-                        <br />
-                        <p>Our mission is to immerse you in a lifestyle that balances refined aesthetics, architectural excellence, and a profound sense of community.</p>
-                    </div>
-
-                    <div className="value-card card-3">
-                        <h3>CULTURAL<br />ENRICHMENT</h3>
-                        <p>Celebrate local artistry, history, and traditions.</p>
-                        <span className="card-number">(3)</span>
-                    </div>
-
-                    <div className="value-card card-4">
-                        <h3>COMMUNITY &<br />CONNECTION</h3>
-                        <p>A welcoming environment that fosters relationships.</p>
-                        <span className="card-number">(4)</span>
-                    </div>
-
-                    <div className="value-card card-5">
-                        <h3>SUSTAINABLE<br />ELEGANCE</h3>
-                        <p>Luxury that respects our environment.</p>
-                        <span className="card-number">(5)</span>
-                    </div>
-
+                <div className="values-list">
+                    {valuesList.map((item, index) => (
+                        <div className="value-item" key={index}>
+                            <span className="value-number">{(index + 1).toString().padStart(2, '0')}</span>
+                            <div className="value-content">
+                                <h3>{item.title}</h3>
+                                <div className="value-line"></div>
+                                <p>{item.desc}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
