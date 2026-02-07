@@ -225,43 +225,74 @@
     letter-spacing: 0.05em;
 }
 
+/* Amenities Section New Style */
 .detail-amenities {
     margin-bottom: 6rem;
+    padding: 0 1rem;
     text-align: center;
+    /* Ensure title is centered */
 }
 
-.amenities-list {
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.amenity-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    aspect-ratio: 1/1;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.amenity-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.amenity-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.amenity-tag {
-    display: flex;
     align-items: center;
-    gap: 0.8rem;
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    color: #ccc;
-    border: 1px solid #444;
-    padding: 0.8rem 1.5rem;
-    border-radius: 50px;
-    letter-spacing: 0.05em;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
     transition: all 0.3s ease;
 }
 
-.amenity-icon {
-    display: flex;
-    font-size: 1.1rem;
-    color: white;
+.amenity-card:hover .amenity-icon-wrapper {
+    background: white;
+    color: black;
+    border-color: white;
 }
 
-.amenity-tag:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: white;
+.amenity-text {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ccc;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+}
+
+.amenity-card:hover .amenity-text {
     color: white;
-    transform: translateY(-2px);
 }
 
 .detail-gallery {
@@ -270,87 +301,121 @@
 
 /* Gallery Grid View (Vertical Scrolling) */
 /* Gallery Grid View (Vertical Scrolling) */
-.gallery-grid-view {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 Columns */
-    gap: 2rem;
-    width: 100%;
-    max-height: 80vh;
-    /* Limit height for scroll */
-    overflow-y: auto;
-    /* Enable vertical scroll */
-    padding-right: 1rem;
-    scrollbar-width: thin;
-    scrollbar-color: #888 #222;
+/* Gallery Masonry View & Filters */
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
 }
 
-/* Custom Vertical Scrollbar */
-.gallery-grid-view::-webkit-scrollbar {
-    width: 6px;
-}
-
-.gallery-grid-view::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 3px;
-}
-
-.gallery-grid-view::-webkit-scrollbar-thumb {
-    background: #666;
-    border-radius: 3px;
-}
-
-.gallery-grid-view::-webkit-scrollbar-thumb:hover {
-    background: #888;
-}
-
-.gallery-img-container {
-    width: 100%;
-    aspect-ratio: 16/9;
-    position: relative;
-    overflow: hidden;
-    border-radius: 4px;
+.gallery-filter-btn {
+    padding: 0.8rem 2rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ccc;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    border-radius: 50px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.project-gallery-img {
+.gallery-filter-btn:hover,
+.gallery-filter-btn.active {
+    background: white;
+    color: black;
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.gallery-masonry-view {
+    column-count: 3;
+    column-gap: 2rem;
+    width: 100%;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 2rem;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.masonry-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    filter: brightness(0.9);
+}
+
+.masonry-item:hover .masonry-img {
+    transform: scale(1.1);
+    filter: brightness(1);
+}
+
+.masonry-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    filter: grayscale(0.2);
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    backdrop-filter: blur(2px);
 }
 
-.gallery-img-container:hover .project-gallery-img {
-    transform: scale(1.05);
-    filter: grayscale(0);
+.masonry-item:hover .masonry-overlay {
+    opacity: 1;
+}
+
+.masonry-text {
+    color: white;
+    font-family: var(--font-serif);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1.2rem;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.5rem;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.masonry-item:hover .masonry-text {
+    transform: translateY(0);
 }
 
 @media (max-width: 1024px) {
-    .gallery-grid-view {
-        grid-template-columns: repeat(2, 1fr);
+    .gallery-masonry-view {
+        column-count: 2;
     }
 }
 
-@media (max-width: 768px) {
-    .gallery-grid-view {
-        grid-template-columns: 1fr;
+@media (max-width: 600px) {
+    .gallery-masonry-view {
+        column-count: 1;
     }
-}
 
+    .gallery-filters {
+        gap: 0.5rem;
+    }
 
-
-.project-gallery-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    filter: grayscale(0.2);
-}
-
-.gallery-img-container:hover .project-gallery-img {
-    transform: scale(1.05);
-    filter: grayscale(0);
+    .gallery-filter-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.7rem;
+    }
 }
 
 .detail-action {
@@ -394,106 +459,107 @@
     margin-bottom: 1.5rem;
 }
 
-/* Floor Plans Section */
+/* Updated Floor Plans Section */
 .detail-floorplans {
     margin-bottom: 6rem;
     text-align: center;
 }
 
-.floorplan-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
-}
-
-.tab-btn {
-    padding: 0.8rem 2rem;
-    background: transparent;
-    border: 1px solid #444;
-    color: #888;
-    font-family: var(--font-sans);
-    text-transform: uppercase;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-}
-
-.tab-btn:hover {
-    border-color: white;
-    color: white;
-}
-
-.tab-btn.active {
-    background-color: white;
-    color: black;
-    border-color: white;
-}
-
 .floorplan-display {
-    max-width: 1200px;
+    max-width: 1600px;
+    /* Increased width to allow larger cards */
     margin: 0 auto;
-    background: transparent;
     padding: 2rem 0;
 }
 
-.floorplan-grid-view {
+.floorplan-grid-new {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 2.5rem;
+    /* Slightly larger gap for cleaner look */
+    padding: 0 2rem;
 }
 
-.floorplan-category-card {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.floorplan-card-new {
     cursor: pointer;
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
+    position: relative;
 }
 
-.floorplan-category-card.dimmed {
-    opacity: 0.3;
-    filter: blur(2px) grayscale(0.8);
-    transform: scale(0.95);
+.floorplan-card-new:hover {
+    transform: translateY(-8px);
+    z-index: 10;
 }
 
-.floorplan-category-card:hover:not(.dimmed) {
-    transform: translateY(-5px);
-}
-
-.floorplan-img-wrapper {
+.floorplan-img-wrapper-new {
+    position: relative;
     width: 100%;
-    aspect-ratio: 4/3;
+    aspect-ratio: 16/10;
+    /* Slightly taller for better view */
+    background: transparent;
     overflow: hidden;
-    border: 1px solid #333;
-    border-radius: 4px;
-    transition: border-color 0.3s ease;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
 }
 
-.floorplan-category-card:hover .floorplan-img-wrapper {
-    border-color: white;
+.floorplan-card-new:hover .floorplan-img-wrapper-new {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
-.floorplan-img {
+.floorplan-img-new {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    /* CHANGED to cover to fill the space attractively (user can click to see full) */
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Removed padding to maximize size */
 }
 
-.floorplan-category-card:hover .floorplan-img {
-    transform: scale(1.03);
+.floorplan-card-new:hover .floorplan-img-new {
+    transform: scale(1.1);
 }
 
-.floorplan-label {
-    font-family: var(--font-sans);
-    font-size: 1.2rem;
+.floorplan-label-overlay {
+    position: absolute;
+    bottom: 1.5rem;
+    left: -0.5rem;
+    /* Slight overlap effect */
+    background: #000;
+    /* Deep black for contrast */
     color: white;
+    padding: 0.8rem 1.8rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    /* Increased font size */
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 1rem;
+    box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.2);
+    /* Stylish accent shadow */
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.floorplan-card-new:hover .floorplan-label-overlay {
+    background: white;
+    color: black;
+    transform: translateX(5px);
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1024px) {
+    .floorplan-grid-new {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .floorplan-grid-new {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Modal Popup */

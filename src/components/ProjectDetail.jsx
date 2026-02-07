@@ -51,6 +51,7 @@ const ProjectDetail = () => {
     const [floorLightboxImg, setFloorLightboxImg] = useState(null); // { src, title }
 
     const [activeLightboxIndex, setActiveLightboxIndex] = useState(null);
+    const [galleryFilter, setGalleryFilter] = useState('View All');
 
     useGSAP(() => {
         gsap.fromTo('.detail-hero-img',
@@ -143,59 +144,60 @@ const ProjectDetail = () => {
                     </div>
                 </div>
 
-                {/* 2. Gallery Section (Vertical Grid Layout) */}
+                {/* 2. Gallery Section (Masonry Grid with Filters) */}
                 <div className="detail-gallery">
                     <h3 className="section-subtitle">PROJECT GALLERY</h3>
-                    <div className="gallery-grid-view">
-                        {project.gallery?.map((item, index) => (
-                            <div key={index} className="gallery-item-wrapper" onClick={() => openLightbox(index)}>
-                                <div className="gallery-img-container">
-                                    <img src={item.src} alt={item.text} className="project-gallery-img" />
-                                </div>
-                                <div className="gallery-caption">{item.text}</div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
 
-                {/* 3. Floor Plans Section */}
-                <div className="detail-floorplans">
-                    <h3 className="section-subtitle">FLOOR PLANS</h3>
-
-                    {/* Tabs Navigation */}
-                    <div className="floorplan-tabs">
-                        {Object.keys(project.floorPlans).map((floor) => (
+                    {/* Gallery Filters */}
+                    <div className="gallery-filters">
+                        {["View All", "Living", "Bedroom", "Kitchen", "Bathroom", "Office", "Exterior"].map((filter) => (
                             <button
-                                key={floor}
-                                className={`tab-btn ${activeTab === floor ? 'active' : ''}`}
-                                onClick={() => setActiveTab(floor)}
+                                key={filter}
+                                className={`gallery-filter-btn ${galleryFilter === filter ? 'active' : ''}`}
+                                onClick={() => setGalleryFilter(filter)}
                             >
-                                {floor}
+                                {filter}
                             </button>
                         ))}
                     </div>
 
+                    <div className="gallery-masonry-view">
+                        {project.gallery
+                            ?.map((item, originalIdx) => ({ ...item, originalIdx }))
+                            .filter(item => galleryFilter === 'View All' || item.category === galleryFilter)
+                            .map((item, index) => (
+                                <div key={item.originalIdx} className="masonry-item" onClick={() => openLightbox(item.originalIdx)}>
+                                    <img src={item.src} alt={item.text} className="masonry-img" />
+                                    <div className="masonry-overlay">
+                                        <span className="masonry-text">{item.text}</span>
+                                    </div>
+                                </div>
+                            ))}
+                    </div>
+                </div>
+
+                {/* 3. Plans & Layout Section */}
+                <div className="detail-floorplans">
+                    <h3 className="section-subtitle">PLANS & LAYOUT</h3>
+
                     <div className="floorplan-display">
-                        <div className="floorplan-grid-view">
+                        <div className="floorplan-grid-new">
                             {Object.keys(project.floorPlans).map((floorName, index) => (
                                 <div
                                     key={floorName}
-                                    className={`floorplan-category-card ${activeTab !== floorName ? 'dimmed' : ''}`}
-                                    onClick={() => setActiveTab(floorName)}
+                                    className="floorplan-card-new"
+                                    onClick={() => openLightboxForFloor(project.floorPlans[floorName][0], floorName)}
                                 >
-                                    <div className="floorplan-img-wrapper" onClick={(e) => {
-                                        e.stopPropagation(); // Prevent tab switch overlap if clicked efficiently
-                                        setActiveTab(floorName);
-                                        openLightboxForFloor(project.floorPlans[floorName][0], floorName);
-                                    }}>
-                                        {/* Show the first image of this floor category as representative */}
+                                    <div className="floorplan-img-wrapper-new">
                                         <img
                                             src={project.floorPlans[floorName][0]}
                                             alt={`${floorName} Plan`}
-                                            className="floorplan-img"
+                                            className="floorplan-img-new"
                                         />
+                                        <div className="floorplan-label-overlay">
+                                            {floorName}
+                                        </div>
                                     </div>
-                                    <div className="floorplan-label">{floorName}</div>
                                 </div>
                             ))}
                         </div>
@@ -205,10 +207,12 @@ const ProjectDetail = () => {
                 {/* 4. Amenities Section */}
                 <div className="detail-amenities" id="amenities">
                     <h3 className="section-subtitle">EXCLUSIVE AMENITIES</h3>
-                    <div className="amenities-list">
+                    <div className="amenities-grid">
                         {project.amenities?.map((amenity, index) => (
-                            <div key={index} className="amenity-tag">
-                                <span className="amenity-icon">{getAmenityIcon(amenity)}</span>
+                            <div key={index} className="amenity-card">
+                                <div className="amenity-icon-wrapper">
+                                    {getAmenityIcon(amenity)}
+                                </div>
                                 <span className="amenity-text">{amenity}</span>
                             </div>
                         ))}

@@ -34,9 +34,9 @@ function App() {
           <>
             <Hero />
             <Values />
-            <Amenities />
+            {/* <Amenities /> */}
             <Projects />
-            <Vision />
+            {/* <Vision /> */}
             <About />
           </>
         } />
