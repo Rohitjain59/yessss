@@ -33,11 +33,11 @@ function App() {
         <Route path="/" element={
           <>
             <Hero />
+            <About />
             <Values />
             {/* <Amenities /> */}
             <Projects />
             {/* <Vision /> */}
-            <About />
           </>
         } />
         <Route path="/projects" element={<Projects standalone={true} />} />

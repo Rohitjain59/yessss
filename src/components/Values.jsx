@@ -52,7 +52,7 @@ const Values = () => {
                     </div>
                 </div>
 
-                <div className="values-list">
+                {/* <div className="values-list">
                     {valuesList.map((item, index) => (
                         <div className="value-item" key={index}>
                             <span className="value-number">{(index + 1).toString().padStart(2, '0')}</span>
@@ -63,7 +63,7 @@ const Values = () => {
                             </div>
                         </div>
                     ))}
-                </div>
+                </div> */}
             </div>
         </section>
     );
