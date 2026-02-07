@@ -45,67 +45,55 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
     width: 100%;
+    max-width: 800px;
 }
 
 .section-label {
     font-family: var(--font-sans);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.2em;
+    color: #ccc;
+    font-weight: 500;
     margin-bottom: 2rem;
     position: relative;
-    display: inline-block;
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1rem;
 }
 
 .section-label::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.5);
+    display: none;
 }
 
 .values-title {
     font-family: var(--font-serif);
-    font-size: 6vw;
-    /* Massive responsive text */
+    font-size: 3rem;
     line-height: 1.1;
     font-weight: 400;
     color: white;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    margin-bottom: 3rem;
-    opacity: 0.95;
-    mix-blend-mode: overlay;
-    /* Blends with background for high-end look */
-}
-
-/* Fallback for mix-blend-mode if needed, but overlay looks great on dark */
-@supports not (mix-blend-mode: overlay) {
-    .values-title {
-        mix-blend-mode: normal;
-        opacity: 1;
-    }
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    text-shadow: none;
+    mix-blend-mode: normal;
+    opacity: 1;
 }
 
 .values-title span {
-    display: block;
+    display: inline-block;
 }
 
 .italic-text {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-weight: 300;
-    color: #ffd700;
-    /* Gold/Accent tint */
-    background: linear-gradient(to right, #ffffff, #c0c0c0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    background: none;
+    -webkit-text-fill-color: white;
 }
 
 .values-desc-text {
