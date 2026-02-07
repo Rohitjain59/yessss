@@ -139,48 +139,51 @@
 @media (max-width: 768px) {
     .hero {
         height: 100vh;
-        /* Restore full height to avoid cutting off */
     }
 
     .hero-title {
-        font-size: 18vw;
-        bottom: 5%;
-        /* Bring it UP so it is visible */
+        font-size: 15vw;
+        bottom: 10%;
         left: 50%;
         transform: translateX(-50%);
         opacity: 0.3;
-        /* Fade it out so text is readable */
+        width: 100%;
+        text-align: center;
     }
 
     .hero-content {
-        bottom: 35%;
-        /* Move text WAY up to clear the title */
-        right: 0;
-        left: 0;
-        width: 100%;
-        padding: 0 2rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 100%;
+        padding: 0 1rem;
         text-align: center;
-        /* Center text on mobile */
+        /* Ensure no fixed margins pushing it off */
+        margin: 0;
+        right: auto;
+        bottom: auto;
     }
 
     .hero-description {
-        max-width: 100%;
-        margin: 0 auto 1rem auto;
+        width: 100%;
+        margin: 0 auto 2rem auto;
+        font-size: 0.95rem;
     }
 }
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 20vw;
-        bottom: 5%;
-        /* Even higher on small screens */
+        font-size: 18vw;
+        bottom: 15%;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .hero-description {
         font-size: 0.9rem;
+        line-height: 1.5;
     }
 }
