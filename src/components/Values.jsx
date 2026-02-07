@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import './Values.css';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import '@fontsource/rye'; // Oklahoma-style font
 
 const Values = () => {
     const containerRef = useRef(null);

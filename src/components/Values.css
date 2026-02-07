@@ -71,7 +71,8 @@
 }
 
 .values-title {
-    font-family: var(--font-serif);
+    font-family: 'Rye', serif;
+    /* Oklahoma-style font */
     font-size: 3rem;
     line-height: 1.1;
     font-weight: 400;
@@ -81,6 +82,8 @@
     text-shadow: none;
     mix-blend-mode: normal;
     opacity: 1;
+    letter-spacing: 0.05em;
+    /* Rye benefits from slight spacing */
 }
 
 .values-title span {
