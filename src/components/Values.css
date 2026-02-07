@@ -110,29 +110,28 @@
 
 .values-desc-text {
     max-width: 600px;
-    background: rgba(255, 255, 255, 0.05);
-    /* Glassmorphism */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 2.5rem;
-    border-radius: 2px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
     margin-top: 2rem;
-    transition: transform 0.5s ease;
 }
 
 .values-desc-text:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.08);
+    transform: none;
+    background: transparent;
 }
 
 .values-desc-text p {
     font-family: var(--font-sans);
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    /* Slightly brighter for better contrast on bg */
+    font-weight: 400;
+    /* Standard weight like project detail */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    /* Strong shadow for readability */
 }
 
 /* Responsive */

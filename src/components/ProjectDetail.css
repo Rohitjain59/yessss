@@ -67,10 +67,30 @@
 
 .detail-title {
     font-family: var(--font-serif);
-    font-size: 5rem;
+    font-size: 6vw;
+    /* Matches Values title scale */
     line-height: 1;
     margin-bottom: 2rem;
     text-transform: uppercase;
+    font-weight: 400;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.02em;
+    /* Tighter for modern serif look */
+}
+
+@media (max-width: 1024px) {
+    .detail-title {
+        font-size: 8vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .detail-title {
+        font-size: 12vw;
+        /* Huge on mobile too */
+        color: white;
+        /* Ensure visibility */
+    }
 }
 
 .block-line {
