@@ -58,7 +58,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav ref={navRef} className="navbar">
+      <nav ref={navRef} className={`navbar ${isMenuOpen ? 'menu-open' : ''}`}>
         <div className="navbar-left-spacer"></div> {/* Spacer for grid centering */}
 
         <div className="navbar-logo">
