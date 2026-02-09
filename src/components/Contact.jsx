@@ -85,6 +85,11 @@ const Contact = ({ standalone = true }) => {
                         </div>
 
                         <div className="form-group">
+                            <label htmlFor="phone">PHONE NUMBER</label>
+                            <input type="tel" id="phone" placeholder="Your Phone Number" />
+                        </div>
+
+                        <div className="form-group">
                             <label htmlFor="message">MESSAGE</label>
                             <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
                         </div>

@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Projects.css';
+import '@fontsource/rye';
 
 gsap.registerPlugin(ScrollTrigger);
 import projectImg from '../assets/project.png';
@@ -324,7 +325,7 @@ const Projects = ({ standalone = false }) => {
                 <p className="projects-description">
                     {projectsData[activeIndex].desc}
                 </p>
-                <Link to={`/projects/${projectsData[activeIndex].id}`} className="btn-pill">LEARN MORE</Link>
+                <Link to={`/projects/${projectsData[activeIndex].id}`} className="btn-pill">EXPLORE PROJECTS</Link>
             </div>
         </section>
     );

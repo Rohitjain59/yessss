@@ -185,17 +185,17 @@
     }
 
     .menu-links {
-        gap: 2rem;
+        gap: 3rem;
         width: 100%;
         padding: 0 1rem;
     }
 
     .menu-links a {
-        font-size: 2rem;
-        /* Balanced size for mobile */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        /* Separator line */
-        padding-bottom: 1rem;
+        font-size: 1.2rem;
+        /* Smaller font */
+        border-bottom: none;
+        padding-bottom: 1.5rem;
+        letter-spacing: 0.2em;
         width: 100%;
         display: block;
     }

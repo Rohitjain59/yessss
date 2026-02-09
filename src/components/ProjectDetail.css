@@ -445,18 +445,38 @@
     flex-wrap: wrap;
 }
 
-.btn-outline {
-    display: inline-block;
-    padding: 1rem 3rem;
-    background-color: transparent;
+.btn-brochure {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem 3.5rem;
+    background-color: black;
     color: white;
     font-family: var(--font-sans);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border: 1px solid white;
-    border-radius: 50px;
-    transition: all 0.3s;
+    letter-spacing: 0.15em;
+    border: none;
+    border-radius: 0;
+    /* Sharp corners as per image */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 250px;
+    justify-content: center;
+}
+
+.btn-icon {
+    font-size: 1.1rem;
+    color: white;
+    /* Ensure white icon */
+}
+
+.btn-brochure:hover {
+    background-color: #222;
+    /* Slightly lighter black on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-outline:hover {
@@ -828,7 +848,9 @@
         padding: 0.6rem 1.2rem;
         font-size: 0.8rem;
     }
-}/* Updated Gallery Grid Styles (Matching Floorplans) */
+}
+
+/* Updated Gallery Grid Styles (Matching Floorplans) */
 .gallery-grid-new {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -912,6 +934,7 @@
         grid-template-columns: 1fr;
     }
 }
+
 /* Updated Gallery Grid Styles for Full Screen Width */
 .gallery-grid-new {
     display: grid;
@@ -942,6 +965,7 @@
         grid-template-columns: 1fr;
     }
 }
+
 /* Breakout Gallery Section to Full Viewport Width */
 .detail-gallery {
     width: 100vw;
@@ -986,6 +1010,7 @@
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
 }
+
 /* Full Width Floor Plans Section */
 .detail-floorplans {
     width: 100vw;
@@ -1112,6 +1137,7 @@
         /* Taller on mobile */
     }
 }
+
 /* Refined Full Screen Breakout for Gallery and Plans */
 .detail-gallery,
 .detail-floorplans {
@@ -1177,6 +1203,7 @@
 .floorplan-card-new:nth-child(n) {
     grid-column: auto;
 }
+
 /* FORCE LABELS TO BOTTOM LEFT CORNER AS REQUESTED */
 .gallery-label-overlay,
 .floorplan-label-overlay {

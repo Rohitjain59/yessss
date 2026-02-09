@@ -45,7 +45,7 @@ const About = ({ standalone = false }) => {
                 <section className="about standalone-section">
                     <div className="about-grid">
                         <div className="about-col-left">
-                            <div className="section-label about-animate-text">WHO WE ARE</div>
+
                             <h2 className="about-heading about-animate-text">
                                 <span>CRAFTING</span>
                                 <span>MODERN</span>
@@ -59,6 +59,10 @@ const About = ({ standalone = false }) => {
                                 <div className="stat-item">
                                     <span className="stat-number">40+</span>
                                     <span className="stat-label">Awards Won</span>
+                                </div>
+                                <div className="stat-item">
+                                    <span className="stat-number">50+</span>
+                                    <span className="stat-label">Projects Completed</span>
                                 </div>
                             </div>
                         </div>
@@ -79,11 +83,11 @@ const About = ({ standalone = false }) => {
                                 </p>
 
                                 <div className="philosophy-list about-animate-text">
-                                    <h4>OUR PHILOSOPHY</h4>
                                     <ul>
                                         <li>Human-Centric Design</li>
                                         <li>Sustainable Innovation</li>
                                         <li>Cultural Harmony</li>
+                                        <li>Timeless Aesthetics</li>
                                     </ul>
                                 </div>
                             </div>
@@ -125,7 +129,6 @@ const About = ({ standalone = false }) => {
             <div className="about-grid">
                 {/* Left Column: Heading */}
                 <div className="about-col-left">
-                    <div className="section-label about-animate-text">WHO WE ARE</div>
                     <h2 className="about-heading about-animate-text">
                         <span>CRAFTING</span>
                         <span>MODERN</span>
@@ -139,6 +142,10 @@ const About = ({ standalone = false }) => {
                         <div className="stat-item">
                             <span className="stat-number">40+</span>
                             <span className="stat-label">Awards Won</span>
+                        </div>
+                        <div className="stat-item">
+                            <span className="stat-number">50+</span>
+                            <span className="stat-label">Projects Completed</span>
                         </div>
                     </div>
                 </div>
@@ -161,11 +168,11 @@ const About = ({ standalone = false }) => {
                         </p>
 
                         <div className="philosophy-list about-animate-text">
-                            <h4>OUR PHILOSOPHY</h4>
                             <ul>
                                 <li>Human-Centric Design</li>
                                 <li>Sustainable Innovation</li>
                                 <li>Cultural Harmony</li>
+                                <li>Timeless Aesthetics</li>
                             </ul>
                         </div>
                     </div>

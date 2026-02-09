@@ -46,7 +46,7 @@ const Values = () => {
 
             <div className="values-container">
                 <div className="values-header">
-                    <span className="section-label">OUR PHILOSOPHY</span>
+
                     <h2 className="values-title">Created for the <br /> <span className="italic-text">Discerning Few</span></h2>
                     <div className="values-desc-text">
                         <p>At Elyse Residence, we believe that a home is more than a physical space — it's a reflection of your aspirations, well-being, and values. Our mission is to immerse you in a lifestyle that balances refined aesthetics, architectural excellence, and a profound sense of community.</p>

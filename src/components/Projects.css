@@ -28,8 +28,8 @@
 }
 
 .page-title {
-    font-family: var(--font-serif);
-    font-size: 2.5rem;
+    font-family: 'Rye', serif;
+    font-size: 3rem;
     font-weight: 400;
     letter-spacing: 0.1em;
 }
@@ -211,7 +211,8 @@
 }
 
 .projects-heading {
-    font-size: 2.5rem;
+    font-family: 'Rye', serif;
+    font-size: 3rem;
     line-height: 1;
     font-weight: 400;
     color: white;
@@ -452,7 +453,9 @@
         font-size: 0.7rem;
         margin-bottom: 1rem;
     }
-}/* FIX TEXT VISIBILITY ON CAROUSEL */
+}
+
+/* FIX TEXT VISIBILITY ON CAROUSEL */
 
 /* 1. Remove mix-blend-mode which causes transparency issues on complex images */
 .item-title-container {

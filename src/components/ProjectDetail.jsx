@@ -8,7 +8,7 @@ import {
     FaBuilding, FaConciergeBell, FaSwimmingPool, FaCarAlt,
     FaGolfBall, FaFan, FaGem, FaMobileAlt, FaGlassCheers, FaTree,
     FaToriiGate, FaChild, FaSpa, FaWater,
-    FaCocktail, FaBriefcase, FaFilm
+    FaCocktail, FaBriefcase, FaFilm, FaFilePdf
 } from 'react-icons/fa';
 import { MdDeck, MdElevator, MdClose } from "react-icons/md";
 import './ProjectDetail.css';
@@ -222,7 +222,9 @@ const ProjectDetail = () => {
                 </div>
 
                 <div className="detail-action">
-                    <button className="btn-outline" onClick={openModal}>DOWNLOAD BROCHURE</button>
+                    <button className="btn-brochure" onClick={openModal}>
+                        <FaFilePdf className="btn-icon" /> GET E-BROCHURE
+                    </button>
                     <Link to="/contact" className="btn-solid">ENQUIRE NOW</Link>
                 </div>
             </section>
