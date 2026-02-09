@@ -55,7 +55,7 @@ const Hero = () => {
                     We believe that a home is more than a physical space — it's a reflection of your aspirations.
                 </p>
                 <Link to="/projects" className="hero-cta-btn">VIEW RESIDENCES</Link>
-                <div className="scroll-indicator">SCROLL</div>
+            
             </div>
         </section>
     );

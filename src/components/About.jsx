@@ -45,7 +45,7 @@ const About = ({ standalone = false }) => {
                 <section className="about standalone-section">
                     <div className="about-grid">
                         <div className="about-col-left">
-                            <div className="section-label about-animate-text">(WHO WE ARE)</div>
+                            <div className="section-label about-animate-text">WHO WE ARE</div>
                             <h2 className="about-heading about-animate-text">
                                 <span>CRAFTING</span>
                                 <span>MODERN</span>
@@ -125,7 +125,7 @@ const About = ({ standalone = false }) => {
             <div className="about-grid">
                 {/* Left Column: Heading */}
                 <div className="about-col-left">
-                    <div className="section-label about-animate-text">(WHO WE ARE)</div>
+                    <div className="section-label about-animate-text">WHO WE ARE</div>
                     <h2 className="about-heading about-animate-text">
                         <span>CRAFTING</span>
                         <span>MODERN</span>
