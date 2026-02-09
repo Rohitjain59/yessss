@@ -146,39 +146,26 @@ const ProjectDetail = () => {
 
                 {/* 2. Gallery Section (Masonry Grid with Filters) */}
                 <div className="detail-gallery">
-                    <h3 className="section-subtitle">PROJECT GALLERY</h3>
+                    <h3 className="section-subtitle">Gallery</h3>
 
                     {/* Gallery Filters */}
-                    <div className="gallery-filters">
-                        {["View All", "Living", "Bedroom", "Kitchen", "Bathroom", "Office", "Exterior"].map((filter) => (
-                            <button
-                                key={filter}
-                                className={`gallery-filter-btn ${galleryFilter === filter ? 'active' : ''}`}
-                                onClick={() => setGalleryFilter(filter)}
-                            >
-                                {filter}
-                            </button>
-                        ))}
-                    </div>
-
-                    <div className="gallery-masonry-view">
-                        {project.gallery
-                            ?.map((item, originalIdx) => ({ ...item, originalIdx }))
-                            .filter(item => galleryFilter === 'View All' || item.category === galleryFilter)
-                            .map((item, index) => (
-                                <div key={item.originalIdx} className="masonry-item" onClick={() => openLightbox(item.originalIdx)}>
-                                    <img src={item.src} alt={item.text} className="masonry-img" />
-                                    <div className="masonry-overlay">
-                                        <span className="masonry-text">{item.text}</span>
+                    <div className="gallery-grid-new">
+                        {project.gallery?.map((item, originalIdx) => (
+                            <div key={originalIdx} className="gallery-card-new" onClick={() => openLightbox(originalIdx)}>
+                                <div className="gallery-img-wrapper-new">
+                                    <img src={item.src} alt={item.text} className="gallery-img-new" />
+                                    <div className="gallery-label-overlay">
+                                        {item.text}
                                     </div>
                                 </div>
-                            ))}
+                            </div>
+                        ))}
                     </div>
                 </div>
 
                 {/* 3. Plans & Layout Section */}
                 <div className="detail-floorplans">
-                    <h3 className="section-subtitle">PLANS & LAYOUT</h3>
+                    <h3 className="section-subtitle">Plans & Layout</h3>
 
                     <div className="floorplan-display">
                         <div className="floorplan-grid-new">

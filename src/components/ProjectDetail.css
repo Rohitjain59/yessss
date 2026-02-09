@@ -828,4 +828,352 @@
         padding: 0.6rem 1.2rem;
         font-size: 0.8rem;
     }
+}/* Updated Gallery Grid Styles (Matching Floorplans) */
+.gallery-grid-new {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    padding: 0 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.gallery-card-new {
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.gallery-card-new:hover {
+    transform: translateY(-8px);
+    z-index: 10;
+}
+
+.gallery-img-wrapper-new {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: transparent;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.gallery-card-new:hover .gallery-img-wrapper-new {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-img-new {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.gallery-card-new:hover .gallery-img-new {
+    transform: scale(1.1);
+}
+
+.gallery-label-overlay {
+    position: absolute;
+    bottom: 1.5rem;
+    left: -0.5rem;
+    background: #000;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.gallery-card-new:hover .gallery-label-overlay {
+    background: white;
+    color: black;
+    transform: translateX(5px);
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1024px) {
+    .gallery-grid-new {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid-new {
+        grid-template-columns: 1fr;
+    }
+}
+/* Updated Gallery Grid Styles for Full Screen Width */
+.gallery-grid-new {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    /* Reduced gap for tighter full-screen look */
+    padding: 0 1rem;
+    /* minimal padding on sides */
+    max-width: 100%;
+    /* Full Width */
+    margin: 0 auto;
+}
+
+/* Ensure images cover the area nicely */
+.gallery-img-wrapper-new {
+    aspect-ratio: 16/9;
+    /* Wider aspect ratio for cinematic feel */
+}
+
+@media (max-width: 1024px) {
+    .gallery-grid-new {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid-new {
+        grid-template-columns: 1fr;
+    }
+}
+/* Breakout Gallery Section to Full Viewport Width */
+.detail-gallery {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0;
+    margin-bottom: 6rem;
+    background: var(--color-bg);
+    /* Ensure background matches */
+}
+
+/* Update Gallery Grid for Full Screen Coverage */
+.gallery-grid-new {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns for "badi" (bigger) look, or 3 if screen is huge */
+    gap: 1rem;
+    /* Tighter gap */
+    padding: 0 1rem;
+    /* Minimal padding */
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .gallery-grid-new {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columns on large screens */
+    }
+}
+
+.gallery-img-wrapper-new {
+    aspect-ratio: 16/9;
+    /* Maintain cinematic wide aspect ratio */
+    width: 100%;
+}
+
+.gallery-label-overlay {
+    bottom: 1rem;
+    /* Adjust overlay position */
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+/* Full Width Floor Plans Section */
+.detail-floorplans {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0;
+    margin-bottom: 6rem;
+    text-align: center;
+    background: var(--color-bg);
+}
+
+.floorplan-display {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 2rem 0;
+}
+
+/* 4-Column Grid for Cinematic Layout */
+.floorplan-grid-new {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+/* First two items span 2 columns (Top Row) */
+.floorplan-card-new:nth-child(1),
+.floorplan-card-new:nth-child(2) {
+    grid-column: span 2;
+}
+
+/* Image Wrapper Styling */
+.floorplan-img-wrapper-new {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    /* Cinematic Aspect Ratio */
+    background: #111;
+    overflow: hidden;
+    border-radius: 4px;
+    /* Slightly sharper edges */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.floorplan-img-new {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure full coverage */
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.floorplan-card-new:hover .floorplan-img-new {
+    transform: scale(1.05);
+}
+
+/* Label Overlay Styling */
+.floorplan-label-overlay {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-left: 3px solid white;
+    box-shadow: none;
+    /* Removed heavy shadow for cleaner look */
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.floorplan-card-new:hover .floorplan-label-overlay {
+    background: white;
+    color: black;
+    border-left-color: black;
+    transform: translateX(5px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+
+    /* On medium screens, maybe go to 2 columns for all? */
+    .floorplan-grid-new {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Reset spans */
+    .floorplan-card-new:nth-child(1),
+    .floorplan-card-new:nth-child(2) {
+        grid-column: span 1;
+    }
+
+    /* Maybe make first two span 2 IF we want to keep hierarchy? 
+       Let's stick to simple 2-col grid for tablet. */
+    .floorplan-card-new:nth-child(1),
+    .floorplan-card-new:nth-child(2) {
+        grid-column: span 2;
+        /* Keep top ones big? */
+    }
+}
+
+@media (max-width: 768px) {
+    .floorplan-grid-new {
+        grid-template-columns: 1fr;
+    }
+
+    .floorplan-card-new:nth-child(1),
+    .floorplan-card-new:nth-child(2) {
+        grid-column: span 1;
+    }
+
+    .floorplan-img-wrapper-new {
+        aspect-ratio: 4/3;
+        /* Taller on mobile */
+    }
+}
+/* Refined Full Screen Breakout for Gallery and Plans */
+.detail-gallery,
+.detail-floorplans {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 0 !important;
+    /* Force remove padding */
+    margin-bottom: 6rem;
+    background: transparent;
+    /* Seamless blend */
+}
+
+/* Gallery Grid: 3 columns massive images */
+.gallery-grid-new,
+.floorplan-grid-new {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    /* Minimal gap for cinematic look */
+    padding: 0 0.5rem;
+    width: 100%;
+}
+
+/* Ensure images take up full height/width of their cell */
+.gallery-card-new,
+.floorplan-card-new {
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-img-wrapper-new,
+.floorplan-img-wrapper-new {
+    aspect-ratio: 16/10;
+    /* Standardize aspect ratio */
+    width: 100%;
+    border-radius: 0;
+    /* Sharp edges for full screen feel */
+    border: none;
+}
+
+/* Responsive: 2 cols on tablet, 1 on mobile */
+@media (max-width: 1024px) {
+
+    .gallery-grid-new,
+    .floorplan-grid-new {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .gallery-grid-new,
+    .floorplan-grid-new {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Override previous specific child spans to keep uniform grid */
+.floorplan-card-new:nth-child(n) {
+    grid-column: auto;
 }

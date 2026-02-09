@@ -45,12 +45,10 @@ export const projectsData = [
         ],
         story: "Lumière Duplex Residences redefine urban luxury by blending contemporary architecture with the warmth of natural light. \n\nInspired by the interplay of sun and shadow, the design philosophy focuses on creating expansive, airy interiors that seamlessly connect with the outdoors. \n\nEach residence is a masterpiece of craftsmanship, featuring double-height living areas, private elevators, and sustainable materials that ensure a healthy, eco-friendly lifestyle.",
         floorPlans: {
-            "Ground Floor Plan": ["/3d-floor-plan-design-.jpg", house1Img, house2Img],
-            "Typical Floor Plan": ["/images.jpeg", house4Img, house5Img],
-            "3BHK Type A & D": ["/images (1).jpeg", heroImg, aboutImg],
-            "3BHK Type B & C": ["/images (2).jpeg", house6Img, house8Img],
-            "Cluster Plan": ["/images.jpeg", projectImg, house1Img],
-            "Site Layout": ["/3d-floor-plan-design-.jpg", house2Img, florImg]
+            "Ground Floor Plan": ["/3d-floor-plan-design-.jpg"],
+            "Typical Floor Plan": ["/images.jpeg"],
+            "3BHK Type A & D": ["/images (1).jpeg"],
+            "3BHK Type B & C": ["/images (2).jpeg"]
         }
     },
     {
