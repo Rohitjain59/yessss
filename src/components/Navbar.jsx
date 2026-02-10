@@ -86,6 +86,9 @@ const Navbar = () => {
           <Link to="/about" onClick={handleLinkClick}>About</Link>
           <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
         </div>
+        <div className="menu-copyright">
+          © DISHVA
+        </div>
       </div>
     </>
   );

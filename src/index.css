@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Montserrat:wght@200;300;400;500;600&display=swap');
+@import './components/SogoFont.css';
 
 :root {
-  --font-serif: 'Bodoni Moda', serif;
-  --font-sans: 'Montserrat', sans-serif;
+  --font-serif: 'Sogo Regular', serif;
+  --font-sans: 'Sogo Regular', sans-serif;
 
   --color-bg: #0a0a0a;
   --color-text: #ffffff;
@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: 'Sogo Regular', sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
   overflow-x: hidden;
@@ -30,7 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-serif);
+  font-family: 'Sogo Regular', serif !important;
   font-weight: 400;
 }
 
@@ -38,7 +38,7 @@ button,
 input,
 textarea,
 select {
-  font-family: var(--font-sans);
+  font-family: 'Sogo Regular', sans-serif;
   font-size: inherit;
 }
 

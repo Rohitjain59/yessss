@@ -153,6 +153,18 @@
     transform: scale(1.05);
 }
 
+.menu-copyright {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .navbar {
         padding: 1rem 1.5rem;

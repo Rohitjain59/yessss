@@ -28,7 +28,7 @@
 }
 
 .page-title {
-    font-family: 'Rye', serif;
+    font-family: 'Sogo Regular', serif;
     font-size: 3rem;
     font-weight: 400;
     letter-spacing: 0.1em;
@@ -76,9 +76,9 @@
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 4rem;
+    column-gap: 8rem;
     row-gap: 8rem;
-    max-width: 1600px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -95,8 +95,9 @@
 
 .card-image-wrapper {
     width: 100%;
-    aspect-ratio: 4/5;
+    aspect-ratio: 16/9;
     overflow: hidden;
+    border-radius: 4px;
 }
 
 .card-image-wrapper img {
@@ -143,7 +144,7 @@
 
 .project-name {
     font-family: var(--font-serif);
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 1.1;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
@@ -211,7 +212,7 @@
 }
 
 .projects-heading {
-    font-family: 'Rye', serif;
+    font-family: 'Sogo Regular', serif;
     font-size: 3rem;
     line-height: 1;
     font-weight: 400;
@@ -234,7 +235,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    height: 70vh;
+    height: 60vh;
     width: 100%;
 }
 
@@ -243,7 +244,7 @@
 .gallery-item {
     position: absolute;
     top: 50%;
-    width: 35vw;
+    width: 30vw;
     height: 100%;
     transform: translateY(-50%) scale(0.8);
     transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
@@ -326,7 +327,7 @@
 .item-title span {
     display: block;
     font-family: var(--font-serif);
-    font-size: 5vw;
+    font-size: 3.5vw;
     line-height: 0.9;
     text-transform: uppercase;
     color: white;
@@ -337,7 +338,7 @@
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
     text-align: left;
 }
 
@@ -428,7 +429,7 @@
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    padding: 0 4rem;
+    padding: 0 2rem;
     /* Adjusted to match item padding/width if possible */
     box-sizing: border-box;
     position: relative;

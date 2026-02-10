@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Projects.css';
-import '@fontsource/rye';
+
 
 gsap.registerPlugin(ScrollTrigger);
 import projectImg from '../assets/project.png';
