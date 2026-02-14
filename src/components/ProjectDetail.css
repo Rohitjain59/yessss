@@ -318,13 +318,7 @@
 
 
 .amenity-text {
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    text-align: center;
-    color: #ccc;
-    letter-spacing: 0.05em;
-    line-height: 1.4;
+    display: none;
 }
 
 .amenity-card:hover .amenity-text {
