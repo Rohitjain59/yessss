@@ -10,35 +10,86 @@ import {
     FaToriiGate, FaChild, FaSpa, FaWater,
     FaCocktail, FaBriefcase, FaFilm, FaFilePdf
 } from 'react-icons/fa';
-import { MdDeck, MdElevator, MdClose } from "react-icons/md";
+import { MdClose } from "react-icons/md";
 import './ProjectDetail.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const getAmenityIcon = (amenity) => {
-    const map = {
-        "Private Lift": <MdElevator />,
-        "Sky Penthouse": <FaBuilding />,
-        "Concierge Service": <FaConciergeBell />,
-        "Heated Indoor Pool": <FaSwimmingPool />,
-        "Valet Parking": <FaCarAlt />,
-        "Golf Course View": <FaGolfBall />,
-        "VRV Air Conditioning": <FaFan />,
-        "Italian Marble Flooring": <FaGem />,
-        "Smart Home Automation": <FaMobileAlt />,
-        "Clubhouse Access": <FaGlassCheers />,
-        "Private Garden": <FaTree />,
-        "Terrace Garden": <MdDeck />,
-        "Gated Community": <FaToriiGate />,
-        "Kids Play Area": <FaChild />,
-        "Meditation Zone": <FaSpa />,
-        "Sea View": <FaWater />,
-        "Infinity Pool": <FaSwimmingPool />,
-        "Rooftop Lounge": <FaCocktail />,
-        "Business Center": <FaBriefcase />,
-        "Private Cinema": <FaFilm />
+    // Map amenity names to icon filenames
+    const iconMap = {
+        // Parking & Transportation
+        "Private Lift": "ALOOTED CAR PARKING.png",
+        "Valet Parking": "ALOOTED CAR PARKING.png",
+        "Basement Parking": "ALOOTED CAR PARKING.png",
+        "Allotted Car Parking": "ALOOTED CAR PARKING.png",
+
+        // Entertainment & Recreation
+        "Amphitheatre": "AMPETHEATRE.png",
+        "Sky Penthouse": "AMPETHEATRE.png",
+        "Multi Purpose Hall": "AMPETHEATRE.png",
+
+        // Security & Safety
+        "CCTV": "CCTV.png",
+        "Security System": "CCTV.png",
+        "Power Backup": "CCTV.png",
+        "Concierge Service": "SECURITY CABIN.png",
+        "Gated Community": "SECURITY CABIN.png",
+        "Security Cabin": "SECURITY CABIN.png",
+        "Fire Safety": "FIRE SAFETY.png",
+        "Solar System": "FIRE SAFETY.png",
+
+        // Children & Family
+        "Children Play Area": "CHILDREN PLAY AREA.png",
+        "Kids Play Area": "CHILDREN PLAY AREA.png",
+        "Toddler Play Area": "TODDLER PLAY AREA.png",
+        "Senior Citizen Area": "SENIOR CITYZEN.png",
+
+        // Work & Business
+        "Co Working Space": "CO WORKING SPACE.png",
+        "Business Center": "CO WORKING SPACE.png",
+
+        // Connectivity
+        "DTH Connection": "DTH CONNECTION.png",
+        "Gas Pipeline": "GAS PIPE.png",
+        "Gas Pipe": "GAS PIPE.png",
+
+        // Outdoor & Garden
+        "Gazebo": "GAZEBO.png",
+        "Meditation Zone": "GAZEBO.png",
+        "Rooftop Lounge": "GAZEBO.png",
+        "Terrace Garden": "GAZEBO.png",
+        "Private Garden": "LANDSCAPE GARDEN.png",
+        "Landscape Garden": "LANDSCAPE GARDEN.png",
+        "Golf Course View": "LANDSCAPE GARDEN.png",
+        "Italian Marble Flooring": "LANDSCAPE GARDEN.png",
+        "Sea View": "LANDSCAPE GARDEN.png",
+
+        // Fitness & Wellness
+        "Gymnasium": "GYMNASSIUM.png",
+        "Clubhouse Access": "GYMNASSIUM.png",
+        "Heated Indoor Pool": "SWIMMING POOL.png",
+        "Swimming Pool": "SWIMMING POOL.png",
+        "Infinity Pool": "SWIMMING POOL.png",
+
+        // Indoor Activities
+        "Indoor Games": "INDOOR GAMES.png",
+        "Private Cinema": "INDOOR GAMES.png",
+        "Library": "LIBRARY.png",
+
+        // Utilities
+        "Water Supply": "WATER SUPPLY.png",
+        "Wifi": "WIFI ZONE.png",
+        "Wifi Zone": "WIFI ZONE.png",
+        "Smart Home Automation": "WIFI ZONE.png",
+        "VRV Air Conditioning": "WIFI ZONE.png",
+
+        // Special Zones
+        "No Vehicle Zone": "NO VEHICLE ZONE.png"
     };
-    return map[amenity] || <FaGem />; // Default icon
+
+    const iconFileName = iconMap[amenity] || "CCTV.png"; // Default icon
+    return `/DISHVA AMENITIES PNG/${iconFileName}`;
 };
 
 const ProjectDetail = () => {
@@ -198,7 +249,11 @@ const ProjectDetail = () => {
                         {project.amenities?.map((amenity, index) => (
                             <div key={index} className="amenity-card">
                                 <div className="amenity-icon-wrapper">
-                                    {getAmenityIcon(amenity)}
+                                    <img
+                                        src={getAmenityIcon(amenity)}
+                                        alt={amenity}
+                                        className="amenity-icon-img"
+                                    />
                                 </div>
                                 <span className="amenity-text">{amenity}</span>
                             </div>

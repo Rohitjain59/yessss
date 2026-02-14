@@ -26,7 +26,7 @@ export const projectsData = [
         desc: "A landmark residential project offering a blend of luxury and nature. Experience the pinnacle of modern living with state-of-the-art amenities and breathtaking views.",
         location: "GURGAON",
         status: "NEW LAUNCH",
-        amenities: ["Private Lift", "Sky Penthouse", "Concierge Service", "Heated Indoor Pool", "Valet Parking", "Multi Purpose Hall", "Senior Citizen Area", "Fire Safety", "Basement Parking", "Power Backup"],
+        amenities: ["Allotted Car Parking", "Amphitheatre", "CCTV", "Children Play Area", "Co Working Space", "DTH Connection", "Fire Safety", "Gas Pipeline", "Gazebo", "Gymnasium", "Indoor Games", "Landscape Garden", "Library", "No Vehicle Zone", "Security Cabin", "Senior Citizen Area", "Swimming Pool", "Toddler Play Area", "Water Supply", "Wifi Zone"],
         gallery: [
             { src: "/photos/6.jpg", text: "MAIN FACADE", category: "Exterior" },
             { src: "/photos/Shawat_C 1.jpg", text: "LIVING AREA", category: "Living" },
@@ -61,7 +61,7 @@ export const projectsData = [
         desc: "The premium tower at The Atmosphere, offering exclusive penthouses and sky villas for limited residents.",
         location: "GURGAON",
         status: "PREMIUM TOWER",
-        amenities: ["Golf Course View", "VRV Air Conditioning", "Italian Marble Flooring", "Smart Home Automation", "Clubhouse Access", "Wifi", "Security System", "Solar System", "Gas Pipeline", "DTH Connection"],
+        amenities: ["Allotted Car Parking", "Amphitheatre", "CCTV", "Children Play Area", "Co Working Space", "DTH Connection", "Fire Safety", "Gas Pipeline", "Gazebo", "Gymnasium", "Indoor Games", "Landscape Garden", "Library", "No Vehicle Zone", "Security Cabin", "Senior Citizen Area", "Swimming Pool", "Toddler Play Area", "Water Supply", "Wifi Zone"],
         gallery: [
             { src: "/photos/Cam_01_night_02.jpg", text: "NIGHT VIEW", category: "Exterior" },
             { src: "/photos/F_Cam_01.jpg", text: "MODERN KITCHEN", category: "Kitchen" },
@@ -96,7 +96,7 @@ export const projectsData = [
         desc: "Phase 1 of The Atmosphere, featuring spacious 3 & 4 BHK apartments designed for family living.",
         location: "GURGAON",
         status: "PHASE 1",
-        amenities: ["Private Garden", "Terrace Garden", "Gated Community", "Kids Play Area", "Meditation Zone", "Multi Purpose Hall", "Senior Citizen Area", "Fire Safety", "Basement Parking", "Power Backup"],
+        amenities: ["Allotted Car Parking", "Amphitheatre", "CCTV", "Children Play Area", "Co Working Space", "DTH Connection", "Fire Safety", "Gas Pipeline", "Gazebo", "Gymnasium", "Indoor Games", "Landscape Garden", "Library", "No Vehicle Zone", "Security Cabin", "Senior Citizen Area", "Swimming Pool", "Toddler Play Area", "Water Supply", "Wifi Zone"],
         gallery: [
             { src: "/photos/Shawat_C 1.jpg", text: "SKY TERRACE", category: "Exterior" },
             { src: "/photos/Cam_13_2.jpg", text: "MASTER SUITE", category: "Bedroom" },
@@ -131,7 +131,7 @@ export const projectsData = [
         desc: "The commercial and retail hub of The Atmosphere, created for seamless business and leisure experiences.",
         location: "GURGAON",
         status: "COMMERCIAL",
-        amenities: ["Sea View", "Infinity Pool", "Rooftop Lounge", "Business Center", "Private Cinema", "Wifi", "Security System", "Solar System", "Gas Pipeline", "DTH Connection"],
+        amenities: ["Allotted Car Parking", "Amphitheatre", "CCTV", "Children Play Area", "Co Working Space", "DTH Connection", "Fire Safety", "Gas Pipeline", "Gazebo", "Gymnasium", "Indoor Games", "Landscape Garden", "Library", "No Vehicle Zone", "Security Cabin", "Senior Citizen Area", "Swimming Pool", "Toddler Play Area", "Water Supply", "Wifi Zone"],
         gallery: [
             { src: "/photos/Cam_11_2.jpg", text: "MAIN FACADE", category: "Exterior" },
             { src: "/photos/Cam_03 copy.jpg", text: "PRIVATE POOL", category: "Exterior" },
@@ -163,17 +163,77 @@ export const projectsData = [
 const Projects = ({ standalone = false }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const projectsRef = useRef(null);
+    const [cursorX, setCursorX] = useState(0);
+    const autoPlayRef = useRef(null);
 
     // Carousel Logic (Only runs if NOT standalone)
     useEffect(() => {
         if (standalone) return;
 
-        const interval = setInterval(() => {
-            setActiveIndex((prev) => (prev + 1) % projectsData.length);
-        }, 4000);
+        const startAutoPlay = () => {
+            autoPlayRef.current = setInterval(() => {
+                setActiveIndex((prev) => (prev + 1) % projectsData.length);
+            }, 4000);
+        };
 
-        return () => clearInterval(interval);
-    }, [standalone]);
+        startAutoPlay();
+
+        // Cursor tracking for horizontal movement
+        const handleMouseMove = (e) => {
+            const windowWidth = window.innerWidth;
+            const mouseX = e.clientX;
+            const threshold = windowWidth * 0.2; // 20% from edges
+
+            // Left side - move to previous
+            if (mouseX < threshold) {
+                setCursorX(-1);
+            }
+            // Right side - move to next
+            else if (mouseX > windowWidth - threshold) {
+                setCursorX(1);
+            }
+            // Center - neutral
+            else {
+                setCursorX(0);
+            }
+        };
+
+        // Keyboard controls
+        const handleKeyDown = (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                setActiveIndex((prev) => (prev - 1 + projectsData.length) % projectsData.length);
+                // Reset auto-play
+                clearInterval(autoPlayRef.current);
+                startAutoPlay();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                setActiveIndex((prev) => (prev + 1) % projectsData.length);
+                // Reset auto-play
+                clearInterval(autoPlayRef.current);
+                startAutoPlay();
+            }
+        };
+
+        // Auto-advance based on cursor position
+        const cursorInterval = setInterval(() => {
+            if (cursorX === -1) {
+                setActiveIndex((prev) => (prev - 1 + projectsData.length) % projectsData.length);
+            } else if (cursorX === 1) {
+                setActiveIndex((prev) => (prev + 1) % projectsData.length);
+            }
+        }, 2000); // Change slide every 2 seconds when cursor is on edges
+
+        window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            clearInterval(autoPlayRef.current);
+            clearInterval(cursorInterval);
+            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [standalone, cursorX]);
 
     // GSAP Animation for Both Views
     useGSAP(() => {

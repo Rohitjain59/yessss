@@ -117,7 +117,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #0F1112;
+    background-color: #000000;
     z-index: 150;
     /* Lower than navbar */
     display: flex;
@@ -192,8 +192,8 @@
     }
 
     .menu-overlay {
-        /* Add a subtle gradient for mobile looks */
-        background: radial-gradient(circle at center, #1a1d1f 0%, #0F1112 100%);
+        /* Pure black background for mobile */
+        background: #000000;
     }
 
     .menu-links {

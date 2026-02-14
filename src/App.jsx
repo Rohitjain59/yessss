@@ -10,6 +10,8 @@ import Projects from './components/Projects';
 import ProjectDetail from './components/ProjectDetail';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
+import PhoneButton from './components/PhoneButton';
 import './index.css';
 
 function App() {
@@ -46,6 +48,8 @@ function App() {
         <Route path="/contact" element={<Contact standalone={true} />} />
       </Routes>
       <Footer />
+      <PhoneButton />
+      <WhatsAppButton />
     </div>
   );
 }
