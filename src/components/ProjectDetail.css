@@ -1259,3 +1259,39 @@
     /* Prevent movement */
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2) !important;
 }
+/* Mobile Amenities Adjustment */
+@media (max-width: 768px) {
+    .amenities-grid {
+        /* Force 3 columns */
+        grid-template-columns: repeat(3, 1fr); 
+        /* Reduce gap to make them fit nicely */
+        gap: 0.5rem; 
+        padding: 0 0.5rem;
+    }
+
+    .amenity-card {
+        /* Reduce padding inside the card */
+        padding: 0.8rem 0.2rem; 
+        /* Ensure card doesn't get too tall */
+        aspect-ratio: 1/1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .amenity-icon-wrapper {
+        /* Make the circle smaller */
+        width: 35px; 
+        height: 35px;
+        padding: 8px;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .amenity-text {
+        /* Reduce font size so text fits in the small box */
+        font-size: 0.65rem; 
+        line-height: 1.2;
+        word-wrap: break-word;
+    }
+}

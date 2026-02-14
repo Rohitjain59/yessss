@@ -4,8 +4,6 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Projects.css';
-
-
 gsap.registerPlugin(ScrollTrigger);
 import projectImg from '../assets/project.png';
 import aboutImg from '../assets/about.png';
