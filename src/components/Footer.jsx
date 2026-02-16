@@ -27,9 +27,9 @@ const Footer = () => {
                     <div className="footer-column">
                         <h3>Connect</h3>
                         <ul>
-                            <li><a href="mailto:hello@dishva.com">hello@dishva.com</a></li>
-                            <li><a href="tel:+919876543210">+91 987 654 3210</a></li>
-                            <li><span className="address">South Delhi, India</span></li>
+                            <li><a href="mailto:Info@dishva.com">Info@dishva.com</a></li>
+                            <li><a href="tel:+917600900993">+91 76 009 009 93</a></li>
+                            <li><span className="address">The Atmosphere, opp. Sangath Pure,<br />Chandkheda, Ahmedabad.</span></li>
                         </ul>
                     </div>
 

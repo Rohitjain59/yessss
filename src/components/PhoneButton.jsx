@@ -5,7 +5,7 @@ const PhoneButton = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     // Replace with your phone number
-    const phoneNumber = '+919876543210'; // Change this to your actual number
+    const phoneNumber = '+917600900993'; // Change this to your actual number
 
     const phoneUrl = `tel:${phoneNumber}`;
 

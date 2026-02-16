@@ -37,26 +37,25 @@ const Contact = ({ standalone = true }) => {
 
                     <div className="contact-text contact-animate">
                         <p>
-                            DISHVA Group provides exclusive 2 & 3 BHK apartments in Zundal, Vaishnodevi Circle, Ahmedabad.
-                            If you are looking for affordable luxurious flats near Vaishnodevi circle, Ahmedabad, and Shops in Zundal,
-                            we are here with a few ongoing projects like    Dishva Orbit, Dishva Solitaire, Dishva Essence, and Dishva Ixora.
+                            At the heart of every project we build is a commitment to excellence and a promise of a better lifestyle.
+                            Whether you are looking for your next family home or a strategic investment, our team is ready to guide you through our latest developments.
                         </p>
                         <p className="mt-4">
-                            Feel free to contact us for any inquiries. You can call us or drop an email, and our team of experts will connect with you as soon as possible.
+                            Reach out today to schedule a site visit or to discuss your future at one of our landmark addresses.
                         </p>
                     </div>
 
                     <div className="contact-details contact-animate">
                         <div className="detail-group">
                             <span className="label">OFFICE ADDRESS</span>
-                            <p>Vaishnodevi Circle, Zundal<br />Ahmedabad, Gujarat</p>
+                            <p>The Atmosphere, opp. Sangath Pure, Chandkheda, Ahmedabad.</p>
                         </div>
 
                         <div className="detail-group">
                             <span className="label">GET IN TOUCH</span>
                             <p>
-                                <a href="mailto:[EMAIL_ADDRESS]">[EMAIL_ADDRESS]</a><br />
-                                <a href="tel:+919876543210">+91 98765 43210</a>
+                                <a href="mailto:Info@dishva.com">Info@dishva.com</a><br />
+                                <a href="tel:+917600900993">+91 76 009 009 93</a>
                             </p>
                         </div>
 
