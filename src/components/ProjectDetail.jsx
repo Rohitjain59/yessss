@@ -98,8 +98,8 @@ const ProjectDetail = () => {
     // tabs removed
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const [activeTab, setActiveTab] = useState('Ground Floor');
-    const [floorLightboxImg, setFloorLightboxImg] = useState(null); // { src, title }
+    const floorPlanKeys = Object.keys(project.floorPlans || {});
+    const [activeFloorIndex, setActiveFloorIndex] = useState(null);
 
     const [activeLightboxIndex, setActiveLightboxIndex] = useState(null);
     const [galleryFilter, setGalleryFilter] = useState('View All');
@@ -153,8 +153,18 @@ const ProjectDetail = () => {
         setActiveLightboxIndex((prev) => (prev - 1 + project.gallery.length) % project.gallery.length);
     };
 
-    const openLightboxForFloor = (src, title) => setFloorLightboxImg({ src, title });
-    const closeFloorLightbox = () => setFloorLightboxImg(null);
+    const openFloorLightbox = (index) => setActiveFloorIndex(index);
+    const closeFloorLightbox = () => setActiveFloorIndex(null);
+
+    const nextFloor = (e) => {
+        e.stopPropagation();
+        setActiveFloorIndex((prev) => (prev + 1) % floorPlanKeys.length);
+    };
+
+    const prevFloor = (e) => {
+        e.stopPropagation();
+        setActiveFloorIndex((prev) => (prev - 1 + floorPlanKeys.length) % floorPlanKeys.length);
+    };
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -224,7 +234,7 @@ const ProjectDetail = () => {
                                 <div
                                     key={floorName}
                                     className="floorplan-card-new"
-                                    onClick={() => openLightboxForFloor(project.floorPlans[floorName][0], floorName)}
+                                    onClick={() => openFloorLightbox(index)}
                                 >
                                     <div className="floorplan-img-wrapper-new">
                                         <img
@@ -303,18 +313,26 @@ const ProjectDetail = () => {
                 </div>
             )}
 
-            {/* Separate Lightbox for Floor Plans */}
-            {floorLightboxImg && (
-                <div className="lightbox-overlay" onClick={closeFloorLightbox}>
+            {/* Navigatable Lightbox for Floor Plans */}
+            {activeFloorIndex !== null && (
+                <div className="lightbox-overlay floor-lightbox" onClick={closeFloorLightbox}>
                     <button className="lightbox-close" onClick={closeFloorLightbox}><MdClose /></button>
+
+                    {floorPlanKeys.length > 1 && (
+                        <>
+                            <button className="lightbox-prev" onClick={prevFloor}>&lt;</button>
+                            <button className="lightbox-next" onClick={nextFloor}>&gt;</button>
+                        </>
+                    )}
+
                     <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
                         <img
-                            src={floorLightboxImg.src}
-                            alt={floorLightboxImg.title}
+                            src={project.floorPlans[floorPlanKeys[activeFloorIndex]][0]}
+                            alt={floorPlanKeys[activeFloorIndex]}
                             className="lightbox-img"
                         />
                         <div className="lightbox-caption">
-                            {floorLightboxImg.title}
+                            {floorPlanKeys[activeFloorIndex]}
                         </div>
                     </div>
                 </div>

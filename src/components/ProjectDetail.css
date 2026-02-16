@@ -1310,3 +1310,65 @@
     /* Prevent movement */
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2) !important;
 }
+
+/* Floor Plan Specific Lightbox Styles (Matches user image) */
+.floor-lightbox .lightbox-content {
+    background: white;
+    padding: 3rem 4rem;
+    border-radius: 4px;
+    max-width: 80vw;
+    max-height: 85vh;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.floor-lightbox .lightbox-img {
+    max-height: 65vh;
+    width: auto;
+    object-fit: contain;
+    border: none;
+    box-shadow: none;
+    filter: none;
+}
+
+.floor-lightbox .lightbox-caption {
+    color: #000;
+    margin-top: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Ensure navigation buttons stay visible and accessible */
+.floor-lightbox .lightbox-prev,
+.floor-lightbox .lightbox-next {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.floor-lightbox .lightbox-prev:hover,
+.floor-lightbox .lightbox-next:hover {
+    background: white;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .floor-lightbox .lightbox-content {
+        padding: 1.5rem;
+        width: 95vw;
+        max-width: 95vw;
+    }
+
+    .floor-lightbox .lightbox-caption {
+        font-size: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .floor-lightbox .lightbox-img {
+        max-height: 50vh;
+    }
+}
