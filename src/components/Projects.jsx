@@ -19,10 +19,10 @@ import house8Img from '../assets/house8.jpeg';
 export const projectsData = [
     {
         id: 1,
-        title: ["THE", "ATMOSPHERE"],
-        img: "/photos/6.jpg",
-        desc: "A landmark residential project offering a blend of luxury and nature. Experience the pinnacle of modern living with state-of-the-art amenities and breathtaking views.",
-        location: "GURGAON",
+        title: ["IN", "ATMOSPHERE"],
+        img: "/photos/Cam_03 copy.jpg",
+        desc: "A landmark residential project in Chandkheda offering a blend of luxury and nature. Experience the pinnacle of modern living in our 3 & 4 BHK Apartments with aesthetic appeal & modern amenities.",
+        location: "CHANDKHEDA",
         status: "NEW LAUNCH",
         amenities: ["Allotted Car Parking", "Amphitheatre", "CCTV", "Children Play Area", "Co Working Space", "DTH Connection", "Fire Safety", "Gas Pipeline", "Gazebo", "Gymnasium", "Indoor Games", "Landscape Garden", "Library", "No Vehicle Zone", "Security Cabin", "Senior Citizen Area", "Swimming Pool", "Toddler Play Area", "Water Supply", "Wifi Zone"],
         gallery: [
@@ -42,7 +42,7 @@ export const projectsData = [
             { src: "/photos/Shawat_C 04.jpg", text: "GARDEN PATH", category: "Exterior" },
             { src: "/photos/Foyer_N.jpg", text: "ENTRANCE FOYER", category: "Exterior" }
         ],
-        story: "The Atmosphere is more than just a home; it's a lifestyle statement. \n\nDesigned for those who appreciate the finer things in life, this project combines architectural brilliance with functional elegance. \n\nEvery corner is crafted to perfection, ensuring a living experience that is both opulent and comfortable.",
+        story: "In Atmosphere is more than just a home; it's a lifestyle statement. \n\nDesigned for those who appreciate the finer things in life, this project combines architectural brilliance with functional elegance. \n\nEvery corner is crafted to perfection, ensuring a living experience that is both opulent and comfortable.",
         floorPlans: {
             "Ground Floor Plan": ["/THE ATMOSPHERE GROUND FLOOR PLAN.jpg.jpeg"],
             "First Floor Plan": ["/THE ATMOSPHERE FIRST FLOOR PLAN.jpg.jpeg"],
@@ -54,11 +54,11 @@ export const projectsData = [
     },
     {
         id: 2,
-        title: ["ATMOSPHERE", "O2"],
+        title: ["ATMOSPHERE", "SOLITAIRE"],
         img: "/photos/Cam_01_night_02.jpg",
-        desc: "The premium tower at The Atmosphere, offering exclusive penthouses and sky villas for limited residents.",
-        location: "GURGAON",
-        status: "PREMIUM TOWER",
+        desc: "Exquisite living spaces in Chandkheda designed for those who seek exclusivity and architectural grandeur in every detail.",
+        location: "CHANDKHEDA",
+        status: "ONGOING",
         amenities: ["Allotted Car Parking", "Amphitheatre", "CCTV", "Children Play Area", "Co Working Space", "DTH Connection", "Fire Safety", "Gas Pipeline", "Gazebo", "Gymnasium", "Indoor Games", "Landscape Garden", "Library", "No Vehicle Zone", "Security Cabin", "Senior Citizen Area", "Swimming Pool", "Toddler Play Area", "Water Supply", "Wifi Zone"],
         gallery: [
             { src: "/photos/Cam_01_night_02.jpg", text: "NIGHT VIEW", category: "Exterior" },
@@ -77,7 +77,7 @@ export const projectsData = [
             { src: "/photos/Work_Space.jpg", text: "OFFICE SPACE", category: "Office" },
             { src: "/photos/Indoor_Games.jpg", text: "RECREATION", category: "Living" }
         ],
-        story: "Atmosphere O2 represents the zenith of luxury living. \n\nReserved for the select few, these residences feature higher ceilings, exclusive elevator access, and premium specifications. \n\nThe tower commands the best views in the development, overlooking the central greens and the city skyline.",
+        story: "Atmosphere Solitaire represents the zenith of mid-city luxury. Reserved for the select few, these residences feature higher ceilings, exclusive elevator access, and premium specifications.",
         floorPlans: {
             "Ground Floor Plan": ["/THE ATMOSPHERE GROUND FLOOR PLAN.jpg.jpeg"],
             "First Floor Plan": ["/THE ATMOSPHERE FIRST FLOOR PLAN.jpg.jpeg"],
@@ -89,11 +89,11 @@ export const projectsData = [
     },
     {
         id: 3,
-        title: ["THE", "ATMOSPHERE"],
-        img: "/photos/Shawat_C 1.jpg",
-        desc: "Phase 1 of The Atmosphere, featuring spacious 3 & 4 BHK apartments designed for family living.",
-        location: "GURGAON",
-        status: "PHASE 1",
+        title: ["DISHVA", "ESSENCE"],
+        img: "/photos/6.jpg",
+        desc: "An expansive 3,50,0,00 Sq. Ft. upcoming development featuring premium 3 & 4 BHK residences. Expected completion by April 2028.",
+        location: "AHMEDABAD",
+        status: "UPCOMING",
         amenities: ["Allotted Car Parking", "Amphitheatre", "CCTV", "Children Play Area", "Co Working Space", "DTH Connection", "Fire Safety", "Gas Pipeline", "Gazebo", "Gymnasium", "Indoor Games", "Landscape Garden", "Library", "No Vehicle Zone", "Security Cabin", "Senior Citizen Area", "Swimming Pool", "Toddler Play Area", "Water Supply", "Wifi Zone"],
         gallery: [
             { src: "/photos/Shawat_C 1.jpg", text: "SKY TERRACE", category: "Exterior" },
@@ -112,7 +112,7 @@ export const projectsData = [
             { src: "/photos/Shawat_C 04.jpg", text: "GARDEN PATH", category: "Exterior" },
             { src: "/photos/BG_FN_02.jpg", text: "PANORAMIC VIEW", category: "Exterior" }
         ],
-        story: "The Atmosphere Phase 1 set the benchmark for luxury living in the region. \n\nWith a focus on community and connectivity, the layout fosters a sense of belonging while ensuring privacy. \n\nThe lush landscaped gardens and podium-level amenities provide a serene escape from the urban hustle.",
+        story: "DISHVA ESSENCE is designed to be a future-ready living space, spanning across 3,50,000 Sq. Ft. of pristine landscape. Featuring carefully crafted 3 & 4 BHK apartments, it sets a new benchmark for luxury in Ahmedabad with an expected completion in April 2028.",
         floorPlans: {
             "Ground Floor Plan": ["/THE ATMOSPHERE GROUND FLOOR PLAN.jpg.jpeg"],
             "First Floor Plan": ["/THE ATMOSPHERE FIRST FLOOR PLAN.jpg.jpeg"],
@@ -120,40 +120,6 @@ export const projectsData = [
             "3BHK Type A": ["/THE ATMOSPHERE 3BHK FLOOR PLAN.jpg.jpeg"],
             "3BHK Type B": ["/THE ATMOSPHERE 3BHK FLOOR PLAN 2.0.jpg.jpeg"],
             "4BHK Luxury Plan": ["/THE ATMOSPHERE 4BHK FLOOR PLAN.jpg.jpeg"]
-        }
-    },
-    {
-        id: 4,
-        title: ["ATMOSPHERE", "GRID"],
-        img: "/photos/Cam_11_2.jpg",
-        desc: "The commercial and retail hub of The Atmosphere, created for seamless business and leisure experiences.",
-        location: "GURGAON",
-        status: "COMMERCIAL",
-        amenities: ["Allotted Car Parking", "Amphitheatre", "CCTV", "Children Play Area", "Co Working Space", "DTH Connection", "Fire Safety", "Gas Pipeline", "Gazebo", "Gymnasium", "Indoor Games", "Landscape Garden", "Library", "No Vehicle Zone", "Security Cabin", "Senior Citizen Area", "Swimming Pool", "Toddler Play Area", "Water Supply", "Wifi Zone"],
-        gallery: [
-            { src: "/photos/Cam_11_2.jpg", text: "MAIN FACADE", category: "Exterior" },
-            { src: "/photos/Cam_03 copy.jpg", text: "PRIVATE POOL", category: "Exterior" },
-            { src: "/photos/Shawat_C 2.jpg", text: "GUEST LOUNGE", category: "Living" },
-            { src: "/photos/Shawat_C 003.jpg", text: "SKY TERRACE", category: "Exterior" },
-            { src: "/photos/Shawat_C 1.jpg", text: "LIVING AREA", category: "Living" },
-            { src: "/photos/F_Cam_01.jpg", text: "MODERN KITCHEN", category: "Kitchen" },
-            { src: "/photos/Cam_005_02.jpg", text: "DINING SPACE", category: "Kitchen" },
-            { src: "/photos/Cam_13_2.jpg", text: "MASTER SUITE", category: "Bedroom" },
-            { src: "/photos/BG_FN_02.jpg", text: "SPA & WELLNESS", category: "Bathroom" },
-            { src: "/photos/Indoor_Games.jpg", text: "HOME THEATER", category: "Living" },
-            { src: "/photos/Library_Cam_01.jpg", text: "LIBRARY", category: "Office" },
-            { src: "/photos/Foyer_N.jpg", text: "WINE CELLAR", category: "Living" },
-            { src: "/photos/Work_Space.jpg", text: "ART GALLERY", category: "Living" },
-            { src: "/photos/Shawat_C 04.jpg", text: "GARDEN PATH", category: "Exterior" },
-            { src: "/photos/Cam_01_night_02.jpg", text: "PANORAMIC VIEW", category: "Exterior" }
-        ],
-        story: "Atmosphere Grid is the heartbeat of the development. \n\nIntegrating high-street retail, office spaces, and entertainment zones, it offers a vibrant ecosystem for residents and visitors alike. \n\nThe modern glass facade reflects the dynamic energy of the businesses within.",
-        floorPlans: {
-            "Ground Floor Layout": ["/THE ATMOSPHERE GROUND FLOOR PLAN.jpg.jpeg"],
-            "First Level Plan": ["/THE ATMOSPHERE FIRST FLOOR PLAN.jpg.jpeg"],
-            "Typical Office Floor": ["/THE ATMOSPHERE TYPICAL FLOOR PLAN.jpg.jpeg"],
-            "Executive Suite A": ["/THE ATMOSPHERE 4BHK FLOOR PLAN.jpg.jpeg"],
-            "Meeting Suites": ["/THE ATMOSPHERE 3BHK FLOOR PLAN.jpg.jpeg"]
         }
     }
 ];
@@ -301,8 +267,8 @@ const Projects = ({ standalone = false }) => {
         return (
             <div className="projects-page" ref={projectsRef}>
                 <div className="projects-page-header">
-                    <h1 className="page-title">OUR PORTFOLIO</h1>
-                    <p className="page-subtitle">A curation of our finest architectural endeavors.</p>
+                    <h1 className="page-title">OUR PROJECTS</h1>
+                    <p className="page-subtitle">Creating iconic landmarks that define the skyline of the city of tomorrow.</p>
 
                     {/* Filter Tabs */}
                     <div className="project-filters">
@@ -310,7 +276,7 @@ const Projects = ({ standalone = false }) => {
                             className={`filter-btn ${filterStatus === 'ONGOING' ? 'active' : ''}`}
                             onClick={() => setFilterStatus('ONGOING')}
                         >
-                            ONGOING
+                            ONGOING 
                         </button>
                         <button
                             className={`filter-btn ${filterStatus === 'UPCOMING' ? 'active' : ''}`}
