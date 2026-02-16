@@ -8,22 +8,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #000;
 }
 
-.values-section::before {
-    content: "";
+.values-bg-clear,
+.values-bg-blur {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 120%;
+    /* Extra height for parallax */
     background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
     background-size: cover;
     background-position: center;
-    filter: blur(8px) brightness(0.6);
-    transform: scale(1.1);
-    /* Prevents white edges from blur */
     z-index: 0;
+    will-change: transform, opacity;
+}
+
+.values-bg-blur {
+    filter: blur(15px) brightness(0.4);
+    opacity: 1;
+}
+
+.values-bg-clear {
+    filter: brightness(0.7);
+    opacity: 0;
 }
 
 .values-bg-overlay {
@@ -32,22 +42,21 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.85) 100%);
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
     z-index: 1;
 }
 
 .values-container {
     position: relative;
     z-index: 2;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 2rem;
+    width: 90%;
+    max-width: 1000px;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100%;
 }
 
 /* Header Section */
@@ -84,18 +93,13 @@
 
 .values-title {
     font-family: 'Sogo Regular', serif;
-    /* Oklahoma-style font */
-    font-size: 3rem;
+    font-size: 3.5rem;
     line-height: 1.1;
     font-weight: 400;
     color: white;
     text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    text-shadow: none;
-    mix-blend-mode: normal;
-    opacity: 1;
+    margin-bottom: 2rem;
     letter-spacing: 0.05em;
-    /* Rye benefits from slight spacing */
 }
 
 .values-title span {
@@ -128,13 +132,9 @@
 .values-desc-text p {
     font-family: var(--font-sans);
     font-size: 1.1rem;
-    line-height: 1.6;
-    color: #e0e0e0;
-    /* Slightly brighter for better contrast on bg */
-    font-weight: 400;
-    /* Standard weight like project detail */
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
-    /* Strong shadow for readability */
+    line-height: 1.8;
+    color: #f0f0f0;
+    font-weight: 300;
 }
 
 /* Responsive */
@@ -148,16 +148,15 @@
     .values-section {
         height: auto;
         min-height: 100vh;
-        padding: 6rem 0;
+        padding: 4rem 1.5rem;
+    }
+
+    .values-container {
+        padding: 3rem 1.5rem;
+        width: 100%;
     }
 
     .values-title {
-        font-size: 12vw;
-        margin-bottom: 2rem;
-    }
-
-    .values-desc-text {
-        padding: 2rem;
-        width: 100%;
+        font-size: 2.5rem;
     }
 }

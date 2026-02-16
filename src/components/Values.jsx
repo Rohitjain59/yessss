@@ -14,38 +14,65 @@ const Values = () => {
         { title: "SUSTAINABLE ELEGANCE", desc: "Luxury that respects our environment." }
     ];
 
+    const bgClearRef = useRef(null);
+    const bgBlurRef = useRef(null);
+    const contentRef = useRef(null);
+
     useGSAP(() => {
-        const tl = gsap.timeline({
+        // Smooth Parallax for both layers
+        gsap.to([bgClearRef.current, bgBlurRef.current], {
+            yPercent: -20,
+            ease: "none",
             scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top 75%",
-                toggleActions: "play none none reverse"
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1 // Smooth following
             }
         });
 
-        tl.from(".values-header", {
-            y: 50,
+        // High-performance Focus Transition (Opacity Cross-fade)
+        gsap.to(bgBlurRef.current, {
             opacity: 0,
-            duration: 1,
-            ease: "power3.out"
-        })
-            .from(".value-item", {
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.1,
-                ease: "power3.out"
-            }, "-=0.5");
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1
+            }
+        });
+
+        gsap.to(bgClearRef.current, {
+            opacity: 1,
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1
+            }
+        });
+
+        // Content slight lift
+        gsap.to(contentRef.current, {
+            y: -50,
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1
+            }
+        });
 
     }, { scope: containerRef });
 
     return (
         <section className="values-section" id="values" ref={containerRef}>
+            <div className="values-bg-clear" ref={bgClearRef}></div>
+            <div className="values-bg-blur" ref={bgBlurRef}></div>
             <div className="values-bg-overlay"></div>
 
-            <div className="values-container">
+            <div className="values-container" ref={contentRef}>
                 <div className="values-header">
-
                     <h2 className="values-title">Created for the <br /> <span className="italic-text">Discerning Few</span></h2>
                     <div className="values-desc-text">
                         <p>At Elyse Residence, we believe that a home is more than a physical space — it's a reflection of your aspirations, well-being, and values. Our mission is to immerse you in a lifestyle that balances refined aesthetics, architectural excellence, and a profound sense of community.</p>
