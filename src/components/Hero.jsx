@@ -50,7 +50,7 @@ const Hero = () => {
 
 
             <div className="hero-content">
-                <h2 className="hero-subtitle">At Elyse Residence</h2>
+
                 <p className="hero-description">
                     Creating spaces that truly reflects your vision of the good life.
                 </p>
