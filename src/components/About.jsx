@@ -47,9 +47,9 @@ const About = ({ standalone = false }) => {
                         <div className="about-col-left">
 
                             <h2 className="about-heading about-animate-text">
-                                <span>CRAFTING</span>
-                                <span>MODERN</span>
-                                <span>LEGACIES.</span>
+                                <span>TOMORROW,</span>
+                                <span>BUILT</span>
+                                <span>TODAY.</span>
                             </h2>
                             <div className="about-stats about-animate-text">
                                 <div className="stat-item">
@@ -76,18 +76,18 @@ const About = ({ standalone = false }) => {
                         <div className="about-col-right">
                             <div className="about-description">
                                 <p className="about-animate-text intro-text">
-                                    At <strong>Dishva</strong>, we believe that a home is more than just a structure—it is a canvas for your life. We merge architectural innovation with timeless aesthetics.
+                                    Quality is not a luxury; it is our standard. <strong>Dishva Group</strong> was founded on the principle that excellence is found in the details—the strength of the concrete, the flow of the floor plan, and the sustainability of the landscape.
                                 </p>
                                 <p className="about-animate-text secondary-text">
-                                    From the selection of sustainable materials to the integration of seamless technology, every detail acts as a testament to our commitment to quality.
+                                    At the heart of every project we build is a commitment to excellence and a promise of a better lifestyle.
                                 </p>
 
                                 <div className="philosophy-list about-animate-text">
                                     <ul>
-                                        <li>Human-Centric Design</li>
-                                        <li>Sustainable Innovation</li>
-                                        <li>Cultural Harmony</li>
-                                        <li>Timeless Aesthetics</li>
+                                        <li>100% TRANSPARENCY</li>
+                                        <li>QUALITY FIRST-APPROACH</li>
+                                        <li>SUSTAINABLE MODERNITY</li>
+                                        <li>ON TIME COMPLETION</li>
                                     </ul>
                                 </div>
                             </div>
@@ -130,9 +130,9 @@ const About = ({ standalone = false }) => {
                 {/* Left Column: Heading */}
                 <div className="about-col-left">
                     <h2 className="about-heading about-animate-text">
-                        <span>CRAFTING</span>
-                        <span>MODERN</span>
-                        <span>LEGACIES.</span>
+                        <span>TOMORROW,</span>
+                        <span>BUILT</span>
+                        <span>TODAY.</span>
                     </h2>
                     <div className="about-stats about-animate-text">
                         <div className="stat-item">
@@ -161,18 +161,18 @@ const About = ({ standalone = false }) => {
                 <div className="about-col-right">
                     <div className="about-description">
                         <p className="about-animate-text intro-text">
-                            At <strong>Dishva</strong>, we believe that a home is more than just a structure—it is a canvas for your life. We merge architectural innovation with timeless aesthetics to create sanctuaries that inspire.
+                            Quality is not a luxury; it is our standard. <strong>Dishva Group</strong> was founded on the principle that excellence is found in the details—the strength of the concrete, the flow of the floor plan, and the sustainability of the landscape.
                         </p>
                         <p className="about-animate-text secondary-text">
-                            From the selection of sustainable materials to the integration of seamless technology, every detail acts as a testament to our commitment to quality.
+                            At the heart of every project we build is a commitment to excellence and a promise of a better lifestyle.
                         </p>
 
                         <div className="philosophy-list about-animate-text">
                             <ul>
-                                <li>Human-Centric Design</li>
-                                <li>Sustainable Innovation</li>
-                                <li>Cultural Harmony</li>
-                                <li>Timeless Aesthetics</li>
+                                <li>100% TRANSPARENCY</li>
+                                <li>QUALITY FIRST-APPROACH</li>
+                                <li>SUSTAINABLE MODERNITY</li>
+                                <li>ON TIME COMPLETION</li>
                             </ul>
                         </div>
                     </div>

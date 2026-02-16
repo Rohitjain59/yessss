@@ -14,9 +14,9 @@ const Hero = () => {
     const titleRef = useRef(null);
 
     const heroImages = [
-        heroImage,
-        house1,
-        house2
+        '/photos/72D06D45-8CD7-4FA9-B467-E070A4EC5BE1.jpeg.jpg',
+        '/photos/BF1F0B7F-2EFD-4BA7-A303-15AA5BA58C26.jpeg.jpg',
+        '/photos/Cam_03 copy.jpg'
     ];
 
     useGSAP(() => {
@@ -52,7 +52,7 @@ const Hero = () => {
             <div className="hero-content">
                 <h2 className="hero-subtitle">At Elyse Residence</h2>
                 <p className="hero-description">
-                    We believe that a home is more than a physical space — it's a reflection of your aspirations.
+                    Creating spaces that truly reflects your vision of the good life.
                 </p>
                 <Link to="/projects" className="hero-cta-btn">VIEW PROJECTS</Link>
 
