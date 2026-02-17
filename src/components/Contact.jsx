@@ -32,7 +32,7 @@ const Contact = ({ standalone = true }) => {
                 {/* Left Column: Info */}
                 <div className="contact-info">
                     <h1 className="contact-title contact-animate">
-                        CONTACT<br />DISHVA GROUP
+                        CONTACT<br />
                     </h1>
 
                     <div className="contact-text contact-animate">

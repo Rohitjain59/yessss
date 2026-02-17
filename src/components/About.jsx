@@ -134,20 +134,7 @@ const About = ({ standalone = false }) => {
                         <span>BUILT</span>
                         <span>TODAY.</span>
                     </h2>
-                    <div className="about-stats about-animate-text">
-                        <div className="stat-item">
-                            <span className="stat-number">18+</span>
-                            <span className="stat-label">YEARS OF EXPERIENCE</span>
-                        </div>
-                        <div className="stat-item">
-                            <span className="stat-number">27</span>
-                            <span className="stat-label">PROJECTS COMPLETED</span>
-                        </div>
-                        <div className="stat-item">
-                            <span className="stat-number">54,00,000+</span>
-                            <span className="stat-label">SQ. FT. BUILT</span>
-                        </div>
-                    </div>
+                 
                 </div>
 
                 {/* Center Column: Image */}
@@ -166,6 +153,21 @@ const About = ({ standalone = false }) => {
                         <p className="about-animate-text secondary-text">
                             At the heart of every project we build is a commitment to excellence and a promise of a better lifestyle.
                         </p>
+
+                        <div className="about-stats mobile-only-stats about-animate-text">
+                            <div className="stat-item">
+                                <span className="stat-number">18+</span>
+                                <span className="stat-label">YEARS OF EXPERIENCE</span>
+                            </div>
+                            <div className="stat-item">
+                                <span className="stat-number">27</span>
+                                <span className="stat-label">PROJECTS COMPLETED</span>
+                            </div>
+                            <div className="stat-item">
+                                <span className="stat-number">54,00,000+</span>
+                                <span className="stat-label">SQ. FT. BUILT</span>
+                            </div>
+                        </div>
 
                         <div className="philosophy-list about-animate-text">
                             <ul>

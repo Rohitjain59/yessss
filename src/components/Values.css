@@ -162,6 +162,11 @@
 }
 
 
+/* Mobile Stats */
+.values-mobile-stats {
+    display: none;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .values-title {
@@ -183,5 +188,68 @@
 
     .values-title {
         font-size: 2.5rem;
+    }
+
+    /* Mobile Stats */
+    .values-mobile-stats {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin: 2rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 1.5rem 0;
+    }
+
+    .v-stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .v-stat-num {
+        font-family: var(--font-serif);
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    .v-stat-lbl {
+        font-family: var(--font-sans);
+        font-size: 0.6rem;
+        color: #aeaeae;
+        letter-spacing: 0.1em;
+        margin-top: 0.5rem;
+    }
+
+    /* Arrow CTA Style for Mobile */
+    .values-cta-btn {
+        margin-top: 2rem;
+        padding: 0;
+        width: auto;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        font-size: 0.9rem;
+        letter-spacing: 0.2em;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .values-cta-btn::after {
+        content: '→';
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+
+    .values-cta-btn:hover {
+        background: transparent;
+        color: white;
+        transform: none;
+        box-shadow: none;
+    }
+
+    .values-cta-btn:hover::after {
+        transform: translateX(5px);
     }
 }

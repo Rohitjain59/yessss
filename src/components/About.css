@@ -149,6 +149,39 @@
     padding-top: 2rem;
 }
 
+.mobile-only-stats {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .desktop-only-stats {
+        display: none !important;
+    }
+
+    .mobile-only-stats {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 2rem;
+    }
+
+    .mobile-only-stats .stat-item {
+        align-items: center;
+        text-align: center;
+    }
+
+    .mobile-only-stats .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .mobile-only-stats .stat-label {
+        font-size: 0.6rem;
+    }
+}
+
 .stat-item {
     display: flex;
     flex-direction: column;
