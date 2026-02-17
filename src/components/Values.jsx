@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import './Values.css';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { Link } from 'react-router-dom';
 
 const Values = () => {
     const containerRef = useRef(null);
@@ -63,7 +64,24 @@ const Values = () => {
             }
         });
 
+        // CTA Button Entrance
+        gsap.fromTo(".values-cta-btn",
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                delay: 0.5,
+                scrollTrigger: {
+                    trigger: ".values-cta-btn",
+                    start: "top bottom-=100",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+
     }, { scope: containerRef });
+
 
     return (
         <section className="values-section" id="values" ref={containerRef}>
@@ -77,6 +95,8 @@ const Values = () => {
                     <div className="values-desc-text">
                         <p>At Elyse Residence, we believe that a home is more than a physical space — it's a reflection of your aspirations, well-being, and values. Our mission is to immerse you in a lifestyle that balances refined aesthetics, architectural excellence, and a profound sense of community.</p>
                     </div>
+                    <Link to="/projects" className="values-cta-btn">Call To Action</Link>
+
                 </div>
 
                 {/* <div className="values-list">

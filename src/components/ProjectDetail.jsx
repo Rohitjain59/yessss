@@ -185,10 +185,15 @@ const ProjectDetail = () => {
                         <span>{project.status}</span>
                     </div>
                     <h1 className="detail-title">
-                        {project.title.map((line, i) => (
-                            <span key={i} className="block-line">{line}</span>
-                        ))}
+                        {project.logo ? (
+                            <img src={project.logo} alt={project.title.join(' ')} className="detail-logo-img" />
+                        ) : (
+                            project.title.map((line, i) => (
+                                <span key={i} className="block-line">{line}</span>
+                            ))
+                        )}
                     </h1>
+
                     <p className="detail-desc">{project.desc}</p>
                 </div>
             </div>

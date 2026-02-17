@@ -20,6 +20,7 @@ export const projectsData = [
     {
         id: 1,
         title: ["IN", "ATMOSPHERE"],
+        logo: "/THE ATMOSPHERE LOGO BLACK (2).png",
         img: "/photos/Cam_03 copy.jpg",
         desc: "A landmark residential project in Chandkheda offering a blend of luxury and nature. Experience the pinnacle of modern living in our 3 & 4 BHK Apartments with aesthetic appeal & modern amenities.",
         location: "CHANDKHEDA",
@@ -55,6 +56,7 @@ export const projectsData = [
     {
         id: 2,
         title: ["ATMOSPHERE", "SOLITAIRE"],
+        logo: "/THE ATMOSPHERE LOGO BLACK (2).png",
         img: "/photos/Cam_01_night_02.jpg",
         desc: "Exquisite living spaces in Chandkheda designed for those who seek exclusivity and architectural grandeur in every detail.",
         location: "CHANDKHEDA",
@@ -276,7 +278,7 @@ const Projects = ({ standalone = false }) => {
                             className={`filter-btn ${filterStatus === 'ONGOING' ? 'active' : ''}`}
                             onClick={() => setFilterStatus('ONGOING')}
                         >
-                            ONGOING 
+                            ONGOING
                         </button>
                         <button
                             className={`filter-btn ${filterStatus === 'UPCOMING' ? 'active' : ''}`}
@@ -303,9 +305,13 @@ const Projects = ({ standalone = false }) => {
                                     </div>
                                 </div>
                                 <h2 className="project-name">
-                                    {project.title.map((line, i) => (
-                                        <span key={i} className="block-span">{line}</span>
-                                    ))}
+                                    {project.logo ? (
+                                        <img src={project.logo} alt={project.title.join(' ')} className="project-logo-img" />
+                                    ) : (
+                                        project.title.map((line, i) => (
+                                            <span key={i} className="block-span">{line}</span>
+                                        ))
+                                    )}
                                 </h2>
                                 <p className="project-desc">{project.desc}</p>
                                 <Link to={`/projects/${project.id}`} className="btn-line">VIEW RESIDENCE</Link>
@@ -335,9 +341,13 @@ const Projects = ({ standalone = false }) => {
                                     <span className="meta-right">{project.status}</span>
                                 </div>
                                 <h2 className="item-title">
-                                    {project.title.map((line, i) => (
-                                        <span key={i}>{line}</span>
-                                    ))}
+                                    {project.logo ? (
+                                        <img src={project.logo} alt={project.title.join(' ')} className="item-logo-img" />
+                                    ) : (
+                                        project.title.map((line, i) => (
+                                            <span key={i}>{line}</span>
+                                        ))
+                                    )}
                                 </h2>
                             </div>
                         </Link>

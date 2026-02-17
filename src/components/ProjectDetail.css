@@ -68,14 +68,23 @@
 .detail-title {
     font-family: var(--font-serif);
     font-size: 6vw;
-    /* Matches Values title scale */
     line-height: 1;
     margin-bottom: 2rem;
     text-transform: uppercase;
     font-weight: 400;
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     letter-spacing: -0.02em;
-    /* Tighter for modern serif look */
+}
+
+.detail-logo-img {
+    height: auto;
+    max-height: 120px;
+    width: auto;
+    max-width: 90%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    display: block;
+    margin: 0 auto;
 }
 
 @media (max-width: 1024px) {
