@@ -53,16 +53,16 @@ const About = ({ standalone = false }) => {
                             </h2>
                             <div className="about-stats about-animate-text">
                                 <div className="stat-item">
-                                    <span className="stat-number">15+</span>
-                                    <span className="stat-label">Years of Excellence</span>
+                                    <span className="stat-number">18+</span>
+                                    <span className="stat-label">YEARS OF EXPERIENCE</span>
                                 </div>
                                 <div className="stat-item">
-                                    <span className="stat-number">40+</span>
-                                    <span className="stat-label">Awards Won</span>
+                                    <span className="stat-number">27</span>
+                                    <span className="stat-label">PROJECTS COMPLETED</span>
                                 </div>
                                 <div className="stat-item">
-                                    <span className="stat-number">50+</span>
-                                    <span className="stat-label">Projects Completed</span>
+                                    <span className="stat-number">54,00,000+</span>
+                                    <span className="stat-label">SQ. FT. BUILT</span>
                                 </div>
                             </div>
                         </div>
@@ -136,16 +136,16 @@ const About = ({ standalone = false }) => {
                     </h2>
                     <div className="about-stats about-animate-text">
                         <div className="stat-item">
-                            <span className="stat-number">15+</span>
-                            <span className="stat-label">Years of Excellence</span>
+                            <span className="stat-number">18+</span>
+                            <span className="stat-label">YEARS OF EXPERIENCE</span>
                         </div>
                         <div className="stat-item">
-                            <span className="stat-number">40+</span>
-                            <span className="stat-label">Awards Won</span>
+                            <span className="stat-number">27</span>
+                            <span className="stat-label">PROJECTS COMPLETED</span>
                         </div>
                         <div className="stat-item">
-                            <span className="stat-number">50+</span>
-                            <span className="stat-label">Projects Completed</span>
+                            <span className="stat-number">54,00,000+</span>
+                            <span className="stat-label">SQ. FT. BUILT</span>
                         </div>
                     </div>
                 </div>
