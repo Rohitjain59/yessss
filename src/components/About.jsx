@@ -45,12 +45,16 @@ const About = ({ standalone = false }) => {
                 <section className="about standalone-section">
                     <div className="about-grid">
                         <div className="about-col-left">
-
-                            <h2 className="about-heading about-animate-text">
-                                <span>TOMORROW,</span>
-                                <span>BUILT</span>
-                                <span>TODAY.</span>
-                            </h2>
+                            <div>
+                                <h2 className="about-heading about-animate-text">
+                                    <span>TOMORROW,</span>
+                                    <span>BUILT</span>
+                                    <span>TODAY.</span>
+                                </h2>
+                                <p className="about-animate-text secondary-text" style={{ marginTop: '1rem' }}>
+                                    At the heart of every project we build is a commitment to excellence and a promise of a better lifestyle.
+                                </p>
+                            </div>
                             <div className="about-stats about-animate-text">
                                 <div className="stat-item">
                                     <span className="stat-number">18+</span>
@@ -76,10 +80,7 @@ const About = ({ standalone = false }) => {
                         <div className="about-col-right">
                             <div className="about-description">
                                 <p className="about-animate-text intro-text">
-                                    Quality is not a luxury; it is our standard. <strong>Dishva Group</strong> was founded on the principle that excellence is found in the details—the strength of the concrete, the flow of the floor plan, and the sustainability of the landscape.
-                                </p>
-                                <p className="about-animate-text secondary-text">
-                                    At the heart of every project we build is a commitment to excellence and a promise of a better lifestyle.
+                                    quality is not a luxury; it is our standard. <strong>Dishva Group</strong> was founded on the principle that excellence is found in the details—the strength of the concrete, the flow of the floor plan, and the sustainability of the landscape.
                                 </p>
 
                                 <div className="philosophy-list about-animate-text">
@@ -129,12 +130,31 @@ const About = ({ standalone = false }) => {
             <div className="about-grid">
                 {/* Left Column: Heading */}
                 <div className="about-col-left">
-                    <h2 className="about-heading about-animate-text">
-                        <span>TOMORROW,</span>
-                        <span>BUILT</span>
-                        <span>TODAY.</span>
-                    </h2>
-                 
+                    <div>
+                        <h2 className="about-heading about-animate-text">
+                            <span>TOMORROW,</span>
+                            <span>BUILT</span>
+                            <span>TODAY.</span>
+                        </h2>
+                        <p className="about-animate-text secondary-text" style={{ marginTop: '1rem' }}>
+                            At the heart of every project we build is a commitment to excellence and a promise of a better lifestyle.
+                        </p>
+                    </div>
+
+                    <div className="about-stats about-animate-text">
+                        <div className="stat-item">
+                            <span className="stat-number">18+</span>
+                            <span className="stat-label">YEARS OF EXPERIENCE</span>
+                        </div>
+                        <div className="stat-item">
+                            <span className="stat-number">27</span>
+                            <span className="stat-label">PROJECTS COMPLETED</span>
+                        </div>
+                        <div className="stat-item">
+                            <span className="stat-number">54,00,000+</span>
+                            <span className="stat-label">SQ. FT. BUILT</span>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Center Column: Image */}
@@ -150,24 +170,8 @@ const About = ({ standalone = false }) => {
                         <p className="about-animate-text intro-text">
                             Quality is not a luxury; it is our standard. <strong>Dishva Group</strong> was founded on the principle that excellence is found in the details—the strength of the concrete, the flow of the floor plan, and the sustainability of the landscape.
                         </p>
-                        <p className="about-animate-text secondary-text">
-                            At the heart of every project we build is a commitment to excellence and a promise of a better lifestyle.
-                        </p>
 
-                        <div className="about-stats mobile-only-stats about-animate-text">
-                            <div className="stat-item">
-                                <span className="stat-number">18+</span>
-                                <span className="stat-label">YEARS OF EXPERIENCE</span>
-                            </div>
-                            <div className="stat-item">
-                                <span className="stat-number">27</span>
-                                <span className="stat-label">PROJECTS COMPLETED</span>
-                            </div>
-                            <div className="stat-item">
-                                <span className="stat-number">54,00,000+</span>
-                                <span className="stat-label">SQ. FT. BUILT</span>
-                            </div>
-                        </div>
+
 
                         <div className="philosophy-list about-animate-text">
                             <ul>

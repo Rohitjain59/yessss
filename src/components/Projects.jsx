@@ -55,31 +55,28 @@ export const projectsData = [
     },
     {
         id: 2,
-        title: ["ATMOSPHERE", "SOLITAIRE"],
+        title: ["SHASHWAT", "AURA"],
         logo: "/THE ATMOSPHERE LOGO BLACK (2).png",
-        img: "/photos/Cam_01_night_02.jpg",
-        desc: "Exquisite living spaces in Chandkheda designed for those who seek exclusivity and architectural grandeur in every detail.",
-        location: "CHANDKHEDA",
+        img: "/Shashwat_Aura_Waterbody view/Shashwat_Aura_bird eye view.jpg",
+        desc: "Experience the height of residential luxury with our landmark project in Vastral. These Exclusive 3 BHK homes offer unparalleled living experience and a lifestyle enriched by nature and modern architectural excellence.",
+        location: "VASTRAL",
         status: "ONGOING",
         amenities: ["Allotted Car Parking", "Amphitheatre", "CCTV", "Children Play Area", "Co Working Space", "DTH Connection", "Fire Safety", "Gas Pipeline", "Gazebo", "Gymnasium", "Indoor Games", "Landscape Garden", "Library", "No Vehicle Zone", "Security Cabin", "Senior Citizen Area", "Swimming Pool", "Toddler Play Area", "Water Supply", "Wifi Zone"],
         gallery: [
-            { src: "/photos/Cam_01_night_02.jpg", text: "NIGHT VIEW", category: "Exterior" },
-            { src: "/photos/F_Cam_01.jpg", text: "MODERN KITCHEN", category: "Kitchen" },
-            { src: "/photos/Library_Cam_02.jpg", text: "HOME LIBRARY", category: "Living" },
-            { src: "/photos/Shawat_C 003.jpg", text: "SKY TERRACE", category: "Exterior" },
-            { src: "/photos/Shawat_C 1.jpg", text: "LIVING AREA", category: "Living" },
-            { src: "/photos/Cam_03 copy.jpg", text: "PRIVATE POOL", category: "Exterior" },
-            { src: "/photos/6.jpg", text: "MAIN FACADE", category: "Exterior" },
-            { src: "/photos/Shawat_C 2.jpg", text: "GUEST LOUNGE", category: "Living" },
-            { src: "/photos/BG_FN_02.jpg", text: "SPA & WELLNESS", category: "Bathroom" },
-            { src: "/photos/Cam_13_2.jpg", text: "MASTER SUITE", category: "Bedroom" },
-            { src: "/photos/Cam_005_02.jpg", text: "DINING SPACE", category: "Kitchen" },
-            { src: "/photos/Shawat_C 04.jpg", text: "GARDEN PATH", category: "Exterior" },
-            { src: "/photos/Library_Cam_01.jpg", text: "STUDY", category: "Office" },
-            { src: "/photos/Work_Space.jpg", text: "OFFICE SPACE", category: "Office" },
-            { src: "/photos/Indoor_Games.jpg", text: "RECREATION", category: "Living" }
+            { src: "/Shashwat_Aura_Waterbody view/Shashwat_Aura_bird eye view.jpg", text: "BIRD EYE VIEW", category: "Exterior" },
+            { src: "/Shashwat_Aura_Waterbody view/Shashwat_Aura_Waterbody view.jpg", text: "WATERBODY VIEW", category: "Exterior" },
+            { src: "/Shashwat_Aura_Waterbody view/Shashvat_Aura_front view.jpg", text: "FRONT VIEW", category: "Exterior" },
+            { src: "/Shashwat_Aura_Waterbody view/Shashvat_Aura_corner view.jpg", text: "CORNER VIEW", category: "Exterior" },
+            { src: "/Shashwat_Aura_Waterbody view/Shashvat_Aura_corner night view.jpg", text: "NIGHT VIEW", category: "Exterior" },
+            { src: "/Shashwat_Aura_Waterbody view/Shashwat_Aura_entry gate view.jpg", text: "ENTRY GATE", category: "Exterior" },
+            { src: "/Shashwat_Aura_Waterbody view/Shashvat_Aura_Campfire view.jpg", text: "CAMPFIRE AREA", category: "Exterior" },
+            { src: "/Shashwat_Aura_Waterbody view/Shashvat_Aura_cricket view.jpg", text: "CRICKET VIEW", category: "Exterior" },
+            { src: "/Shashwat_Aura_Waterbody view/Shashwat_Aura_Children play area view.jpg", text: "CHILDREN PLAY AREA", category: "Exterior" },
+            { src: "/Shashwat_Aura_Waterbody view/Shashwat_Aura_gazebo view.jpg", text: "GAZEBO VIEW", category: "Exterior" },
+            { src: "/Shashwat_Aura_Waterbody view/Shashwat_Aura_gazebo seating view.jpg", text: "GAZEBO SEATING", category: "Exterior" },
+            { src: "/Shashwat_Aura_Waterbody view/sashwat aura TOP VIEW.jpg", text: "TOP VIEW", category: "Exterior" }
         ],
-        story: "Atmosphere Solitaire represents the zenith of mid-city luxury. Reserved for the select few, these residences feature higher ceilings, exclusive elevator access, and premium specifications.",
+        story: "Experience the height of residential luxury with our landmark project in Vastral, where sophisticated architecture meets natural tranquility.\n\nThese Exclusive 3 BHK homes are engineered with a human-centric approach, offering an unparalleled living experience built on total transparency.\n\nRedefining the Vastral skyline, this project stands as a bold legacy of artistic design and elite urban craftsmanship.",
         floorPlans: {
             "Ground Floor Plan": ["/THE ATMOSPHERE GROUND FLOOR PLAN.jpg.jpeg"],
             "First Floor Plan": ["/THE ATMOSPHERE FIRST FLOOR PLAN.jpg.jpeg"],
@@ -131,6 +128,39 @@ const Projects = ({ standalone = false }) => {
     const projectsRef = useRef(null);
     const [cursorX, setCursorX] = useState(0);
     const autoPlayRef = useRef(null);
+    const touchStartX = useRef(0);
+    const touchEndX = useRef(0);
+
+    // Touch swipe handlers for mobile
+    const handleTouchStart = (e) => {
+        touchStartX.current = e.touches[0].clientX;
+        // Pause autoplay during touch
+        clearInterval(autoPlayRef.current);
+    };
+
+    const handleTouchMove = (e) => {
+        touchEndX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+        const swipeDistance = touchStartX.current - touchEndX.current;
+        const minSwipe = 50; // minimum swipe distance in px
+
+        if (Math.abs(swipeDistance) > minSwipe) {
+            if (swipeDistance > 0) {
+                // Swiped left → next
+                setActiveIndex((prev) => (prev + 1) % projectsData.length);
+            } else {
+                // Swiped right → previous
+                setActiveIndex((prev) => (prev - 1 + projectsData.length) % projectsData.length);
+            }
+        }
+
+        // Restart autoplay after swipe
+        autoPlayRef.current = setInterval(() => {
+            setActiveIndex((prev) => (prev + 1) % projectsData.length);
+        }, 4000);
+    };
 
     // Carousel Logic (Only runs if NOT standalone)
     useEffect(() => {
@@ -330,7 +360,12 @@ const Projects = ({ standalone = false }) => {
                 <h2 className="projects-heading">OUR PROJECTS</h2>
             </div>
 
-            <div className="gallery-container">
+            <div
+                className="gallery-container"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+            >
                 {projectsData.map((project, index) => (
                     <div key={project.id} className={`gallery-item ${getPositionClass(index)}`}>
                         <Link to={`/projects/${project.id}`} className="gallery-link">

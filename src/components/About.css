@@ -241,13 +241,16 @@
 }
 
 .about-description .secondary-text {
-    font-size: 0.9rem;
-    color: #aeaeae;
+    font-size: 1.1rem !important;
+    /* Force override */
+    color: white;
+    font-weight: 300;
     margin-bottom: 3rem;
 }
 
 .philosophy-list {
     margin-bottom: 3rem;
+    margin-top: 2rem;
 }
 
 .philosophy-list h4 {
@@ -268,12 +271,14 @@
 }
 
 .philosophy-list li {
-    font-family: var(--font-serif);
-    font-size: 1.3rem;
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    /* Adjusted slightly to match flow */
+    font-weight: 300;
     margin-bottom: 0.8rem;
     padding-left: 1rem;
     position: relative;
-    color: #d1d1d1;
+    color: white;
 }
 
 .philosophy-list li::before {
@@ -290,7 +295,7 @@
     color: black;
     padding: 1rem 2rem;
     border-radius: 2rem;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -349,7 +354,8 @@
     }
 
     .about-stats {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 1.5rem;
         margin-top: 2rem;
     }

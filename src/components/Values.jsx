@@ -97,23 +97,7 @@ const Values = () => {
                         <p>At Elyse Residence, we believe that a home is more than a physical space — it's a reflection of your aspirations, well-being, and values. Our mission is to immerse you in a lifestyle that balances refined aesthetics, architectural excellence, and a profound sense of community.</p>
                     </div>
 
-                    {/* Mobile Stats (Moved down) */}
-                    <div className="values-mobile-stats">
-                        <div className="v-stat-item">
-                            <span className="v-stat-num">18+</span>
-                            <span className="v-stat-lbl">YEARS</span>
-                        </div>
-                        <div className="v-stat-item">
-                            <span className="v-stat-num">27</span>
-                            <span className="v-stat-lbl">PROJECTS</span>
-                        </div>
-                        <div className="v-stat-item">
-                            <span className="v-stat-num">54L+</span>
-                            <span className="v-stat-lbl">SQ.FT.</span>
-                        </div>
-                    </div>
-
-                    <Link to="/projects" className="values-cta-btn">Call To Action</Link>
+                    <Link to="/projects" className="values-cta-btn">Explore Project</Link>
 
                 </div>
 

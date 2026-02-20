@@ -1,10 +1,16 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import './Contact.css';
 
 const Contact = ({ standalone = true }) => {
     const sectionRef = useRef(null);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+    });
 
     useGSAP(() => {
         const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -24,6 +30,31 @@ const Contact = ({ standalone = true }) => {
             }, "-=0.6");
 
     }, { scope: sectionRef });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.id]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Validate required fields
+        if (!formData.name.trim() || !formData.phone.trim() || !formData.message.trim()) {
+            alert("Please fill in all required fields (Name, Phone, Message).");
+            return;
+        }
+
+        const subject = `Enquiry from ${formData.name}`;
+        const body = `Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email || 'Not provided'}
+
+Message:
+${formData.message}`;
+
+        const mailtoLink = `mailto:Info@dishva.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailtoLink;
+    };
 
     return (
         <section className={`contact-page ${standalone ? 'standalone' : ''}`} ref={sectionRef}>
@@ -72,25 +103,25 @@ const Contact = ({ standalone = true }) => {
 
                 {/* Right Column: Form */}
                 <div className="contact-form-wrapper">
-                    <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                    <form className="contact-form" onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label htmlFor="name">NAME</label>
-                            <input type="text" id="name" placeholder="Your Name" />
+                            <label htmlFor="name">NAME *</label>
+                            <input type="text" id="name" placeholder="Your Name" required value={formData.name} onChange={handleChange} />
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="email">EMAIL</label>
-                            <input type="email" id="email" placeholder="Your Email" />
+                            <label htmlFor="email">EMAIL <span style={{ opacity: 0.4, fontSize: '0.7rem' }}>(Optional)</span></label>
+                            <input type="email" id="email" placeholder="Your Email" value={formData.email} onChange={handleChange} />
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="phone">PHONE NUMBER</label>
-                            <input type="tel" id="phone" placeholder="Your Phone Number" />
+                            <label htmlFor="phone">PHONE NUMBER *</label>
+                            <input type="tel" id="phone" placeholder="Your Phone Number" required value={formData.phone} onChange={handleChange} />
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="message">MESSAGE</label>
-                            <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+                            <label htmlFor="message">MESSAGE *</label>
+                            <textarea id="message" rows="4" placeholder="How can we help you?" required value={formData.message} onChange={handleChange}></textarea>
                         </div>
 
                         <button type="submit" className="btn-submit">
