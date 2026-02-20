@@ -138,27 +138,39 @@
 }
 
 .values-cta-btn {
-    display: inline-block;
-    margin-top: 3rem;
-    padding: 1rem 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1.5rem;
+    padding: 0;
     background: transparent;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 0;
     font-family: var(--font-sans);
-    font-size: 0.9rem;
-    letter-spacing: 0.2em;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-decoration: none;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
+.values-cta-btn::after {
+    content: '→';
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
 .values-cta-btn:hover {
-    background: white;
-    color: black;
-    border-color: white;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+    color: white;
+    background: transparent;
+    transform: none;
+    box-shadow: none;
+}
+
+.values-cta-btn:hover::after {
+    transform: translateX(6px);
 }
 
 
