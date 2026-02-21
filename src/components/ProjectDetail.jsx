@@ -279,15 +279,15 @@ const ProjectDetail = () => {
                 <div className="detail-specs">
                     <div className="spec-item">
                         <span className="spec-label">Area</span>
-                        <span className="spec-value">4,500 Sq. Ft.</span>
+                        <span className="spec-value">{project.area}</span>
                     </div>
                     <div className="spec-item">
                         <span className="spec-label">Bedrooms</span>
-                        <span className="spec-value">4 - 5</span>
+                        <span className="spec-value">{project.bedrooms}</span>
                     </div>
                     <div className="spec-item">
                         <span className="spec-label">Completion</span>
-                        <span className="spec-value">2026</span>
+                        <span className="spec-value">{project.completion}</span>
                     </div>
                 </div>
 
