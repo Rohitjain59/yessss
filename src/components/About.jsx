@@ -51,9 +51,6 @@ const About = ({ standalone = false }) => {
                                     <span>BUILT</span>
                                     <span>TODAY.</span>
                                 </h2>
-                                <p className="about-animate-text secondary-text" style={{ marginTop: '1rem' }}>
-                                    At the heart of every project we build is a commitment to excellence and a promise of a better lifestyle.
-                                </p>
                             </div>
                             <div className="about-stats about-animate-text">
                                 <div className="stat-item">
@@ -82,15 +79,18 @@ const About = ({ standalone = false }) => {
                                 <p className="about-animate-text intro-text">
                                     quality is not a luxury; it is our standard. <strong>Dishva Group</strong> was founded on the principle that excellence is found in the details—the strength of the concrete, the flow of the floor plan, and the sustainability of the landscape.
                                 </p>
+                                <p className="about-animate-text secondary-text">
+                                    At the heart of every project we build is a commitment to excellence and a promise of a better lifestyle.
+                                </p>
+                            </div>
 
-                                <div className="philosophy-list about-animate-text">
-                                    <ul>
-                                        <li>100% TRANSPARENCY</li>
-                                        <li>QUALITY FIRST-APPROACH</li>
-                                        <li>SUSTAINABLE MODERNITY</li>
-                                        <li>ON TIME COMPLETION</li>
-                                    </ul>
-                                </div>
+                            <div className="philosophy-list about-animate-text">
+                                <ul>
+                                    <li>100% TRANSPARENCY</li>
+                                    <li>QUALITY FIRST-APPROACH</li>
+                                    <li>SUSTAINABLE MODERNITY</li>
+                                    <li>ON TIME COMPLETION</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -119,8 +119,8 @@ const About = ({ standalone = false }) => {
                             <p>We bring the blueprint to life with flawless execution and finish.</p>
                         </div>
                     </div>
-                </section>
-            </div>
+                </section >
+            </div >
         );
     }
 
@@ -136,9 +136,6 @@ const About = ({ standalone = false }) => {
                             <span>BUILT</span>
                             <span>TODAY.</span>
                         </h2>
-                        <p className="about-animate-text secondary-text" style={{ marginTop: '1rem' }}>
-                            At the heart of every project we build is a commitment to excellence and a promise of a better lifestyle.
-                        </p>
                     </div>
 
                     <div className="about-stats about-animate-text">
@@ -169,6 +166,9 @@ const About = ({ standalone = false }) => {
                     <div className="about-description">
                         <p className="about-animate-text intro-text">
                             Quality is not a luxury; it is our standard. <strong>Dishva Group</strong> was founded on the principle that excellence is found in the details—the strength of the concrete, the flow of the floor plan, and the sustainability of the landscape.
+                        </p>
+                        <p className="about-animate-text secondary-text">
+                            At the heart of every project we build is a commitment to excellence and a promise of a better lifestyle.
                         </p>
 
 

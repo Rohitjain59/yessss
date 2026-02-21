@@ -241,7 +241,7 @@
         background: transparent;
         border: none;
         border-radius: 0;
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         letter-spacing: 0.2em;
         display: inline-flex;
         align-items: center;
@@ -250,7 +250,7 @@
 
     .values-cta-btn::after {
         content: '→';
-        font-size: 1.2rem;
+        font-size: 1rem;
         transition: transform 0.3s ease;
     }
 

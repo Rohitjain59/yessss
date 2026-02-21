@@ -245,7 +245,7 @@
     /* Force override */
     color: white;
     font-weight: 300;
-    margin-bottom: 3rem;
+    margin: 1.5rem 0 3rem 0;
 }
 
 .philosophy-list {
@@ -410,4 +410,20 @@
         /* Full width button */
         text-align: center;
     }
+
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: block !important;
+    }
+}
+
+.desktop-only {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
 }
