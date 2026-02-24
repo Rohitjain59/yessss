@@ -95,10 +95,9 @@
 
 @media (max-width: 768px) {
     .detail-title {
-        font-size: 12vw;
-        /* Huge on mobile too */
+        font-size: 2.2rem;
+        /* Reduced for classy mobile look */
         color: white;
-        /* Ensure visibility */
     }
 }
 
@@ -107,8 +106,8 @@
 }
 
 .detail-desc {
-    font-family: var(--font-sans);
-    font-size: 1.1rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
     line-height: 1.6;
     max-width: 600px;
     margin: 0 auto;
@@ -129,15 +128,15 @@
 }
 
 .detail-info-block h3 {
-    font-family: var(--font-serif);
-    font-size: 2rem;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
     color: white;
 }
 
 .detail-info-block p {
-    font-family: var(--font-sans);
-    font-size: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
     line-height: 1.8;
     color: #bbb;
 }
@@ -229,7 +228,7 @@
 
     .detail-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
     }
 
     .detail-specs {
@@ -253,8 +252,9 @@
 
 @media (max-width: 480px) {
     .detail-title {
-        font-size: 2.2rem;
-        /* Smaller title for mobile */
+        font-size: 1.8rem;
+        /* Small classy title */
+        letter-spacing: 0.02em;
     }
 
     .detail-content-section {

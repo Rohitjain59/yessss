@@ -1,8 +1,10 @@
-@import './components/SogoFont.css';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
 :root {
-  --font-serif: 'Sogo Regular', serif;
-  --font-sans: 'Sogo Regular', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Montserrat', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
 
   --color-bg: #0a0a0a;
   --color-text: #ffffff;
@@ -17,11 +19,13 @@
 }
 
 body {
-  font-family: 'Sogo Regular', sans-serif;
+  font-family: var(--font-body);
   background-color: var(--color-bg);
   color: var(--color-text);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 h1,
@@ -30,15 +34,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Sogo Regular', serif !important;
+  font-family: var(--font-heading) !important;
   font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 button,
 input,
 textarea,
 select {
-  font-family: 'Sogo Regular', sans-serif;
+  font-family: var(--font-body);
   font-size: inherit;
 }
 
@@ -74,4 +79,33 @@ a {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+/* Mobile Small Classy Fonts - Global Scale */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    /* Essential "small classy" base */
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .container {
+    padding: 0 1.2rem;
+  }
 }

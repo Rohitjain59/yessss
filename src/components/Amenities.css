@@ -65,8 +65,8 @@
 }
 
 .amenities-desc {
-    font-family: var(--font-sans);
-    font-size: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
     color: #ccc;
     line-height: 1.8;
     max-width: 400px;
@@ -191,7 +191,9 @@
     }
 
     .amenities-title {
-        font-size: 3rem;
+        font-size: 1.8rem;
+        /* Small classy heading */
+        letter-spacing: 0.02em;
     }
 
     .amenities-right {

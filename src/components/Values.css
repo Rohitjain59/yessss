@@ -92,7 +92,7 @@
 }
 
 .values-title {
-    font-family: 'Sogo Regular', serif;
+    font-family: var(--font-heading);
     font-size: 3.5rem;
     line-height: 1.1;
     font-weight: 400;
@@ -130,7 +130,7 @@
 }
 
 .values-desc-text p {
-    font-family: var(--font-sans);
+    font-family: var(--font-body);
     font-size: 1.1rem;
     line-height: 1.8;
     color: #f0f0f0;
@@ -199,7 +199,10 @@
     }
 
     .values-title {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+        /* Small classy heading for mobile */
+        letter-spacing: 0.02em;
+        margin-bottom: 1.5rem;
     }
 
     /* Mobile Stats */

@@ -1,4 +1,4 @@
-@import './SogoFont.css';
+@import '../index.css';
 
 .hero {
     position: relative;
@@ -92,17 +92,16 @@
 }
 
 .hero-subtitle {
-    font-family: 'Sogo Regular', sans-serif;
+    font-family: var(--font-heading);
     font-size: 2.5rem;
     /* Increased size for impact */
     margin-bottom: 1.5rem;
     font-weight: 400;
     line-height: 1.2;
-    /* Removed italic to match Sogo Regular style typically */
 }
 
 .hero-description {
-    font-family: 'Sogo Regular', sans-serif;
+    font-family: var(--font-body);
     font-size: 1.1rem;
     /* Slightly larger for readability */
     line-height: 1.6;
@@ -118,7 +117,7 @@
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 50px;
-    font-family: 'Sogo Regular', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -134,7 +133,7 @@
 }
 
 .scroll-indicator {
-    font-family: 'Sogo Regular', sans-serif;
+    font-family: var(--font-body);
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 0.2em;
@@ -171,7 +170,9 @@
     .hero-description {
         width: 100%;
         margin: 0 auto 2rem auto;
-        font-size: 0.95rem;
+        font-size: 0.85rem;
+        /* Classy small font */
+        opacity: 0.8;
     }
 }
 
@@ -182,24 +183,26 @@
     }
 
     .hero-subtitle {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        /* Small classy heading */
+        letter-spacing: 0.05em;
     }
 
     .hero-description {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
+        /* Small classy body */
         line-height: 1.5;
         margin-bottom: 1.5rem;
-        /* Reduced margin */
+        max-width: 280px;
     }
 
     .hero-content {
         top: 45%;
-        /* Moved up slightly */
     }
 
     .hero-cta-btn {
-        padding: 0.8rem 2rem;
-        font-size: 0.8rem;
+        padding: 0.7rem 1.8rem;
+        font-size: 0.7rem;
         margin-bottom: 2rem;
     }
 }

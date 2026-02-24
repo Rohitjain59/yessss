@@ -40,8 +40,8 @@
 }
 
 .contact-text p {
-    font-family: var(--font-sans);
-    font-size: 1.1rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
     line-height: 1.8;
     color: #ccc;
     margin-bottom: 1.5rem;
@@ -70,8 +70,8 @@
 
 .detail-group p,
 .detail-group a {
-    font-family: var(--font-sans);
-    font-size: 1.1rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
     line-height: 1.5;
     color: #e0e0e0;
     text-decoration: none;
@@ -202,7 +202,7 @@
     }
 
     .contact-title {
-        font-size: 3.5rem;
+        font-size: 2.2rem;
     }
 
     .contact-form-wrapper {
@@ -216,8 +216,9 @@
     }
 
     .contact-title {
-        font-size: 3rem;
-        margin-bottom: 2rem;
+        font-size: 1.8rem;
+        /* Small classy heading */
+        margin-bottom: 1.5rem;
     }
 
     .form-group input {
@@ -232,7 +233,7 @@
 
 @media (max-width: 480px) {
     .contact-title {
-        font-size: 2.2rem;
+        font-size: 1.6rem;
     }
 
     .contact-page {

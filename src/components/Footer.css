@@ -115,7 +115,7 @@
 
     .footer-links-group {
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 2rem;
     }
 
     .footer-bottom {

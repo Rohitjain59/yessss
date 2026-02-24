@@ -54,7 +54,8 @@ export const projectsData = [
             "3BHK Type A": ["/THE ATMOSPHERE 3BHK FLOOR PLAN.jpg.jpeg"],
             "3BHK Type B": ["/THE ATMOSPHERE 3BHK FLOOR PLAN 2.0.jpg.jpeg"],
             "4BHK Luxury Plan": ["/THE ATMOSPHERE 4BHK FLOOR PLAN.jpg.jpeg"]
-        }
+        },
+        brochure: "/The Atmosphere E-Brochure..pdf"
     },
     {
         id: 2,
@@ -90,20 +91,22 @@ export const projectsData = [
             "3BHK Type A": ["/THE ATMOSPHERE 3BHK FLOOR PLAN.jpg.jpeg"],
             "3BHK Type B": ["/THE ATMOSPHERE 3BHK FLOOR PLAN 2.0.jpg.jpeg"],
             "4BHK Luxury Plan": ["/THE ATMOSPHERE 4BHK FLOOR PLAN.jpg.jpeg"]
-        }
+        },
+        brochure: "/Shashwat Aura Brochure (1).pdf"
     },
     {
         id: 3,
-        title: ["DISHVA", "ESSENCE"],
-        img: "/photos/6.jpg",
-        desc: "An expansive 3,50,000 Sq. Ft. upcoming development featuring premium 3 & 4 BHK residences. Expected completion by April 2028.",
-        location: "AHMEDABAD",
+        title: ["DISHVA", "INDUSTRIAL PARK"],
+        img: "/WhatsApp Image 2026-02-23 at 5.36.24 PM.jpeg",
+        desc: "A state-of-the-art upcoming industrial park development featuring premium industrial spaces and modern infrastructure at Odhav-Singarva Road.",
+        location: "ODHAV-SINGARVA ROAD",
         status: "UPCOMING",
         amenities: ["Allotted Car Parking", "Amphitheatre", "CCTV", "Children Play Area", "Co Working Space", "DTH Connection", "Fire Safety", "Gas Pipeline", "Gazebo", "Gymnasium", "Indoor Games", "Landscape Garden", "Library", "No Vehicle Zone", "Security Cabin", "Senior Citizen Area", "Swimming Pool", "Toddler Play Area", "Water Supply", "Wifi Zone"],
         area: "3,50,000 Sq. Ft.",
-        bedrooms: "3 - 4",
+        bedrooms: "Industrial Units",
         completion: "April 2028",
         gallery: [
+            { src: "/WhatsApp Image 2026-02-23 at 5.36.24 PM.jpeg", text: "MAIN ENTRANCE", category: "Exterior" },
             { src: "/photos/Shawat_C 1.jpg", text: "SKY TERRACE", category: "Exterior" },
             { src: "/photos/Cam_13_2.jpg", text: "MASTER SUITE", category: "Bedroom" },
             { src: "/photos/F_Cam_04.jpg", text: "SPA & WELLNESS", category: "Bathroom" },
@@ -120,7 +123,7 @@ export const projectsData = [
             { src: "/photos/Shawat_C 04.jpg", text: "GARDEN PATH", category: "Exterior" },
             { src: "/photos/BG_FN_02.jpg", text: "PANORAMIC VIEW", category: "Exterior" }
         ],
-        story: "DISHVA ESSENCE is designed to be a future-ready living space, spanning across 3,50,000 Sq. Ft. of pristine landscape. Featuring carefully crafted 3 & 4 BHK apartments, it sets a new benchmark for luxury in Ahmedabad with an expected completion in April 2028.",
+        story: "DISHVA INDUSTRIAL PARK is set to redefine the industrial landscape of Ahmedabad. Located on the strategic Odhav-Singarva Road, this project offers premium industrial spaces designed for efficiency and growth. With modern infrastructure and world-class amenities, it provides the perfect environment for businesses to thrive.",
         floorPlans: {
             "Ground Floor Plan": ["/THE ATMOSPHERE GROUND FLOOR PLAN.jpg.jpeg"],
             "First Floor Plan": ["/THE ATMOSPHERE FIRST FLOOR PLAN.jpg.jpeg"],

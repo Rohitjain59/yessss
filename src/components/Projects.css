@@ -28,7 +28,7 @@
 }
 
 .page-title {
-    font-family: 'Sogo Regular', serif;
+    font-family: var(--font-heading);
     font-size: 3rem;
     font-weight: 400;
     letter-spacing: 0.1em;
@@ -224,7 +224,7 @@
 }
 
 .projects-heading {
-    font-family: 'Sogo Regular', serif;
+    font-family: var(--font-heading);
     font-size: 3rem;
     line-height: 1;
     font-weight: 400;
@@ -414,11 +414,12 @@
     }
 
     .project-name {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
 
     .page-title {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+        /* Small classy page title */
     }
 }
 
@@ -436,8 +437,9 @@
     }
 
     .project-name {
-        font-size: 2.2rem;
-        margin-bottom: 1rem;
+        font-size: 1.6rem;
+        /* Small classy project name */
+        margin-bottom: 0.8rem;
     }
 
     .item-title span {

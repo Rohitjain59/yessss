@@ -168,8 +168,20 @@ const ProjectDetail = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        alert("Thank you! Our brochure will be sent to you shortly.");
-        closeModal();
+
+        if (project.brochure) {
+            // Create a temporary link and trigger download
+            const link = document.createElement('a');
+            link.href = project.brochure;
+            link.download = project.brochure.split('/').pop();
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            closeModal();
+        } else {
+            alert("Digital brochure for this project is coming soon! Our team will contact you with more details.");
+            closeModal();
+        }
     };
 
     return (
@@ -282,7 +294,7 @@ const ProjectDetail = () => {
                         <span className="spec-value">{project.area}</span>
                     </div>
                     <div className="spec-item">
-                        <span className="spec-label">Bedrooms</span>
+                        <span className="spec-label">Configuration</span>
                         <span className="spec-value">{project.bedrooms}</span>
                     </div>
                     <div className="spec-item">

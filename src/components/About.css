@@ -235,13 +235,13 @@
 }
 
 .about-description .intro-text {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: white;
     font-weight: 300;
 }
 
 .about-description .secondary-text {
-    font-size: 1.1rem !important;
+    font-size: 0.95rem !important;
     /* Force override */
     color: white;
     font-weight: 300;
@@ -271,8 +271,8 @@
 }
 
 .philosophy-list li {
-    font-family: var(--font-sans);
-    font-size: 1.2rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
     /* Adjusted slightly to match flow */
     font-weight: 300;
     margin-bottom: 0.8rem;
@@ -350,7 +350,9 @@
     }
 
     .about-heading {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+        /* Small classy heading */
+        letter-spacing: 0.02em;
     }
 
     .about-stats {
@@ -361,7 +363,8 @@
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        /* Smaller stats */
     }
 
     .process-grid {
@@ -393,8 +396,7 @@
 
 @media (max-width: 480px) {
     .about-heading {
-        font-size: 2rem;
-        /* Smaller heading */
+        font-size: 1.6rem;
     }
 
     .section-label {
