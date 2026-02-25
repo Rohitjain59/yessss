@@ -46,7 +46,7 @@ const Footer = () => {
 
             <div className="footer-bottom">
                 <div className="footer-bottom-left">
-                    <p>&copy; {new Date().getFullYear()} Dishva Developments. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Dishva . All rights reserved.</p>
                 </div>
                 <div className="footer-bottom-right">
                     <a href="#">Privacy Policy</a>

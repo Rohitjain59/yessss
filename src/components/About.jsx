@@ -97,29 +97,6 @@ const About = ({ standalone = false }) => {
                 </section>
 
                 {/* Additional Content for Full Page */}
-                <section className="about-process">
-                    <div className="process-header about-animate-text">
-                        <h3>OUR PROCESS</h3>
-                        <div className="line"></div>
-                    </div>
-                    <div className="process-grid">
-                        <div className="process-step about-animate-text">
-                            <span className="step-num">01</span>
-                            <h4>Vision</h4>
-                            <p>We start by understanding your deepest aspirations for your living space.</p>
-                        </div>
-                        <div className="process-step about-animate-text">
-                            <span className="step-num">02</span>
-                            <h4>Craft</h4>
-                            <p>Our artisans and architects work in unison to sculpt every detail.</p>
-                        </div>
-                        <div className="process-step about-animate-text">
-                            <span className="step-num">03</span>
-                            <h4>Realization</h4>
-                            <p>We bring the blueprint to life with flawless execution and finish.</p>
-                        </div>
-                    </div>
-                </section >
             </div >
         );
     }
