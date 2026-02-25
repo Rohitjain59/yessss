@@ -77,7 +77,7 @@ const About = ({ standalone = false }) => {
                         <div className="about-col-right">
                             <div className="about-description">
                                 <p className="about-animate-text intro-text">
-                                    quality is not a luxury; it is our standard. <strong>Dishva Group</strong> was founded on the principle that excellence is found in the details—the strength of the concrete, the flow of the floor plan, and the sustainability of the landscape.
+                                    We don't just build structures; we craft legacies. At <strong>Dishva Group</strong>, our ethos is rooted in an unwavering commitment to quality and integrity. This dedication is the very foundation of our work, as we believe a true legacy isn't measured in buildings, but in the thriving families who call them home.
                                 </p>
                                 <p className="about-animate-text secondary-text">
                                     At the heart of every project we build is a commitment to excellence and a promise of a better lifestyle.
@@ -165,7 +165,7 @@ const About = ({ standalone = false }) => {
                 <div className="about-col-right">
                     <div className="about-description">
                         <p className="about-animate-text intro-text">
-                            Quality is not a luxury; it is our standard. <strong>Dishva Group</strong> was founded on the principle that excellence is found in the details—the strength of the concrete, the flow of the floor plan, and the sustainability of the landscape.
+                            We don't just build structures; we craft legacies. At <strong>Dishva Group</strong>, our ethos is rooted in an unwavering commitment to quality and integrity. This dedication is the very foundation of our work, as we believe a true legacy isn't measured in buildings, but in the thriving families who call them home.
                         </p>
                         <p className="about-animate-text secondary-text">
                             At the heart of every project we build is a commitment to excellence and a promise of a better lifestyle.

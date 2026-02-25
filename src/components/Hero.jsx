@@ -14,8 +14,8 @@ const Hero = () => {
     const titleRef = useRef(null);
 
     const heroImages = [
-        '/photos/72D06D45-8CD7-4FA9-B467-E070A4EC5BE1.jpeg.jpg',
-        '/photos/BF1F0B7F-2EFD-4BA7-A303-15AA5BA58C26.jpeg.jpg',
+        '/photos/2025-10-31-17-57-24-The-Atmosphere-6.jpg',
+        '/photos/BG_FN_02.jpg',
         '/photos/Cam_03 copy.jpg'
     ];
 

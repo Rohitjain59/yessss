@@ -91,10 +91,10 @@ const Values = () => {
 
             <div className="values-container" ref={contentRef}>
                 <div className="values-header">
-                    <h2 className="values-title">Created for the <br /> <span className="italic-text">Discerning Few</span></h2>
+                    <h2 className="values-title">THE ATMOSPHERE <br /> <span className="italic-text">OF DREAMS</span></h2>
 
                     <div className="values-desc-text">
-                        <p>At Elyse Residence, we believe that a home is more than a physical space — it's a reflection of your aspirations, well-being, and values. Our mission is to immerse you in a lifestyle that balances refined aesthetics, architectural excellence, and a profound sense of community.</p>
+                        <p>Beyond the walls, a new way of living begins. This is where your aspirations take flight, anchored in a standard of living without compromise. In the heart of Chandkheda—where you don’t just reside; you finally arrive.</p>
                     </div>
 
                     <Link to="/projects" className="values-cta-btn">Explore Project</Link>
